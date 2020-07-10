@@ -1,0 +1,25 @@
+{
+  "extends": "./configs/base.tsconfig",
+  "compilerOptions": {
+    "skipLibCheck": false,
+    "baseUrl": ".",
+    "paths": {
+      "@cellbang/core": [
+        "packages/core/src/common"
+      ],
+      "@cellbang/core/lib/*": [
+        "packages/core/src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "typescript-eslint-language-service"
+      }
+    ]
+  },
+  "include": [
+    "dev-packages/*/src",
+    "packages/*/src",
+    "examples/*/test"
+  ]
+}
