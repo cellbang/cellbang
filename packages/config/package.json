@@ -1,5 +1,5 @@
 {
-  "name": "@cellbang/core",
+  "name": "@cellbang/config",
   "version": "0.0.0",
   "description": "",
   "main": "lib/common/index.js",

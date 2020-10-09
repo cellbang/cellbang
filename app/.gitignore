@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
-/build
+dist
 lib
+.malagu
+.env
 *.log
 .idea
 .metadata
@@ -11,13 +13,10 @@ lerna-debug.log
 .nyc_output
 coverage
 errorShots
-/browser-app
 .browser_modules
 **/docs/api
 package-backup.json
 .history
 .Trash-*
-gh-pages
-.vscode/ipch
-*.tsbuildinfo
-.eslintcache
+packages/plugin/typedoc
+plugins

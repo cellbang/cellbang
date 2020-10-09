@@ -1,0 +1,8 @@
+frontend: 
+  modules:
+    - lib/browser/theia-core-module
+    - lib/browser/theia-logger-module
+    - '@theia/core/lib/browser/menu/browser-menu-module'
+    - '@theia/core/lib/browser/window/browser-window-module'
+    - '@theia/core/lib/browser/keyboard/browser-keyboard-module'
+    - '@theia/outline-view/lib/browser/outline-view-frontend-module'

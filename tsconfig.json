@@ -5,10 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@cellbang/core": [
-        "packages/core/src/common"
+        "packages/desktop/src/common"
       ],
       "@cellbang/core/lib/*": [
-        "packages/core/src/*"
+        "packages/desktop/src/*"
       ]
     },
     "plugins": [
