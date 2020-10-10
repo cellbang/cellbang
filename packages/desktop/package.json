@@ -5,7 +5,7 @@
   "main": "lib/common/index.js",
   "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@malagu/core": "^1.0.6",
+    "@malagu/core": "^1.0.7",
     "@theia/core": "latest",
     "@theia/outline-view": "latest"
   },

@@ -6,3 +6,10 @@ frontend:
     - '@theia/core/lib/browser/window/browser-window-module'
     - '@theia/core/lib/browser/keyboard/browser-keyboard-module'
     - '@theia/outline-view/lib/browser/outline-view-frontend-module'
+malagu:
+  name: Cellbang
+cellbang:
+  desktop:
+    defaultTheme: dark
+    defaultIconTheme: none
+    applicationName: ${malagu.name}

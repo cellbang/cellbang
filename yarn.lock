@@ -59,10 +59,10 @@
   resolved "https://registry.npm.taobao.org/@improved/node/download/@improved/node-1.1.1.tgz#7be3d401b7cd2f848d5bb8713d2826b84fc51817"
   integrity sha1-e+PUAbfNL4SNW7hxPSgmuE/FGBc=
 
-"@malagu/cli@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@malagu/cli/-/cli-1.0.6.tgz#67ca0ffedea7b65f4176605f5573c375f61bdae5"
-  integrity sha512-4WJPFwDUpDtfk7NDhGJfh6sFvz7Qu1VKVXM4a48GGMBlrahpHDrzgeYQkvRZH6yNyutv8LztIbB7c33DpW+9BA==
+"@malagu/cli@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@malagu/cli/-/cli-1.0.7.tgz#44fcaa51166ec464de2b86daac7336690a109928"
+  integrity sha512-CRQLFbGhx3kwTD8eJ+Lv+H5GxD+RWxysMzIbaT5YHMFdCwBdLjmGCR3/0sSmTwlGzlTkk0PoofwE63b4UtPzAw==
   dependencies:
     "@yarnpkg/lockfile" "^1.1.0"
     base-href-webpack-plugin "^2.0.0"
@@ -134,10 +134,10 @@
     url-join "^4.0.1"
     vscode-ws-jsonrpc "^0.1.1"
 
-"@malagu/core@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npm.taobao.org/@malagu/core/download/@malagu/core-1.0.6.tgz#15483b2bede2568fdb6bce809b2ab14d102584bc"
-  integrity sha1-FUg7K+3iVo/ba86AmyqxTRAlhLw=
+"@malagu/core@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@malagu/core/-/core-1.0.7.tgz#7dfb0992d467fe5e70947c7850d8606ffd888484"
+  integrity sha512-ND9YRLkEpAgpepanUJMbK0gCrxRaz1MPqCgZhiEBb9wJBTJDuJPWT1YlJl7aIvluh6aXN36pdqsDZKFZTGjEoQ==
   dependencies:
     "@types/express" "^4.16.1"
     "@types/lodash.debounce" "4.0.3"
@@ -164,20 +164,20 @@
   resolved "https://registry.npm.taobao.org/@malagu/ext-scripts/download/@malagu/ext-scripts-0.0.30.tgz#71f3284459abbd68a081bef1591337ba455def8c"
   integrity sha1-cfMoRFmrvWiggb7xWRM3ukVd74w=
 
-"@malagu/rpc@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@malagu/rpc/-/rpc-1.0.6.tgz#0bafa45aec99dc2605e7d9ba29465267bebb3ac5"
-  integrity sha512-QrBZv1u4ng5or7QIQ0XVaRssq/dMzCk7ba9kc3FoLS8j+j1eerzbRjY9Zh7LjtVA/zS6hou+PWVmzG1ZyOFoDA==
+"@malagu/rpc@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@malagu/rpc/-/rpc-1.0.7.tgz#037e0dfc575de5699c43d5b64ee62261391ece83"
+  integrity sha512-tpwDYk31u5py1h/zZ46kkYDbF3r/1w+wnveDVNLcS8urXCXfd7+874DoWFsoRvn6kDJRlWnoIJWlZmO7DFeZfg==
   dependencies:
-    "@malagu/web" "^1.0.6"
+    "@malagu/web" "^1.0.7"
     reconnecting-websocket "^4.1.10"
 
-"@malagu/web@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@malagu/web/-/web-1.0.6.tgz#65b0832476d20250850ab643af8fe725599ecb0f"
-  integrity sha512-AFRZOZii79iCllgn/NHy6RlPp64nAj10n47MinukCpN0+T/nlbL754bHKCjzpy6sdhJrWANYyYId4KRzbzpqhg==
+"@malagu/web@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@malagu/web/-/web-1.0.7.tgz#54d3ee45542ba7b7a17b2b56f89e7ffffb86880e"
+  integrity sha512-bRgqB1/IeN0P44tkIdSevcD2aEMXfQ0scNk8AHqj9Wcl8f28HHE2qNcNsnGI4dIn+ZLMv90azF4x4+Z78kHLXA==
   dependencies:
-    "@malagu/core" "^1.0.6"
+    "@malagu/core" "^1.0.7"
     "@types/express" "^4.16.1"
     axios "^0.19.2"
     cookies "^0.8.0"

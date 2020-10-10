@@ -1,4 +1,6 @@
 
+import '../../src/browser/style/index.css';
+
 import { autoBind } from '@malagu/core';
 import { PreferenceProviderProvider, PreferenceSchemaProvider, PreferenceScope } from '@theia/core/lib/browser';
 import '.';

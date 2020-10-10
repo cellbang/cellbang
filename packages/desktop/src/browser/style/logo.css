@@ -1,0 +1,8 @@
+.theia-icon {
+    background: url(../icons/cellbang.svg) center center no-repeat;
+    background-size: 24px;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    margin-left: 8px;
+}
