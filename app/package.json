@@ -10,12 +10,19 @@
     "src"
   ],
   "dependencies": {
-    "@cellbang/desktop": "0.0.0",
-    "@malagu/rpc": "^1.0.7"
+    "@cellbang/monaco": "0.0.0",
+    "@cellbang/navigator": "0.0.0",
+    "@cellbang/preferences": "0.0.0",
+    "@cellbang/mini-browser": "0.0.0",
+    "@cellbang/getting-started": "0.0.0",
+    "@theia/console": "latest",
+    "@theia/output": "latest",
+    "@malagu/rpc": "1.1.0-next.712bf1f9",
+    "@malagu/fc-adapter": "1.1.0-next.712bf1f9"
 
   },
   "devDependencies": {
-    "@malagu/cli": "^1.0.7",
+    "@malagu/cli": "1.1.0-next.712bf1f9",
     "rimraf": "^2.6.3",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.8.5",

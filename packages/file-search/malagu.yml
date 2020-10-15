@@ -1,0 +1,6 @@
+frontend: 
+  modules:
+    - '@theia/file-search/lib/browser/file-search-frontend-module'
+backend: 
+  modules:
+    - '@theia/file-search/lib/node/file-search-backend-module'

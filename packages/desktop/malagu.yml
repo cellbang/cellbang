@@ -5,9 +5,11 @@ frontend:
     - '@theia/core/lib/browser/menu/browser-menu-module'
     - '@theia/core/lib/browser/window/browser-window-module'
     - '@theia/core/lib/browser/keyboard/browser-keyboard-module'
-    - '@theia/outline-view/lib/browser/outline-view-frontend-module'
+    - '@theia/messages/lib/browser/messages-frontend-module'
 malagu:
   name: Cellbang
+  serve-static:
+    spa: false
 cellbang:
   desktop:
     defaultTheme: dark

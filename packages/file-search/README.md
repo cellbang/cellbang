@@ -1,0 +1,1 @@
+# Malagu - File Search component

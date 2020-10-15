@@ -1,0 +1,3 @@
+frontend: 
+  modules:
+    - '@theia/navigator/lib/browser/navigator-frontend-module'

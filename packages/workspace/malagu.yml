@@ -1,0 +1,3 @@
+frontend: 
+  modules:
+    - '@theia/workspace/lib/browser/workspace-frontend-module'

@@ -1,0 +1,7 @@
+frontend: 
+  modules:
+    - '@theia/process/lib/common/process-common-module'
+backend:
+  modules:
+    - '@theia/process/lib/common/process-common-module'
+    - '@theia/process/lib/node/process-backend-module'

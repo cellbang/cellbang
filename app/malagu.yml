@@ -1,3 +1,21 @@
-# 依赖的公共前端 UI 框从 CDN 上加载
-# mode: cdn
-
+frontend:
+  modules:
+    - '@theia/console/lib/browser/console-frontend-module'
+    - '@theia/output/lib/browser/output-frontend-module'
+malagu:
+  name: Cellbang IDE
+  server:
+    endpoint:
+  fc-adapter:
+    service:
+      name: cellbang
+      logConfig: 
+        logstore: logstore
+        project: cellbang
+      role: acs:ram::${malagu['fc-adapter'].profile.accountId}:role/cellbangrole
+    function:
+      name: ide
+      memorySize: 2048
+      instanceConcurrency: 100
+    customDomain:
+      name: ide.cellbang.com

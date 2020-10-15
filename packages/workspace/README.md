@@ -1,0 +1,1 @@
+# Malagu - Workspace component

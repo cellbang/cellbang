@@ -32,11 +32,15 @@ export class ColorContributionImpl implements ColorContribution {
             {
                 id: 'menu.background', defaults: {
                     dark: '#252526',
+                    light: '#ffffff',
+                    hc: '#000000'
                 }, description: ''
             },
             {
                 id: 'menu.foreground', defaults: {
                     dark: '#CCCCCC',
+                    light: '#616161',
+                    hc: '#ffffff'
                 }, description: ''
             },
             {

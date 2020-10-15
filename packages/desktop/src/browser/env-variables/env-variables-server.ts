@@ -21,7 +21,7 @@ export class EnvVariablesServerImpl implements EnvVariablesServer {
     }
 
     async getHomeDirUri(): Promise<string> {
-        return Promise.resolve('home');
+        return Promise.resolve('/');
     }
 
     async getDrives(): Promise<string[]> {

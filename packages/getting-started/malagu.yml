@@ -1,0 +1,5 @@
+frontend: 
+  modules:
+    - '@theia/keymaps/lib/browser/keymaps-frontend-module'
+    - '@theia/getting-started/lib/browser/getting-started-frontend-module'
+

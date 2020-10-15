@@ -1,0 +1,6 @@
+frontend: 
+  modules:
+    - '@theia/preferences/lib/browser/preference-frontend-module'
+    - '@theia/outline-view/lib/browser/outline-view-frontend-module'
+    - '@theia/userstorage/lib/browser/user-storage-frontend-module'
+

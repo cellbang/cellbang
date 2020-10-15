@@ -1,0 +1,15 @@
+frontend: 
+  modules:
+    - lib/browser/monaco-browser-module
+    - '@theia/markers/lib/browser/problem/problem-frontend-module'
+    - '@theia/outline-view/lib/browser/outline-view-frontend-module'
+
+cellbang:
+  monaco:
+    staticCompression: true
+  
+malagu:
+  serve-static:
+    options:
+      headers:
+        Content-Encoding: gzip
