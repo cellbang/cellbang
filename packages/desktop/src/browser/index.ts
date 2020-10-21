@@ -5,3 +5,6 @@ export * from './command';
 export * from './messaging';
 export * from './env-variables';
 export * from './color';
+export * from './widget-manager';
+export * from './locale';
+export * from './menu';

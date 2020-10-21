@@ -16,7 +16,7 @@ export class WorkspaceServerImpl implements WorkspaceServer {
     }
 
     protected async getRoot(): Promise<string | undefined> {
-        return undefined;
+        return '/tmp';
     }
 
     getMostRecentlyUsedWorkspace(): Promise<string | undefined> {

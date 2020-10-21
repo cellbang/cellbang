@@ -1,13 +1,8 @@
 {
-  "name": "@cellbang/process",
+  "name": "@cellbang/oidc-provider",
   "version": "0.0.0",
   "description": "",
-  "main": "lib/common/index.js",
-  "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@cellbang/desktop": "0.0.0",
-    "@theia/node-pty": "latest",
-    "@theia/process": "latest"
   },
   "publishConfig": {
     "access": "public"

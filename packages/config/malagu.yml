@@ -1,0 +1,16 @@
+malagu:
+  name: ${pkg.description || pkg.name}
+  server:
+    endpoint:
+  fc-adapter:
+    service:
+      name: cellbang
+      logConfig: 
+        logstore: logstore
+        project: cellbang
+      role: acs:ram::${malagu['fc-adapter'].profile.accountId}:role/cellbangrole
+    function:
+      memorySize: 526
+      instanceConcurrency: 50
+    customDomain:
+      name: ${pkg.name}.cellbang.com

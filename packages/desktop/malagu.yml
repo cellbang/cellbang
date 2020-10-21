@@ -6,6 +6,19 @@ frontend:
     - '@theia/core/lib/browser/window/browser-window-module'
     - '@theia/core/lib/browser/keyboard/browser-keyboard-module'
     - '@theia/messages/lib/browser/messages-frontend-module'
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Outline: 大纲
+          File: 文件
+          Edit: 编辑
+          malagu.shell.login.label: 登录
+          malagu.shell.logo.label: 细胞矩阵
+      en-US:
+        messages:
+          malagu.shell.login.label: Login
+          malagu.shell.logo.label: Cellbang
 malagu:
   name: Cellbang
   serve-static:
