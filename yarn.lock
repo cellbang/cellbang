@@ -1264,16 +1264,7 @@
     semver "^5.4.1"
     write-json-file "^2.2.0"
 
-"@theia/console@latest":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@theia/console/-/console-1.6.0.tgz#5094f28b02d2d183acb70230c8e48d14271c7af7"
-  integrity sha512-XPLqI6prHZD2qaJMX9N+mi1XXI/wYPYC0bh7mMYGGLvhwLJTfrje2c7iLw6rGGzArmFkM2lE7RHGS+kXrzP1qA==
-  dependencies:
-    "@theia/core" "^1.6.0"
-    "@theia/monaco" "^1.6.0"
-    anser "^1.4.7"
-
-"@theia/core@^1.1.0", "@theia/core@^1.6.0", "@theia/core@latest":
+"@theia/core@^1.6.0", "@theia/core@latest":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@theia/core/-/core-1.6.0.tgz#79abef59b0d19ef3a3dc430e5596aba04a70ad5a"
   integrity sha512-L7migvIY5OiDB5U8RQX6KxeP3ln2oivBZJkRnmiuvww/rXSbPvrKa1DdF5H1Dc9O8km4PFx7VB/8KblPW7S1wg==
@@ -2483,11 +2474,6 @@ amdefine@>=0.0.4, amdefine@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
-
-anser@^1.4.7:
-  version "1.4.10"
-  resolved "https://registry.yarnpkg.com/anser/-/anser-1.4.10.tgz#befa3eddf282684bd03b63dcda3927aef8c2e35b"
-  integrity sha512-hCv9AqTQ8ycjpSd3upOJd7vFwW1JaoYQ7tpham03GJ1ca8/65rqn0RpaWpItOAd6ylW9wAw6luXYPJIyPFVOww==
 
 ansi-colors@3.2.3:
   version "3.2.3"

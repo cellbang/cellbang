@@ -1,0 +1,8 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Download: 下载
+          Copy Download Link: 复制下载链接
+          Upload Files...: 上传文件...

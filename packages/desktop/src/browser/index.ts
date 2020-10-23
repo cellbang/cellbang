@@ -8,3 +8,6 @@ export * from './color';
 export * from './widget-manager';
 export * from './locale';
 export * from './menu';
+export * from './utils';
+export * from './status-bar';
+export * from './messages';

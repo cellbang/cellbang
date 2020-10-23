@@ -1,3 +1,5 @@
+mode:
+  - locales
 frontend: 
   modules:
     - '@theia/variable-resolver/lib/browser/variable-resolver-frontend-module'

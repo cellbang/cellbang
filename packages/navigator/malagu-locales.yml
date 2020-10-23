@@ -1,0 +1,24 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Explorer: 资源管理器
+          Reveal in Explorer: 在资源管理器中显示
+          Toggle Hidden Files: 切换隐藏文件
+          Auto Reveal: 自动显示
+          Refresh in Explorer: 刷新资源管理器
+          Refresh Explorer: 刷新资源管理器
+          Collapse Folders in Explorer: 在资源管理器中折叠文件夹
+          Focus on Files Explorer: 聚焦到文件资源管理器视图
+          Open: 打开
+          Copy Relative Path: 复制相对路径
+          Collapse All: 全部折叠
+          Select for Compare: 选择比较
+          Compare with Selected: 与选定的比较
+          You have not yet opened a workspace.: 您还没有打开一个工作空间。
+          Open Workspace: 打开工作空间
+          Open Folder: 打开文件夹
+          No folder opened: 没有打开任何文件夹
+          Toggle Explorer View: 切换资源管理器视图
+

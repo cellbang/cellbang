@@ -1,5 +1,0 @@
-frontend:
-  modules:
-    - '@theia/console/lib/browser/console-frontend-module'
-    - '@theia/output/lib/browser/output-frontend-module'
-a: 1

@@ -1,0 +1,151 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Selection: 选择
+          Editor: 编辑器
+          Go: 转到
+          Change End of Line Sequence: 更改行尾序列
+          Indent Using Spaces: 使用空格缩进
+          Indent Using Tabs: 使用 "Tab" 缩进
+          Change Language Mode: 更换语言模式
+          Change File Encoding: 更改文件编码
+          Back: 返回
+          Forward: 前进
+          Last Edit Location: 转到上一编辑位置
+          Go Back: 返回
+          Go Forward: 前进
+          Go to Last Edit Location: 转到上一编辑位置
+          Clear Editor History: 清除编辑器历史记录
+          Show All Opened Editors: 显示所有打开的编辑
+          Toggle Minimap: 切换到缩略图
+          Toggle Render Whitespace: 切换呈现空格
+          Show Minimap: 显示缩略图
+          Render Whitespace: 呈现空格
+          Toggle Word Wrap: 切换自动换行
+          Expand Selection: 展开选定内容
+          Shrink Selection: 缩小选定范围
+          Copy Line Up: 向上复制行
+          Copy Line Down: 向下复制一行
+          Move Line Up: 向下移动一行
+          Move Line Down: 向下移动一行
+          Duplicate Selection: 重复选择
+          Add Cursor Above: 在上面添加光标
+          Add Cursor Below: 在下面添加光标
+          Add Cursors to Line Ends: 在行尾添加光标
+          Add Next Occurrence: 添加下一个匹配项
+          Add Previous Occurrence: 添加上一个匹配项
+          Select All Occurrences: 选择所有匹配项
+          Go to Declaration: 转到声明
+          Go to Definition: 转到定义
+          Go to Implementations: 转到实现
+          Go to References: 转到引用
+          Go to Symbol...: 转到符号...
+          Go to Type Definition: 转到类型定义
+          Peek: 快速查看
+          Peek Declaration: 查看声明
+          Peek Definition: 查看定义
+          Peek References: 查看引用
+          Peek Implementations: 查看实现
+          Peek Type Definition: 查看类型定义
+          Change All Occurrences: 改变所有匹配项
+          Format Document: 格式化文档
+          Format Selection: 格式化选定内容
+          Refactor...: 重构...
+          Rename Symbol: 重命名符号
+          Source Action...: 源代码操作
+          Go To Line: 转到行/列
+          Select End Of Line Sequence: 选择行尾序列
+          Select Encoding: 选择编码
+          Select Language Mode: 选择语言模式
+          Select Indentation: 选择缩进
+          'Variable: List All': '变量: 全部列表'
+          Go to Symbol in Workspace...: 转到工作区的符号...
+          Toggle High Contrast Theme: 切换高对比度主题
+          Move Caret Left: 向左移动 Caret
+          Move Caret Right: 向右移动 Caret
+          Transpose Letters: 转换字母
+          Copy With Syntax Highlighting: 语法高亮复制
+          Toggle Line Comment: 切换行注释
+          Add Line Comment: 添加行注释 
+          Remove Line Comment: 移除行注释
+          Toggle Block Comment: 切换块注释
+          Show Editor Context Menu: 显示编辑器上下文菜单
+          Cursor Undo: 光标撤销
+          Cursor Redo: 光标重做
+          Editor Font Zoom In: 编辑字体放大
+          Editor Font Zoom Out: 编辑字体放大
+          Editor Font Zoom Reset: 编辑器字体缩放重置
+          Sort Lines Ascending: 升序排序线
+          Sort Lines Descending: 降序排序行
+          Trim Trailing Whitespace: 修剪尾部空白处
+          Delete Line: 删除行
+          Indent Line: 缩进线
+          Outdent Line: 外围线
+          Insert Line Above: 在上面插入一行
+          Insert Line Below: 在下面插入一行
+          Delete All Left: 删除所有左边的
+          Delete All Right: 全部删除
+          Join Lines: 加入线路
+          Transpose characters around the cursor: 转移光标周围的字符
+          Transform to Uppercase: 转为大写
+          Transform to Lowercase: 转为小写
+          Transform to Title Case: 转为标题案例
+          'Developer: Force Retokenize': '开发者: 强制重新标记'
+          Toggle Tab Key Moves Focus: 切换 Tab 键移动焦点
+          Go to Line...: 转到行...
+          Replace with Previous Value: 替换成以前的值
+          Replace with Next Value: 替换为下一个值
+          Go to Next Difference: 转到下一个差异
+          Go to Previous Difference: 转到上一个差异
+          Select to Bracket: 选择托架
+          Go to Bracket: 进入支架
+          Find With Selection: 用选择查找
+          Find Next: 查找下一个
+          Find Previous: 查找上一个
+          Find Next Selection: 查找下一个选择
+          Find Previous Selection: 查找以前的选择
+          Unfold: 展开
+          Unfold Recursively: 递归展开
+          Fold: 折叠
+          Fold Recursively: 递归折叠
+          Fold All: 全部折叠
+          Unfold All: 展开全部
+          Fold All Block Comments: 折叠所有块注释
+          Fold All Regions: 折叠所有区域
+          Unfold All Regions: 展开所有区域
+          Toggle Fold: 折叠
+          Fold Level 1: 折叠 1 级
+          Fold Level 2: 折叠 2 级
+          Fold Level 3: 折叠 3 级
+          Fold Level 4: 折叠 4 级
+          Fold Level 5: 折叠 5 级
+          Fold Level 6: 折叠 6 级
+          Fold Level 7: 折叠 7 级
+          Open Link: 打开链接
+          Quick Fix...: 快速修复...
+          Organize Imports: 组织导入
+          Auto Fix...: 自动修复...
+          Fix All: 全部修复
+          Add Selection To Next Find Match: 添加选择到下一个查找匹配
+          Add Selection To Previous Find Match: 添加选择到上一个查找匹配
+          Move Last Selection To Next Find Match: 将上一个选择移动到下一个查找匹配
+          Move Last Selection To Previous Find Match: 将上一个选择移动到上一个查找匹配
+          Select All Occurrences of Find Match: 选择查找匹配的所有出现次数
+          Add Cursors To Bottom: 在底部添加光标
+          Add Cursors To Top: 添加光标到顶部
+          Trigger Parameter Hints: 触发参数提示
+          Go to Next Symbol Highlight: 转到下一个符号高亮
+          Go to Previous Symbol Highlight: 转到上一个符号高亮
+          Trigger Symbol Highlight: 触发符号高亮
+          Show Accessibility Help: 显示可访问性帮助
+          'Developer: Inspect Tokens': '开发者: 检查 Tokens'
+          Go to Next Problem (Error, Warning, Info): 转到下一个问题（错误、警告、信息）
+          Go to Previous Problem (Error, Warning, Info): 转到上一个问题（错误、警告、信息）
+          Go to Next Problem in Files (Error, Warning, Info): 转到文件中的下一个问题（错误、警告、信息）
+          Go to Previous Problem in Files (Error, Warning, Info): 转到文件中的上一个问题（错误、警告、信息）
+          Open Definition to the Side: 打开定义到侧边
+          Show Hover: 悬停显示
+          Show Definition Preview Hover: 显示定义预览悬停
+          Trigger Suggest: 触发建议

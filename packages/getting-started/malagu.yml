@@ -1,3 +1,5 @@
+mode:
+  - locales
 frontend: 
   modules:
     - '@theia/keymaps/lib/browser/keymaps-frontend-module'

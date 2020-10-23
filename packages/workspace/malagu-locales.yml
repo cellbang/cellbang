@@ -1,0 +1,21 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Open...: 打开...
+          Workspace: 工作空间
+          Open Workspace...: 打开工作空间...
+          Open Recent Workspace...: 打开最近的工作空间...
+          Close Workspace: 关闭工作空间
+          New File: 新建文件
+          New Folder: 新建文件夹
+          Rename: 重命名
+          Delete: 删除
+          Duplicate: 重复
+          Compare: 比较
+          Compare with Each Other: 相互比较
+          Add Folder to Workspace...: 添加文件夹到工作空间...
+          Remove Folder from Workspace: 从工作空间中移除文件夹
+          Save Workspace As...: 保存工作空间为...
+          Save As...: 保存为...

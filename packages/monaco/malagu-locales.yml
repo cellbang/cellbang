@@ -1,0 +1,22 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Outline: 大纲
+          Collapse All: 全部折叠
+          Clear All: 全部清除
+          Problems: 问题
+          No Problems: 没有问题
+          Copy Message: 复制信息
+          Clear Output Channel...: 清除的输出通道...
+          Show Output Channel...: 显示输出通道...
+          Close Output Channel...: 关闭输出通道...
+          Copy All: 全部复制
+          Clear Output: 清除通道
+          Output: 输出
+          Toggle Problems View: 切换问题视图
+          Toggle Outline View: 切换大纲视图
+          Hide Output Channel...: 隐藏输出通道...
+          Toggle Output View: 切换输出视图
+          

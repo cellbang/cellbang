@@ -1,3 +1,5 @@
+mode:
+  - locales
 frontend: 
   modules:
     - '@theia/filesystem/lib/browser/filesystem-frontend-module'

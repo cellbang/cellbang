@@ -1,8 +1,11 @@
+mode:
+  - locales
 frontend: 
   modules:
     - lib/browser/monaco-browser-module
     - '@theia/markers/lib/browser/problem/problem-frontend-module'
     - '@theia/outline-view/lib/browser/outline-view-frontend-module'
+    - '@theia/output/lib/browser/output-frontend-module'
 
 cellbang:
   monaco:

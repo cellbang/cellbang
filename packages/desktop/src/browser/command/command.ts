@@ -1,21 +1,18 @@
-import { Component, Autowired } from '@malagu/core';
+import { Component, Autowired, Logger } from '@malagu/core';
 import { Command, CommandHandler, CommandRegistry, Disposable } from '@theia/core';
-import { LocaleService } from '../locale';
+import { IntlUtil } from '../utils';
 
 @Component({ id: CommandRegistry, rebind: true })
 export class CommandRegistryImpl extends CommandRegistry {
 
-    @Autowired(LocaleService)
-    protected readonly localeService: LocaleService;
-
+    @Autowired(Logger)
+    protected logger: Logger;
 
     registerCommand(command: Command, handler?: CommandHandler): Disposable {
-        const intl = this.localeService.tryGetIntl();
-        if (command.label && intl) {
-            const id = `${command.id}.label`;
-            command.label = intl.messages[id] ? intl.formatMessage({ id }) : intl.messages[command.label] ? intl.formatMessage({ id: command.label }) : command.label;
-        }
-        return super.registerCommand(command, handler)
+        const id = `${command.id}.label`;
+        command.label = IntlUtil.get(id, command.label);
+        command.category = IntlUtil.get(id, command.category);
+        return super.registerCommand(command, handler);
     }
 
 }

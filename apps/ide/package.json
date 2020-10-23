@@ -11,16 +11,15 @@
     "src"
   ],
   "dependencies": {
-    "@cellbang/config": "0.0.0",
     "@cellbang/monaco": "0.0.0",
     "@cellbang/navigator": "0.0.0",
     "@cellbang/preferences": "0.0.0",
     "@cellbang/mini-browser": "0.0.0",
     "@cellbang/getting-started": "0.0.0",
-    "@theia/console": "latest",
-    "@theia/output": "latest",
     "@malagu/rpc": "^1.1.0",
-    "@malagu/fc-adapter": "^1.1.0"
+    "@malagu/fc-adapter": "^1.1.0",
+    "@cellbang/config": "0.0.0"
+
 
   },
   "devDependencies": {

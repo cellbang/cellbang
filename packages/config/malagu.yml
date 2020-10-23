@@ -10,7 +10,7 @@ malagu:
         project: cellbang
       role: acs:ram::${malagu['fc-adapter'].profile.accountId}:role/cellbangrole
     function:
-      memorySize: 526
-      instanceConcurrency: 50
+      memorySize: 1024
+      instanceConcurrency: 100
     customDomain:
       name: ${pkg.name}.cellbang.com

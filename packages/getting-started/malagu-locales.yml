@@ -1,0 +1,11 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Getting Started: 欢迎使用
+          Keyboard Shortcuts: 键盘快捷方式
+          Open Keyboard Shortcuts: 打开键盘快捷方式
+          Open Keyboard Shortcuts (JSON): 打开键盘快捷方式 (JSON)
+          Open Keyboard Shortcuts in JSON: 在 JSON 中打开键盘快捷键
+          Clear Keybindings Search Input: 清除键绑定搜索输入

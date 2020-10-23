@@ -10,6 +10,7 @@
     "@cellbang/editor": "0.0.0",
     "@cellbang/workspace": "0.0.0",
     "@theia/monaco": "latest",
+    "@theia/output": "latest",
     "babel-loader": "^8.0.6",
     "circular-dependency-plugin": "^5.2.0",
     "compression-webpack-plugin": "^4.0.1",

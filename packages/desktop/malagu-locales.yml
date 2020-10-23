@@ -1,0 +1,83 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          File: 文件
+          Edit: 编辑
+          View: 视图
+          Help: 帮助
+          Settings: 设置
+          Cut: 剪切
+          Copy: 复制
+          Paste: 粘贴
+          Copy Path: 复制路径
+          Undo: 撤销
+          Redo: 恢复
+          Select All: 全选
+          Find: 查找
+          Replace: 替换
+          Developer: 开发者
+          Variable: 变量
+          Find Command...: 命令面板...
+          Switch to Next Tab: 切换到下一个标签页
+          Switch to Previous Tab: 切换到上一个标签页
+          Switch to Next Tab in Group: 组内切换到下一个标签页
+          Switch to Previous Tab in Group: 组内切换到上一个标签页
+          Switch to Next Tab Group: 切换到下一个标签页组
+          Switch to Previous Tab Group: 切换到上一个标签页组
+          Close: 关闭
+          Close Others: 关闭其他
+          Close to the Right: 关闭右侧
+          Close All: 全部关闭
+          Close Tab: 关闭标签页
+          Close Other Tabs: 关闭其他标签页
+          Close Tabs to the Right: 关闭右侧标签页
+          Close All Tabs: 关闭所有标签
+          Close Tab in Main Area: 关闭主区域标签页
+          Collapse: 折叠
+          Collapse Side Panel: 收起侧边面板
+          Collapse All Side Panels: 收起全部侧边面板
+          Toggle Bottom Panel: 切换底部面板
+          Toggle Maximized: 切换最大化
+          Open View...: 打开视图...
+          Save: 保存
+          Save All: 全部保存
+          Auto Save: 自动保存
+          About: 关于
+          Preferences: 首选项
+          Open Preferences: 打开首选项
+          Color Theme: 颜色主题
+          File Icon Theme: 文件图标主题
+          More Actions...: 更多操作...
+          No Notifications: 没有通知
+          Toggle Notifications: 前后通知
+          Clear All Notifications: 清除所有通知
+          Hide Notifications: 隐藏通知
+          NO NEW NOTIFICATIONS: 没有新通知
+          NOTIFICATIONS: 通知
+          Notification: 通知
+          Notifications: 通知
+          Hide Notification Center: 隐藏通知中心
+          Clear All: 全部清除
+          Expand: 展开
+          Cancel: 取消
+          Turn Auto Scrolling Off: 关闭自动滚动
+          Open Link: 打开链接
+          Reset Workbench Layout: 重置工作台布局
+          Language: 语言
+          Languages: 语言
+          Clear Command History: 清除命令历史
+          Close Other Tabs in Main Area: 关闭主区域的其他标签
+          Close All Tabs in Main Area: 关闭主区域的所有标签
+          Choose Keyboard Layout: 选择键盘布局
+          Keyboard: 键盘
+          Toggle High Contrast Theme: 切换高对比度主题
+          Sort Lines Ascending: 升序排序线
+          Sort Lines Descending: 降序排序行
+          Copy Setting ID: 复制设置 ID
+          Copy Setting as JSON: 复制设置为 JSON
+          Reset Setting: 重置设置
+      en-US:
+        messages:
+          File: File

@@ -5,7 +5,7 @@ import { EnvVariable, EnvVariablesServer } from '@theia/core/lib/common/env-vari
 export class EnvVariablesServerImpl implements EnvVariablesServer {
 
     async getExecPath(): Promise<string> {
-        return '/';
+        return '/tmp';
     }
 
     async getVariables(): Promise<EnvVariable[]> {
@@ -17,11 +17,11 @@ export class EnvVariablesServerImpl implements EnvVariablesServer {
     }
 
     getConfigDirUri(): Promise<string> {
-        return Promise.resolve('.theia');
+        return Promise.resolve('/tmp/.theia');
     }
 
     async getHomeDirUri(): Promise<string> {
-        return Promise.resolve('/');
+        return Promise.resolve('/tmp');
     }
 
     async getDrives(): Promise<string[]> {

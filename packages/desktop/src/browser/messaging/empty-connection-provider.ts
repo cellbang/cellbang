@@ -7,7 +7,7 @@ import { WebSocketChannel } from '@theia/core/lib/common/messaging/web-socket-ch
 export class EmptyConnectionProvider extends AbstractConnectionProvider<{}> {
 
     protected createChannel(id: number): WebSocketChannel {
-        return new WebSocketChannel(id, content => { console.error(content);  });
+        return new WebSocketChannel(id, content => {  });
     }
 
 }
