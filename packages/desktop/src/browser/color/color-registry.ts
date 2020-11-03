@@ -7,7 +7,7 @@ import { Color as C, HSLA, RGBA } from './color';
 @Component({ id: ColorRegistry, rebind: true })
 export class ColorRegistryImpl extends ColorRegistry {
 
-    private colorsById: { [key: string]: ColorDefinition };
+    protected colorsById: { [key: string]: ColorDefinition };
 
     constructor() {
         super();

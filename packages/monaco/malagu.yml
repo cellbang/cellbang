@@ -7,12 +7,3 @@ frontend:
     - '@theia/outline-view/lib/browser/outline-view-frontend-module'
     - '@theia/output/lib/browser/output-frontend-module'
 
-cellbang:
-  monaco:
-    staticCompression: true
-  
-malagu:
-  serve-static:
-    options:
-      headers:
-        Content-Encoding: gzip

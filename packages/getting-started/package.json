@@ -35,7 +35,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.1.0"
+    "@malagu/ext-scripts": "1.3.0-next.70c1debe"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

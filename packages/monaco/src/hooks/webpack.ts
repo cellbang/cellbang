@@ -2,7 +2,7 @@ import { WebpackContext, ConfigurationContext, FRONTEND_TARGET } from '@malagu/c
 import * as paths from 'path';
 
 export default async (context: WebpackContext) => {
-    const { configurations, dev, pkg, cfg } = context;
+    const { configurations, dev, pkg } = context;
     const configuration = ConfigurationContext.getConfiguration(FRONTEND_TARGET, configurations);
     if (configuration) {
         const resolve = (moduleName: string, path: string): string => pkg.resolveModulePath(moduleName, path).split(paths.sep).join('/');
@@ -42,18 +42,6 @@ export default async (context: WebpackContext) => {
                 failOnError: false // https://github.com/nodejs/readable-stream/issues/280#issuecomment-297076462
             })
         ]);
-        if (cfg.frontendConfig.cellbang.monaco.staticCompression && !dev) {
-            const CompressionPlugin = require('compression-webpack-plugin');
-            configuration.plugins!.push(
-                    new CompressionPlugin({
-                    // enable reuse of compressed artifacts for incremental development
-                    cache: false,
-                    threshold: 0,
-                    minRatio: 1.2,
-                    filename: '[file]'
-                })
-            );
-        }
 
         const index = configuration.module!.rules.findIndex(r => r.use === 'source-map-loader');
         if (index !== -1) {

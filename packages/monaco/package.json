@@ -13,7 +13,6 @@
     "@theia/output": "latest",
     "babel-loader": "^8.0.6",
     "circular-dependency-plugin": "^5.2.0",
-    "compression-webpack-plugin": "^4.0.1",
     "monaco-css": "^3.1.1",
     "monaco-html": "^3.1.1",
     "monaco-json": "^3.2.1",
@@ -49,7 +48,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.1.0"
+    "@malagu/ext-scripts": "1.3.0-next.70c1debe"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

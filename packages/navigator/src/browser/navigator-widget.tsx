@@ -21,7 +21,7 @@ export class FileNavigatorWidgetExt extends FileNavigatorWidget {
     protected onUpdateRequest(msg: Message): void {
         if (this.parent?.parent?.parent) {
             const id = EXPLORER_VIEW_CONTAINER_TITLE_OPTIONS.label;
-            (this.parent.parent.parent as ViewContainer).setTitleOptions({ 
+            (this.parent.parent.parent as ViewContainer).setTitleOptions({
                 ...EXPLORER_VIEW_CONTAINER_TITLE_OPTIONS,
                 label: IntlUtil.get(id)!
             });
@@ -29,7 +29,6 @@ export class FileNavigatorWidgetExt extends FileNavigatorWidget {
         super.onUpdateRequest(msg);
     }
 
-    
     /**
      * Instead of rendering the file resources from the workspace, we render a placeholder
      * button when the workspace root is not yet set.

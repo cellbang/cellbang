@@ -1,0 +1,10 @@
+frontend:
+  malagu:
+    webpack:
+      config:
+        externals:
+          moment: moment
+      htmlWebpackTagsPlugin:
+        moment: "https://cdn.jsdelivr.net/npm/moment@^2.29.1/moment.min.js"
+        locale-zh-cn: "https://cdn.jsdelivr.net/npm/moment@^2.29.1/locale/zh-cn.js"
+  

@@ -1,0 +1,23 @@
+malagu:
+  webpack:
+    config:
+      devtool: false
+  server:
+    endpoint:
+  fc-adapter:
+    service:
+      name: cellbang
+      logConfig: 
+        logstore: logstore
+        project: cellbang
+      role: acs:ram::${malagu['fc-adapter'].profile.accountId}:role/cellbangrole
+    function:
+      memorySize: 1024
+      instanceConcurrency: 100
+    customDomain:
+      name: ${pkg.name}.cellbang.com
+      protocol: HTTP,HTTPS
+      certConfig:
+        certName: cellbang
+        certificate: "${ env.SSL_PEM ?: '../../ssl/cert.pem' }"
+        privateKey: "${ env.SSL_KEY ?: '../../ssl/cert.key' }"

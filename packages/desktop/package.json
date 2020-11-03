@@ -5,13 +5,12 @@
   "main": "lib/common/index.js",
   "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@malagu/react": "^1.1.0",
-    "@malagu/rpc": "^1.1.0",
-    "@malagu/mvc": "^1.1.0",
-    "@malagu/serve-static": "^1.1.0",
+    "@malagu/react": "1.3.0-next.70c1debe",
+    "@malagu/rpc": "1.3.0-next.70c1debe",
+    "@malagu/mvc": "1.3.0-next.70c1debe",
+    "@malagu/serve-static": "1.3.0-next.70c1debe",
     "@theia/core": "latest",
-    "@theia/messages": "latest",
-    "@theia/outline-view": "latest"
+    "@theia/messages": "latest"
   },
   "publishConfig": {
     "access": "public"
@@ -42,7 +41,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.1.0"
+    "@malagu/ext-scripts": "1.3.0-next.70c1debe"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

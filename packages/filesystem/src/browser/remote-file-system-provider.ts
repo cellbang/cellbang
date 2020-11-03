@@ -24,7 +24,7 @@ export class RemoteFileSystemProviderExt extends RemoteFileSystemProvider {
     }
 
     protected isExpired(time?: Date, intervals = 5000) {
-        return !time || Date.now() - time.getTime() > intervals
+        return !time || Date.now() - time.getTime() > intervals;
     }
 
     async stat(resource: URI): Promise<Stat> {
@@ -43,7 +43,7 @@ export class RemoteFileSystemProviderExt extends RemoteFileSystemProvider {
                 this.cacheMap.delete(key);
                 cache.data.reject(error);
             }
-        } 
+        }
         return cache!.data.promise;
 
     }
@@ -51,7 +51,6 @@ export class RemoteFileSystemProviderExt extends RemoteFileSystemProvider {
     async readdir(resource: URI): Promise<[string, FileType][]> {
         return this.doCacheProxy(`readdir:${resource.toString()}`, () => super.readdir(resource), 1000);
     }
-
 
     async writeFile(resource: URI, content: Uint8Array, opts: FileWriteOptions): Promise<void> {
         await super.writeFile(resource, content, opts);
