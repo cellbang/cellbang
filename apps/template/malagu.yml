@@ -1,0 +1,6 @@
+mode: [ cdn ]
+cellbang:
+  workspace:
+    root: /code/template.theia-workspace
+  env:
+    homeDirUri: /

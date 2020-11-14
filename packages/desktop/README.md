@@ -1,1 +1,1 @@
-# Malagu - Desktop extension
+# Malagu - Desktop Component

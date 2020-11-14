@@ -4,3 +4,6 @@ frontend:
   modules:
     - '@theia/variable-resolver/lib/browser/variable-resolver-frontend-module'
     - '@theia/editor/lib/browser/editor-frontend-module'
+cellbang:
+  desktop:
+    editorMode: true

@@ -1,5 +1,5 @@
 
 import { autoBind } from '@malagu/core';
-import '.';
+// import '.';
 
 export default autoBind();

@@ -1,12 +1,18 @@
 
 import { CommonCommands, CommonFrontendContribution, CommonMenus, KeybindingRegistry, SHELL_TABBAR_CONTEXT_MENU } from '@theia/core/lib/browser';
-import { Component, isWindows } from '@malagu/core';
+import { isWindows } from '@malagu/core';
 import { MenuModelRegistry, environment } from '@theia/core';
+import { Condition } from '../../common/utils';
+import { injectable } from 'inversify';
 
-@Component({ id: CommonFrontendContribution, rebind: true })
+@injectable()
 export class DesktopCommonFrontendContribution extends CommonFrontendContribution {
 
     registerMenus(registry: MenuModelRegistry): void {
+        if (Condition.isEditorMode()) {
+            super.registerMenus(registry);
+            return;
+        }
         registry.registerSubmenu(CommonMenus.VIEW, 'View');
         registry.registerSubmenu(CommonMenus.HELP, 'Help');
 

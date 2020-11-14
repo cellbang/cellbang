@@ -8,3 +8,6 @@ frontend:
 backend: 
   modules:
     - '@theia/filesystem/lib/node/download/file-download-backend-module'
+cellbang:
+  desktop:
+    editorMode: true

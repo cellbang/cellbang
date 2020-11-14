@@ -1,1 +1,1 @@
-# Malagu - Navigator component
+# Malagu - Navigator Component

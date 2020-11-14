@@ -1,1 +1,1 @@
-# Malagu - Config extension
+# Malagu - Config Component

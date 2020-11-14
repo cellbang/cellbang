@@ -1,6 +1,7 @@
 import { Component } from '@malagu/core';
 import { ColorContribution } from '@theia/core/lib/browser/color-application-contribution';
 import { Color, ColorRegistry } from '@theia/core/lib/browser/color-registry';
+import { Condition } from '../../common/utils';
 
 /* eslint-disable max-len */
 
@@ -8,6 +9,9 @@ import { Color, ColorRegistry } from '@theia/core/lib/browser/color-registry';
 export class ColorContributionImpl implements ColorContribution {
 
     registerColors(colors: ColorRegistry): void {
+        if (Condition.isEditorMode()) {
+            return;
+        }
         colors.register(
             {
                 id: 'list.dropBackground', defaults: {

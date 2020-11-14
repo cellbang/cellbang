@@ -1,7 +1,7 @@
 
 import { autoBind } from '@malagu/core';
 import { ErrorConverter } from '@malagu/rpc';
-import { ProxyProvider } from '@malagu/rpc/lib/browser';
+import { ProxyProvider } from '@malagu/rpc';
 import { RemoteFileSystemServer } from '@theia/filesystem/lib/common/remote-file-system-provider';
 import '.';
 import '../common';

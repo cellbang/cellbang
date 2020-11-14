@@ -27,9 +27,7 @@ export function loadMonacoExt(vsRequire: any): Promise<void> {
         (window as any).AMDLoader.Utilities.NEXT_ANONYMOUS_ID = 10000;
         vsRequire([
             'vs/basic-languages/monaco.contribution',
-            'vs/language/json/monaco.contribution',
-            'vs/language/css/monaco.contribution',
-            'vs/language/html/monaco.contribution'
+            'vs/language/json/monaco.contribution'
         ], (basic: any, json: any) => {
             resolve();
         });

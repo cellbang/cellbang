@@ -1,1 +1,1 @@
-# Malagu - Getting started component
+# Malagu - Getting started Component

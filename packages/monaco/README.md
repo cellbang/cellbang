@@ -1,1 +1,1 @@
-# Malagu - Monaco component
+# Malagu - Monaco Component

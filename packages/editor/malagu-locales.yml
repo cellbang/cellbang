@@ -5,6 +5,7 @@ frontend:
         messages:
           Selection: 选择
           Editor: 编辑器
+          Code Editor: 代码编辑器
           Go: 转到
           Change End of Line Sequence: 更改行尾序列
           Indent Using Spaces: 使用空格缩进

@@ -1,1 +1,1 @@
-# Malagu - Preferences component
+# Malagu - Preferences Component

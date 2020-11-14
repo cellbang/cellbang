@@ -1,0 +1,12 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Open Preview: 打开预览
+          Preview: 预览
+          Open Preview to the Side: 打开预览到侧面
+          Open Source: 打开源码
+          Code Editor Preview: 代码编辑器预览
+
+          

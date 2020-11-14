@@ -1,6 +1,6 @@
 
 import { autoBind } from '@malagu/core';
-import { ProxyProvider } from '@malagu/rpc/lib/browser';
+import { ProxyProvider } from '@malagu/rpc';
 import { MiniBrowserService } from '@theia/mini-browser/lib/common/mini-browser-service';
 import '.';
 

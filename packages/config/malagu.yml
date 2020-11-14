@@ -1,2 +1,5 @@
 malagu:
   name: ${pkg.description || pkg.name}
+  rpc:
+    merge:
+      enabled: true

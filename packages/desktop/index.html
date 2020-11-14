@@ -40,8 +40,8 @@
         }
     </style>
     <script type="text/javascript">
-        let value = window.localStorage.getItem('theme.background') || '#1d1d1d';
-        let documentElement = document.documentElement;
+        var value = window.localStorage.getItem('theme.background') || '#1d1d1d';
+        var documentElement = document.documentElement;
         documentElement.style.setProperty('--theia-editor-background', value);
     </script>
 </head>

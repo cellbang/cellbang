@@ -1,1 +1,1 @@
-# Malagu - Editor component
+# Malagu - Editor Component

@@ -1,0 +1,39 @@
+{
+  "name": "template",
+  "description": "模板中心 | Template Center",
+  "keywords": [
+    "malagu-component"
+  ],
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@cellbang/monaco": "0.0.0",
+    "@cellbang/preferences": "0.0.0",
+    "@cellbang/getting-started": "0.0.0",
+    "@cellbang/mini-browser": "0.0.0",
+    "@cellbang/preview": "0.0.0",
+    "@cellbang/navigator": "0.0.0",
+    "@cellbang/config": "0.0.0"
+  },
+  "devDependencies": {
+    "@malagu/cli": "^1.5.1",
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-router": "^5.1.7",
+    "@types/react-router-dom": "^5.1.5",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "clean": "rimraf lib dist .malagu",
+    "build": "malagu build",
+    "start": "malagu serve",
+    "deploy": "malagu deploy -m test",
+    "deploy:test": "malagu deploy -m test",
+    "deploy:pre": "malagu deploy -m pre",
+    "deploy:release": "malagu deploy -m release"
+  }
+}

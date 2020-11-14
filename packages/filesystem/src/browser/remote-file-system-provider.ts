@@ -4,8 +4,8 @@ import { Emitter } from '@theia/core/lib/common/event';
 import { Disposable } from '@theia/core/lib/common/disposable';
 import type { TextDocumentContentChangeEvent } from 'vscode-languageserver-protocol';
 import { RemoteFileSystemProvider } from '@theia/filesystem/lib/common/remote-file-system-provider';
-import { FileChange, FileChangeType, FileDeleteOptions, FileOverwriteOptions, FileType, FileUpdateOptions,
-FileUpdateResult, FileWriteOptions, Stat, WatchOptions } from '@theia/filesystem/lib/common/files';
+import { FileChange, FileChangeType, FileDeleteOptions, FileOverwriteOptions, FileUpdateOptions,
+FileUpdateResult, FileWriteOptions, WatchOptions } from '@theia/filesystem/lib/common/files';
 import { Component, Deferred } from '@malagu/core';
 
 @Component({ id: RemoteFileSystemProvider, rebind: true })
@@ -21,35 +21,6 @@ export class RemoteFileSystemProviderExt extends RemoteFileSystemProvider {
         super.init();
         this.toDispose.push(this.emitter);
         this.toDispose.push(Disposable.create(() => this.cacheMap.clear()));
-    }
-
-    protected isExpired(time?: Date, intervals = 5000) {
-        return !time || Date.now() - time.getTime() > intervals;
-    }
-
-    async stat(resource: URI): Promise<Stat> {
-        return this.doCacheProxy(`stat:${resource.toString()}`, () => super.stat(resource));
-    }
-
-    protected async doCacheProxy(key: string, callback: () => Promise<any>, intervals = 5000): Promise<any> {
-        let cache = this.cacheMap.get(key);
-        if (this.isExpired(cache?.time, intervals)) {
-            cache = { data: new Deferred(), time: new Date() };
-            this.cacheMap.set(key, cache);
-            try {
-                const data = await callback();
-                cache.data.resolve(data);
-            } catch (error) {
-                this.cacheMap.delete(key);
-                cache.data.reject(error);
-            }
-        }
-        return cache!.data.promise;
-
-    }
-
-    async readdir(resource: URI): Promise<[string, FileType][]> {
-        return this.doCacheProxy(`readdir:${resource.toString()}`, () => super.readdir(resource), 1000);
     }
 
     async writeFile(resource: URI, content: Uint8Array, opts: FileWriteOptions): Promise<void> {

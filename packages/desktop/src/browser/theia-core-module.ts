@@ -11,4 +11,4 @@ FrontendApplicationConfigProvider.set({
 
 import { frontendApplicationModule } from '@theia/core/lib/browser/frontend-application-module';
 
-export default Promise.resolve(frontendApplicationModule);
+export default frontendApplicationModule;

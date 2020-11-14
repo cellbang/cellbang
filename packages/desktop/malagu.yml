@@ -1,9 +1,10 @@
 mode:
   - locales
 frontend: 
-  modules:
+  staticModules:
     - lib/browser/theia-core-module
     - lib/browser/theia-logger-module
+  modules:
     - '@theia/core/lib/browser/menu/browser-menu-module'
     - '@theia/core/lib/browser/window/browser-window-module'
     - '@theia/core/lib/browser/keyboard/browser-keyboard-module'
@@ -17,3 +18,8 @@ cellbang:
     defaultTheme: dark
     defaultIconTheme: theia-file-icons
     applicationName: ${malagu.name}
+    editorMode: false
+  env:
+    execPath: /
+    configDirUri: /.theia
+    homeDirUri: /

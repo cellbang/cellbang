@@ -1,1 +1,1 @@
-# Malagu - Mini Browser component
+# Malagu - Mini Browser Component

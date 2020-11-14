@@ -43,6 +43,7 @@ frontend:
           Open View...: 打开视图...
           Save: 保存
           Save All: 全部保存
+          Save without Formatting: 无格式化保存
           Auto Save: 自动保存
           About: 关于
           Preferences: 首选项

@@ -12,6 +12,7 @@ frontend:
           Collapse Folders in Explorer: 在资源管理器中折叠文件夹
           Focus on Files Explorer: 聚焦到文件资源管理器视图
           Open: 打开
+          Open With: 打开方式...
           Copy Relative Path: 复制相对路径
           Collapse All: 全部折叠
           Select for Compare: 选择比较

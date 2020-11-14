@@ -1,1 +1,1 @@
-# Malagu - Process component
+# Malagu - Process Component

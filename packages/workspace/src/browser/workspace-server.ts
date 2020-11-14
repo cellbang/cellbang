@@ -2,12 +2,15 @@ import { postConstruct } from 'inversify';
 import { Deferred } from '@theia/core/lib/common/promise-util';
 import { WorkspaceServer } from '@theia/workspace/lib/common';
 
-import { Component } from '@malagu/core';
+import { Component, Value } from '@malagu/core';
 
 @Component({ id: WorkspaceServer, rebind: true })
 export class WorkspaceServerImpl implements WorkspaceServer {
 
     protected root: Deferred<string | undefined> = new Deferred();
+
+    @Value('cellbang.workspace.root')
+    protected readonly _root?: string;
 
     @postConstruct()
     protected async init() {
@@ -16,7 +19,7 @@ export class WorkspaceServerImpl implements WorkspaceServer {
     }
 
     protected async getRoot(): Promise<string | undefined> {
-        return '/tmp';
+        return this._root;
     }
 
     getMostRecentlyUsedWorkspace(): Promise<string | undefined> {
