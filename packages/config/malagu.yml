@@ -1,3 +1,4 @@
+mode: [ secret ]
 malagu:
   name: ${pkg.description || pkg.name}
   rpc:

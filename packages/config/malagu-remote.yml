@@ -4,8 +4,6 @@ malagu:
       devtool: false
     workboxWebpackPlugin:
       maximumFileSizeToCacheInBytes: 5242880 
-  server:
-    endpoint:
   fc-adapter:
     service:
       name: cellbang

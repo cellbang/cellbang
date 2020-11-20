@@ -6,8 +6,8 @@
             "request": "launch",
             "name": "malagu serve",
             "program": "${workspaceRoot}/node_modules/@malagu/cli/bin/malagu",
-            "args": [ "serve", "-t", "backend"],
-            "cwd": "${workspaceFolder}/apps/ide",
+            "args": [ "serve"],
+            "cwd": "${workspaceFolder}/apps/accounts",
             "sourceMaps": true,
             "env": {
                 "NODE_ENV": "development"

@@ -11,16 +11,12 @@
     "src"
   ],
   "dependencies": {
-    "@cellbang/security": "0.0.0",
+    "@cellbang/accounts": "0.0.0",
     "@cellbang/config": "0.0.0"
   },
   "devDependencies": {
-    "@malagu/cli": "^1.5.1",
-    "rimraf": "^2.6.3",
-    "@types/react": "^16.9.38",
-    "@types/react-dom": "^16.8.5",
-    "@types/react-router": "^5.1.7",
-    "@types/react-router-dom": "^5.1.5"
+    "@malagu/cli": "^1.6.0",
+    "rimraf": "^2.6.3"
   },
   "scripts": {
     "clean": "rimraf lib dist .malagu",

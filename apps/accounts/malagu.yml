@@ -1,1 +1,1 @@
-mode: [ cdn ]
+mode: [ cdn, secret ]

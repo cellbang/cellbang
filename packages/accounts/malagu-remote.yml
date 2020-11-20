@@ -1,0 +1,5 @@
+backend:
+  malagu:
+    session:
+      domain: .cellbang.com
+      overwrite: true

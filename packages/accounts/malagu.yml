@@ -1,10 +1,14 @@
-mode:
-  - locales
-frontend: 
-  modules:
-    - '@theia/filesystem/lib/browser/filesystem-frontend-module'
-    - '@theia/filesystem/lib/browser/download/file-download-frontend-module'
-    - '@theia/filesystem/lib/browser/file-dialog/file-dialog-module'
-backend: 
-  modules:
-    - '@theia/filesystem/lib/node/download/file-download-backend-module'
+mode: [ locale, theme ]
+
+cellbang: 
+  accounts:
+    home:
+      url: https://www.cellbang.com
+    logo:
+      icon: Cellbang
+backend:
+  malagu:
+    serve-static:
+      apiPath: "*oauth2/*"
+    security:
+      loginSuccessUrl: https://www.cellbang.com

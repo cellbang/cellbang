@@ -1,8 +1,16 @@
 .theia-icon {
-    background: url(../icons/cellbang.svg) center center no-repeat;
-    background-size: 24px;
-    width: 32px;
-    height: 32px;
-    margin: 0;
+    margin: 7px;
     margin-left: 8px;
+    margin-right: 0;
+    font-family: "cellbang" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--theia-foreground);
+    text-align: center;
+}
+
+.theia-icon:before {
+    content: "\e604";
 }

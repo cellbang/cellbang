@@ -6,7 +6,7 @@
   "typings": "lib/common/index.d.ts",
   "dependencies": {
     "@cellbang/user": "0.0.0",
-    "@malagu/security": "^1.5.1"
+    "@malagu/security": "^1.6.0"
   },
   "publishConfig": {
     "access": "public"
@@ -37,7 +37,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.5.1"
+    "@malagu/ext-scripts": "^1.6.0"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

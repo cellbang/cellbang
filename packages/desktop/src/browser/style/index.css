@@ -2,4 +2,5 @@
 | Import children style files
 |----------------------------------------------------------------------------*/
 
+@import './iconfont/iconfont.css';
 @import './logo.css';
