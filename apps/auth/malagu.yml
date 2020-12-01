@@ -1,1 +1,13 @@
 mode: [ cdn ]
+
+malagu:
+  security:
+    enabled: false
+    loginRequired: false
+frontend:
+  malagu:
+    security:
+      logoutSuccessUrl: '{redirect}'
+cellbang:
+  accounts-client:
+    showSidebarAccountMenus: false

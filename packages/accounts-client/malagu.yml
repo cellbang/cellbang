@@ -1,0 +1,9 @@
+mode: [ locale ]
+
+cellbang:
+  accounts-client:
+    showSidebarAccountMenus: true
+frontend:
+  malagu:
+    security:
+      loginPage: https://accounts.cellbang.com/login?${malagu.security.targetUrlParameter}={redirect}      

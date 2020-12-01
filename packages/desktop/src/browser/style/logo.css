@@ -1,13 +1,13 @@
 .theia-icon {
     margin: 7px;
-    margin-left: 8px;
+    margin-left: 9px;
     margin-right: 0;
     font-family: "cellbang" !important;
-    font-size: 16px;
+    font-size: 17px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--theia-foreground);
+    color: #2d85f0;
     text-align: center;
 }
 

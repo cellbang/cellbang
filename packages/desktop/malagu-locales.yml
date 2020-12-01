@@ -79,6 +79,11 @@ frontend:
           Copy Setting ID: 复制设置 ID
           Copy Setting as JSON: 复制设置为 JSON
           Reset Setting: 重置设置
+          Sign Out: 退出
+          Sign in to use Cellbang (1): 登录
+          You are not signed in to any accounts: 您未登录任何帐户
       en-US:
         messages:
           File: File
+          Sign in to use Cellbang (1): Login
+

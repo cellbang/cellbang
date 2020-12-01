@@ -2,7 +2,7 @@
 import { ConfigUtil } from '@malagu/core';
 import { FrontendApplicationConfigProvider} from '@theia/core/lib/browser/frontend-application-config-provider';
 
-const { cellbang: { desktop } } = ConfigUtil.getAll();
+const { cellbang: { desktop } } = ConfigUtil.getRaw();
 FrontendApplicationConfigProvider.set({
     defaultTheme: desktop.defaultTheme,
     defaultIconTheme: desktop.defaultIconTheme,

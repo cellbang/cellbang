@@ -1,0 +1,9 @@
+frontend:
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Forbidden: 权限不足
+      en-US:
+        messages:
+          Forbidden: Insufficient permissions

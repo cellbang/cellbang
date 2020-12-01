@@ -94,7 +94,7 @@ export class GetFileHandlerAdapter implements HandlerAdapter {
 
     handle(): Promise<void> {
         const response = Context.getResponse();
-        const uri = Context.getRequest().query.uri;
+        const uri = <string>Context.getRequest().query.uri;
         if (!uri) {
             response.statusCode = 400;
             response.body = 'invalid uri';

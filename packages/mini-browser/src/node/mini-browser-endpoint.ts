@@ -1,5 +1,5 @@
 import { MiniBrowserEndpoint } from '@theia/mini-browser/lib/node/mini-browser-endpoint';
-import { Component, Autowired, ApplicationLifecycle } from '@malagu/core';
+import { Autowired, ApplicationLifecycle } from '@malagu/core';
 import { BackendApplication } from '@malagu/core/lib/node';
 import { Context, HandlerAdapter, RequestMatcher } from '@malagu/web/lib/node';
 import { MVC_HANDLER_ADAPTER_PRIORITY } from '@malagu/mvc/lib/node';
@@ -7,8 +7,8 @@ import { Rpc } from '@malagu/rpc';
 import { PathResolver } from '@malagu/web';
 import { MiniBrowserService } from '@theia/mini-browser/lib/common/mini-browser-service';
 
-@Rpc(MiniBrowserService.toString())
-@Component([HandlerAdapter, ApplicationLifecycle])
+@Rpc({ id: [MiniBrowserService, HandlerAdapter, ApplicationLifecycle], rebind: true})
+@Rpc('', 'dd')
 export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements HandlerAdapter, ApplicationLifecycle<BackendApplication> {
     readonly priority = MVC_HANDLER_ADAPTER_PRIORITY + 10;
 
