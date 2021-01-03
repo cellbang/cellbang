@@ -4,11 +4,11 @@
     "skipLibCheck": false,
     "baseUrl": ".",
     "paths": {
-      "@cellbang/core": [
-        "packages/desktop/src/common"
+      "@cellbang/desktop": [
+        "ide-packages/desktop/src/common"
       ],
-      "@cellbang/core/lib/*": [
-        "packages/desktop/src/*"
+      "@cellbang/desktop/lib/*": [
+        "ide-packages/desktop/src/*"
       ]
     },
     "plugins": [
@@ -19,6 +19,8 @@
   },
   "include": [
     "dev-packages/*/src",
+    "packages-ide/*/src",
+    "packages-api/*/src",
     "packages/*/src",
     "examples/*/test"
   ]

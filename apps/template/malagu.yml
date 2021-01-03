@@ -8,6 +8,10 @@ malagu:
   security:
     enabled: false
     loginRequired: false
+  faas-adapter:
+    function:
+      codeUri:
+        include: templates
 frontend:
   malagu:
     security:

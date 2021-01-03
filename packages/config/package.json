@@ -5,10 +5,10 @@
   "main": "lib/common/index.js",
   "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@malagu/core": "^1.7.0",
-    "@malagu/pwa": "^1.7.0",
-    "@malagu/compression": "^1.7.0",
-    "@malagu/fc-adapter": "^1.7.0"
+    "@malagu/core": "^1.9.1",
+    "@malagu/pwa": "^1.9.1",
+    "@malagu/compression": "^1.9.1",
+    "@malagu/fc-adapter": "^1.9.1"
   },
   "publishConfig": {
     "access": "public"
@@ -39,7 +39,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.7.0"
+    "@malagu/ext-scripts": "^1.9.1"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

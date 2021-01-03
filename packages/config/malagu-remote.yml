@@ -4,13 +4,13 @@ malagu:
       devtool: false
     workboxWebpackPlugin:
       maximumFileSizeToCacheInBytes: 5242880 
-  fc-adapter:
+  faas-adapter:
     service:
       name: cellbang
       logConfig: 
         logstore: logstore
         project: cellbang
-      role: acs:ram::${malagu['fc-adapter'].profile.accountId}:role/cellbangrole
+      role: acs:ram::${malagu['faas-adapter'].account.id}:role/cellbangrole
     function:
       memorySize: 1024
       instanceConcurrency: 100

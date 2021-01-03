@@ -1,0 +1,1 @@
+# Cellbang - Resource Component

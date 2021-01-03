@@ -5,10 +5,10 @@
   "main": "lib/common/index.js",
   "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@malagu/oauth2-client": "^1.7.0",
-    "@malagu/grommet": "^1.7.0",
-    "@malagu/serve-static": "^1.7.0",
-    "@malagu/rpc": "^1.7.0"
+    "@malagu/oauth2-client": "^1.9.1",
+    "@malagu/grommet": "^1.9.1",
+    "@malagu/serve-static": "^1.9.1",
+    "@malagu/rpc": "^1.9.1"
   },
   "publishConfig": {
     "access": "public"
@@ -39,7 +39,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.7.0",
+    "@malagu/ext-scripts": "^1.9.1",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.8.5",
     "@types/react-router": "^5.1.7",
