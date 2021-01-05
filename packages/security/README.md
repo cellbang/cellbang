@@ -1,1 +1,0 @@
-# Cellbang - Security Component

@@ -1,8 +1,11 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/preferences",
   "version": "0.0.0",
   "description": "",
   "dependencies": {
+    "@cellbang/editor": "0.0.0",
+    "@cellbang/workspace": "0.0.0",
+    "@theia/preferences": "latest"
   },
   "publishConfig": {
     "access": "public"

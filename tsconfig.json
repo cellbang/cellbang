@@ -19,8 +19,7 @@
   },
   "include": [
     "dev-packages/*/src",
-    "packages-ide/*/src",
-    "packages-api/*/src",
+    "ide-packages/*/src",
     "packages/*/src",
     "examples/*/test"
   ]

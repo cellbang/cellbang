@@ -1,8 +1,12 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/editor",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
   "dependencies": {
+    "@cellbang/desktop": "0.0.0",
+    "@theia/editor": "latest"
   },
   "publishConfig": {
     "access": "public"

@@ -980,10 +980,10 @@
   resolved "https://registry.yarnpkg.com/@improved/node/-/node-1.1.1.tgz#7be3d401b7cd2f848d5bb8713d2826b84fc51817"
   integrity sha512-ePDxG9UuU9Kobk90ZUjtmDW8IT9U7aRb1/Rl9683MRNM+ur0ocHL2v7TPH2ajTiVSBUFbbeW8vKIt9jrb0JIAA==
 
-"@malagu/cli@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/cli/download/@malagu/cli-1.9.1.tgz#b4cace7f77c4f46bd69827178641842d867ae88d"
-  integrity sha1-tMrOf3fE9GvWmCcXhkGELYZ66I0=
+"@malagu/cli@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/cli/download/@malagu/cli-1.9.2.tgz#cb7589ccbc3181140a6518d75ae12201c92a1c36"
+  integrity sha1-y3WJzLwxgRQKZRjXWuEiAckqHDY=
   dependencies:
     "@babel/core" "^7.10.0"
     "@babel/plugin-transform-classes" "^7.10.0"
@@ -1037,24 +1037,24 @@
     webpack-node-externals "^1.7.2"
     worker-loader "^2.0.0"
 
-"@malagu/cloud@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/cloud/download/@malagu/cloud-1.9.1.tgz#2dec3e3509619f6a35b6a4bf9e8dbdf88a04ba15"
-  integrity sha1-Lew+NQlhn2o1tqS/no29+IoEuhU=
+"@malagu/cloud@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/cloud/download/@malagu/cloud-1.9.2.tgz#581accfef2253dfb5106f492f3feadc041a1ea4e"
+  integrity sha1-WBrM/vIlPftRBvSS8/6twEGh6k4=
   dependencies:
-    "@malagu/core" "^1.9.1"
+    "@malagu/core" "^1.9.2"
 
-"@malagu/compression@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/compression/download/@malagu/compression-1.9.1.tgz#abe8f5de76106cbbccd8b50481281d045d282ff0"
-  integrity sha1-q+j13nYQbLvM2LUEgSgdBF0oL/A=
+"@malagu/compression@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/compression/download/@malagu/compression-1.9.2.tgz#ee2724ef033c655f8e61adfeb73997699bab381c"
+  integrity sha1-7ick7wM8ZV+OYa3+tzmXaZurOBw=
   dependencies:
     compression-webpack-plugin "^4.0.1"
 
-"@malagu/core@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/core/download/@malagu/core-1.9.1.tgz#cbbf51908800645c8b68c2f192ea302b62285d13"
-  integrity sha1-y79RkIgAZFyLaMLxkuowK2IoXRM=
+"@malagu/core@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/core/download/@malagu/core-1.9.2.tgz#e50cf6ae8bc0cf62c0dc25e8d1d63706986752f3"
+  integrity sha1-5Qz2rovAz2LA3CXo0dY3BphnUvM=
   dependencies:
     "@types/express" "^4.16.1"
     "@types/lodash.debounce" "4.0.3"
@@ -1075,32 +1075,32 @@
     url-join "^4.0.1"
     vscode-jsonrpc "^5.0.0"
 
-"@malagu/ext-scripts@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/ext-scripts/download/@malagu/ext-scripts-1.9.1.tgz#063feb5bca66f7bfccd074ca8d4831f3b4f721ef"
-  integrity sha1-Bj/rW8pm97/M0HTKjUgx87T3Ie8=
+"@malagu/ext-scripts@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/ext-scripts/download/@malagu/ext-scripts-1.9.2.tgz#860961e04f5d433ca5238c773232040afbba7eb7"
+  integrity sha1-hglh4E9dQzylI4x3MjIECvu6frc=
 
-"@malagu/faas-adapter@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/faas-adapter/download/@malagu/faas-adapter-1.9.1.tgz#a6c0a60cd6ec977505157bae9dee2ef13f3063a3"
-  integrity sha1-psCmDNbsl3UFFXuune4u8T8wY6M=
+"@malagu/faas-adapter@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/faas-adapter/download/@malagu/faas-adapter-1.9.2.tgz#e4a482572afd293d674a07911735fcc8904bd9cb"
+  integrity sha1-5KSCVyr9KT1nSgeRFzX8yJBL2cs=
   dependencies:
-    "@malagu/cloud" "^1.9.1"
+    "@malagu/cloud" "^1.9.2"
     dotenv "^8.2.0"
     fs-extra "^8.1.0"
     inquirer "^6.5.1"
     jszip "^3.2.2"
 
-"@malagu/fc-adapter@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/fc-adapter/download/@malagu/fc-adapter-1.9.1.tgz#761aad7b119d2ceec536b043d75b8e32001bcc5a"
-  integrity sha1-dhqtexGdLO7FNrBD11uOMgAbzFo=
+"@malagu/fc-adapter@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/fc-adapter/download/@malagu/fc-adapter-1.9.2.tgz#dcf1873f604a9d377a0972920d9a407553b05029"
+  integrity sha1-3PGHP2BKnTd6CXKSDZpAdVOwUCk=
   dependencies:
     "@alicloud/cloudapi" "^1.1.0"
     "@alicloud/fc2" "^2.1.1"
     "@alicloud/ram" "^1.0.0"
-    "@malagu/faas-adapter" "^1.9.1"
-    "@malagu/web" "^1.9.1"
+    "@malagu/faas-adapter" "^1.9.2"
+    "@malagu/web" "^1.9.2"
     "@webserverless/fc-express" "^0.1.4"
     ali-oss "^6.1.1"
     co "^4.6.0"
@@ -1109,12 +1109,12 @@
     fs-extra "^8.1.0"
     raw-body "^2.3.3"
 
-"@malagu/grommet@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/grommet/download/@malagu/grommet-1.9.1.tgz#8b5a102a430335806369565bdacb5897ebbc7f85"
-  integrity sha1-i1oQKkMDNYBjaVZb2stYl+u8f4U=
+"@malagu/grommet@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/grommet/download/@malagu/grommet-1.9.2.tgz#9c562d0b68c85119bf147412049c8f5c8a080de3"
+  integrity sha1-nFYtC2jIURm/FHQSBJyPXIoIDeM=
   dependencies:
-    "@malagu/react" "^1.9.1"
+    "@malagu/react" "^1.9.2"
     grommet "^2.14.0"
     grommet-icons "^4.4.0"
     react "^16.12.0"
@@ -1122,50 +1122,50 @@
     react-is "^16.13.1"
     styled-components "^5.1.1"
 
-"@malagu/mvc@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/mvc/download/@malagu/mvc-1.9.1.tgz#d5dda6185a48042b739589252b8607cccff13b46"
-  integrity sha1-1d2mGFpIBCtzlYklK4YHzM/xO0Y=
+"@malagu/mvc@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/mvc/download/@malagu/mvc-1.9.2.tgz#f7152493129ede5cb8bccb5a06ff65a355c6a611"
+  integrity sha1-9xUkkxKe3ly4vMtaBv9lo1XGphE=
   dependencies:
-    "@malagu/web" "^1.9.1"
+    "@malagu/web" "^1.9.2"
     is-stream "^2.0.0"
     mustache "^4.0.1"
 
-"@malagu/oauth2-client@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/oauth2-client/download/@malagu/oauth2-client-1.9.1.tgz#def0d00d02e6b26344fe0daf65f7fa8b58a952af"
-  integrity sha1-3vDQDQLmsmNE/g2vZff6i1ipUq8=
+"@malagu/oauth2-client@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/oauth2-client/download/@malagu/oauth2-client-1.9.2.tgz#ae5fbff330559ccce77ca7187192cf97baa22714"
+  integrity sha1-rl+/8zBVnMznfKcYcZLPl7qiJxQ=
   dependencies:
-    "@malagu/oauth2-jose" "^1.9.1"
+    "@malagu/oauth2-jose" "^1.9.2"
 
-"@malagu/oauth2-core@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/oauth2-core/download/@malagu/oauth2-core-1.9.1.tgz#7935d93af463a10350b2f8d3b9c50eaa520e9b38"
-  integrity sha1-eTXZOvRjoQNQsvjTucUOqlIOmzg=
+"@malagu/oauth2-core@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/oauth2-core/download/@malagu/oauth2-core-1.9.2.tgz#08232d5c5d0f7d6a7eef7c03c43f61dc43cfefe6"
+  integrity sha1-CCMtXF0PfWp+73wDxD9h3EPP7+Y=
   dependencies:
-    "@malagu/security" "^1.9.1"
+    "@malagu/security" "^1.9.2"
 
-"@malagu/oauth2-jose@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/oauth2-jose/download/@malagu/oauth2-jose-1.9.1.tgz#f57ae2253af4d0768531de0dae2cd165072bba2f"
-  integrity sha1-9XriJTr00HaFMd4NrizRZQcrui8=
+"@malagu/oauth2-jose@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/oauth2-jose/download/@malagu/oauth2-jose-1.9.2.tgz#0584561a9fee39290b4c6f821a417a247c0a44aa"
+  integrity sha1-BYRWGp/uOSkLTG+CGkF6JHwKRKo=
   dependencies:
-    "@malagu/oauth2-core" "^1.9.1"
+    "@malagu/oauth2-core" "^1.9.2"
     jose "^1.28.0"
 
-"@malagu/pwa@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/pwa/download/@malagu/pwa-1.9.1.tgz#c441568795b2ea4dd32e9532bf3d1fb1add65ec7"
-  integrity sha1-xEFWh5Wy6k3TLpUyvz0fsa3WXsc=
+"@malagu/pwa@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/pwa/download/@malagu/pwa-1.9.2.tgz#caf83269dd869137757117543db53868dcff6b7c"
+  integrity sha1-yvgyad2GkTd1cRdUPbU4aNz/a3w=
   dependencies:
     workbox-webpack-plugin "^5.1.3"
 
-"@malagu/react@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/react/download/@malagu/react-1.9.1.tgz#4f203ccd6c833669cf0faadc448fd6f9a6f7e8cd"
-  integrity sha1-TyA8zWyDNmnPD6rcRI/W+ab36M0=
+"@malagu/react@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/react/download/@malagu/react-1.9.2.tgz#e73068a7f4376dcc107f36c9a480f9d7202682e6"
+  integrity sha1-5zBop/Q3bcwQfzbJpID51yAmguY=
   dependencies:
-    "@malagu/widget" "^1.9.1"
+    "@malagu/widget" "^1.9.2"
     history "^4.10.1"
     react "^16.12.0"
     react-dom "^16.12.0"
@@ -1173,44 +1173,44 @@
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
-"@malagu/rpc@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/rpc/download/@malagu/rpc-1.9.1.tgz#dd372fdee83d2b81ecfeacd63735dbf3f5d27c14"
-  integrity sha1-3Tcv3ug9K4Hs/qzWNzXb8/XSfBQ=
+"@malagu/rpc@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/rpc/download/@malagu/rpc-1.9.2.tgz#73129d03d99e083105d3adf71a122e564f1ce439"
+  integrity sha1-cxKdA9meCDEF0633GhIuVk8c5Dk=
   dependencies:
-    "@malagu/web" "^1.9.1"
+    "@malagu/web" "^1.9.2"
 
-"@malagu/security@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/security/download/@malagu/security-1.9.1.tgz#fee1246021cd10e621bb27fda2cbf56d8fcf8a5e"
-  integrity sha1-/uEkYCHNEOYhuyf9osv1bY/Pil4=
+"@malagu/security@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/security/download/@malagu/security-1.9.2.tgz#536c083b41a6a3ed6d5789097e4b91f125c4de8f"
+  integrity sha1-U2wIO0Gmo+1tV4kJfkuR8SXE3o8=
   dependencies:
-    "@malagu/web" "^1.9.1"
+    "@malagu/web" "^1.9.2"
     crypto-js "^4.0.0"
 
-"@malagu/serve-static@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/serve-static/download/@malagu/serve-static-1.9.1.tgz#845eb98560923d007e3f48dbaf0535cdada4ce27"
-  integrity sha1-hF65hWCSPQB+P0jbrwU1za2kzic=
+"@malagu/serve-static@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/serve-static/download/@malagu/serve-static-1.9.2.tgz#74d65e4b8654d341ab6c08f6980fa33c1f5a9927"
+  integrity sha1-dNZeS4ZU00GrbAj2mA+jPB9amSc=
   dependencies:
-    "@malagu/web" "^1.9.1"
+    "@malagu/web" "^1.9.2"
     serve-static "^1.14.1"
 
-"@malagu/typeorm@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/typeorm/download/@malagu/typeorm-1.9.1.tgz#19432d9a1305857d97a7b717e8c93760695ca60a"
-  integrity sha1-GUMtmhMFhX2Xp7cX6Mk3YGlcpgo=
+"@malagu/typeorm@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/typeorm/download/@malagu/typeorm-1.9.2.tgz#e6f037f2f970e94286cb61e484ba10ed4d374913"
+  integrity sha1-5vA38vlw6UKGy2HkhLoQ7U03SRM=
   dependencies:
-    "@malagu/web" "^1.9.1"
+    "@malagu/web" "^1.9.2"
     mysql "^2.17.1"
     typeorm "^0.2.19"
 
-"@malagu/web@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/web/download/@malagu/web-1.9.1.tgz#9bc28d632d105beaf19ae5d5a8682356abfa5a4b"
-  integrity sha1-m8KNYy0QW+rxmuXVqGgjVqv6Wks=
+"@malagu/web@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/web/download/@malagu/web-1.9.2.tgz#0dd592a0ec2035935292c2254679b3745a722e58"
+  integrity sha1-DdWSoOwgNZNSksIlRnmzdFpyLlg=
   dependencies:
-    "@malagu/core" "^1.9.1"
+    "@malagu/core" "^1.9.2"
     "@types/express" "^4.17.9"
     axios "^0.19.2"
     cookies "^0.8.0"
@@ -1222,12 +1222,12 @@
     url-pattern "^1.0.3"
     uuid "^3.4.0"
 
-"@malagu/widget@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.npm.taobao.org/@malagu/widget/download/@malagu/widget-1.9.1.tgz#18ce22016c3a29c8224bd8ee9394b3a8f449ef23"
-  integrity sha1-GM4iAWw6KcgiS9juk5SzqPRJ7yM=
+"@malagu/widget@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.npm.taobao.org/@malagu/widget/download/@malagu/widget-1.9.2.tgz#b4c60ac73aa70f4229d4cf06f24026897f2fd1e7"
+  integrity sha1-tMYKxzqnD0Ip1M8G8kAmiX8v0ec=
   dependencies:
-    "@malagu/core" "^1.9.1"
+    "@malagu/core" "^1.9.2"
 
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
@@ -8188,6 +8188,11 @@ is-yarn-global@^0.3.0:
   resolved "https://registry.yarnpkg.com/is-yarn-global/-/is-yarn-global-0.3.0.tgz#d502d3382590ea3004893746754c89139973e232"
   integrity sha512-VjSeb/lHmkoyd8ryPVIKvOCn4D1koMqY+vqyjjUfc3xyKtP4dYOxM44sZrnqQSzSds3xyOrUTLTC9LVCVgLngw==
 
+is_js@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.npm.taobao.org/is_js/download/is_js-0.9.0.tgz#0ab94540502ba7afa24c856aa985561669e9c52d"
+  integrity sha1-CrlFQFArp6+iTIVqqYVWFmnpxS0=
+
 isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
@@ -11618,6 +11623,13 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
   integrity sha1-KbvZIHinOfC8zitO5B6DeVNSKSQ=
+
+request-ip@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npm.taobao.org/request-ip/download/request-ip-2.1.3.tgz#99ab2bafdeaf2002626e28083cb10597511d9e14"
+  integrity sha1-masrr96vIAJibigIPLEFl1EdnhQ=
+  dependencies:
+    is_js "^0.9.0"
 
 request-promise-core@1.1.4:
   version "1.1.4"

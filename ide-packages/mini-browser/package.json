@@ -1,8 +1,11 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/mini-browser",
   "version": "0.0.0",
   "description": "",
   "dependencies": {
+    "@cellbang/filesystem": "0.0.0",
+    "@theia/mini-browser": "latest",
+    "@theia/preview": "latest"
   },
   "publishConfig": {
     "access": "public"

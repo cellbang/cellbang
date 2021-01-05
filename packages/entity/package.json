@@ -1,8 +1,11 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/entity",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
   "dependencies": {
+    "@malagu/typeorm": "^1.9.2"
   },
   "publishConfig": {
     "access": "public"

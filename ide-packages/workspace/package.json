@@ -1,8 +1,13 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/workspace",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
   "dependencies": {
+    "@cellbang/filesystem": "0.0.0",
+    "@theia/workspace": "latest",
+    "@theia/variable-resolver": "latest"
   },
   "publishConfig": {
     "access": "public"

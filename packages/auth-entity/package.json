@@ -1,8 +1,12 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/auth-entity",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
   "dependencies": {
+    "@malagu/rpc": "^1.9.2",
+    "@cellbang/entity": "0.0.0"
   },
   "publishConfig": {
     "access": "public"

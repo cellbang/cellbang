@@ -1,8 +1,16 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/desktop",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
   "dependencies": {
+    "@malagu/react": "^1.9.2",
+    "@malagu/rpc": "^1.9.2",
+    "@malagu/mvc": "^1.9.2",
+    "@malagu/serve-static": "^1.9.2",
+    "@theia/core": "latest",
+    "@theia/messages": "latest"
   },
   "publishConfig": {
     "access": "public"

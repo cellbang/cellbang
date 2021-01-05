@@ -1,8 +1,10 @@
 {
-  "name": "@cellbang/oidc-provider",
+  "name": "@cellbang/getting-started",
   "version": "0.0.0",
   "description": "",
   "dependencies": {
+    "@cellbang/workspace": "0.0.0",
+    "@theia/getting-started": "latest"
   },
   "publishConfig": {
     "access": "public"
