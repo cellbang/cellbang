@@ -5,6 +5,7 @@ import { Component, Autowired, TenantProvider } from '@malagu/core';
 import { FileRepository, FileStat } from '@cellbang/filesystem-entity/lib/node';
 import path = require('path');
 import * as tar from 'tar-stream';
+import { ResourceNotFoundError } from '@cellbang/entity/lib/node';
 const pump = require('pump');
 
 @Component({ id: DirectoryArchiver, rebind: true })
@@ -38,8 +39,22 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
             try {
                 stat = await this.fileRepository.stat(nextAbs, await this.getTenant());
             } catch (error) {
-                tarPack.destroy(error);
-                throw error;
+                if (error instanceof ResourceNotFoundError) {
+                    try {
+                        stat = new FileStat();
+                        stat.size = await this.fileRepository.getFileSize(nextAbs, await this.getTenant());
+                        stat.createdAt = new Date();
+                        stat.updatedAt = new Date();
+                        stat.isDirectory = false;
+                        stat.isFile = true;
+                    } catch (error2) {
+                        tarPack.destroy(error);
+                        throw error;
+                    }
+                } else {
+                    tarPack.destroy(error);
+                    throw error;
+                }
             }
             const header: tar.Headers = {
                 name: next,
@@ -80,9 +95,9 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
                 }
                 return;
             }
-
             loop();
         };
+
         loop();
         return tarPack;
 

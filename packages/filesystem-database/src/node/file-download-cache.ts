@@ -22,7 +22,7 @@ export class FileDownloadCache {
     async addDownload(downloadInfo: DownloadStorageItem): Promise<void> {
         downloadInfo.file = downloadInfo.file;
         // expires in 1 minute enough for parallel connections to be connected.
-        downloadInfo.expire = new Date(Date.now() + (this.expireTimeInMinutes * 6000));
+        downloadInfo.expire = new Date(Date.now() + (this.expireTimeInMinutes * 600000));
         downloadInfo.tenant = await this.tenantProvider.provide();
         await this.downloadRepository.create(downloadInfo);
     }

@@ -3,7 +3,9 @@ malagu:
     config:
       devtool: false
     workboxWebpackPlugin:
-      maximumFileSizeToCacheInBytes: 5242880 
+      maximumFileSizeToCacheInBytes: 5242880
+    filterWarningsPlugin:
+        cellbang: [ get-caller-file ]
   faas-adapter:
     service:
       name: cellbang

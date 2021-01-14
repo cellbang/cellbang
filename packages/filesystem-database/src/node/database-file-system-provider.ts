@@ -277,7 +277,7 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         copiedSources[source] = true; // remember as copied
 
         // Create folder
-        this.mkdir(new URI(target));
+        await this.mkdir(new URI(target));
 
         // Copy each file recursively
         const files = await this.fileRepository.readdir(source, await this.getTenant());
