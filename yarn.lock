@@ -980,10 +980,18 @@
   resolved "https://registry.yarnpkg.com/@improved/node/-/node-1.1.1.tgz#7be3d401b7cd2f848d5bb8713d2826b84fc51817"
   integrity sha512-ePDxG9UuU9Kobk90ZUjtmDW8IT9U7aRb1/Rl9683MRNM+ur0ocHL2v7TPH2ajTiVSBUFbbeW8vKIt9jrb0JIAA==
 
-"@malagu/cli@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/cli/download/@malagu/cli-1.9.2.tgz#cb7589ccbc3181140a6518d75ae12201c92a1c36"
-  integrity sha1-y3WJzLwxgRQKZRjXWuEiAckqHDY=
+"@malagu/cache@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/cache/-/cache-1.10.0.tgz#5288dd071257982824f868c0e3780b5bc6dad658"
+  integrity sha512-GcjZzsfbt2ig1C7RFuR8QF1/eRfvgLholPJ0Hvr2oMZydCwO1WryniUlGHtXXCDSp+WeD+4P+FKaXLXzjSKnuw==
+  dependencies:
+    "@malagu/core" "^1.10.0"
+    cache-manager "^3.4.0"
+
+"@malagu/cli@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/cli/-/cli-1.10.0.tgz#4e0c0351b1e3e1057e3c39631c6133884a2ef092"
+  integrity sha512-d2JhSnvhccmZHlH4aIRdVrml0t13xQ8LavcOdpxCVwChbvkHUIMgEe+0+4pG6Nimaqb61ZP9DWjM/9j/2zIGDw==
   dependencies:
     "@babel/core" "^7.10.0"
     "@babel/plugin-transform-classes" "^7.10.0"
@@ -1037,24 +1045,24 @@
     webpack-node-externals "^1.7.2"
     worker-loader "^2.0.0"
 
-"@malagu/cloud@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/cloud/download/@malagu/cloud-1.9.2.tgz#581accfef2253dfb5106f492f3feadc041a1ea4e"
-  integrity sha1-WBrM/vIlPftRBvSS8/6twEGh6k4=
+"@malagu/cloud@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/cloud/-/cloud-1.10.0.tgz#863a56878a43a05f92741095db13ac261c386bab"
+  integrity sha512-aDyNA/0SH/Jnxk322/cnxylE6gGrTpK/KRCiLtz9E99gS7odtlICbD5R6Us6klgJkofaUHJ2EDv1P2WjbqhkNw==
   dependencies:
-    "@malagu/core" "^1.9.2"
+    "@malagu/core" "^1.10.0"
 
-"@malagu/compression@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/compression/download/@malagu/compression-1.9.2.tgz#ee2724ef033c655f8e61adfeb73997699bab381c"
-  integrity sha1-7ick7wM8ZV+OYa3+tzmXaZurOBw=
+"@malagu/compression@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/compression/-/compression-1.10.0.tgz#ff226873f48902839a69f05dc4c6869dd83e230c"
+  integrity sha512-EBUylKW1jEV4bK/H35g8nVy15ocR9OAiuVGxnUI7P+8tCSJljCJhMlPGSIQTe/ujI0IIsYKIQfNRBVTiJ/FtTw==
   dependencies:
     compression-webpack-plugin "^4.0.1"
 
-"@malagu/core@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/core/download/@malagu/core-1.9.2.tgz#e50cf6ae8bc0cf62c0dc25e8d1d63706986752f3"
-  integrity sha1-5Qz2rovAz2LA3CXo0dY3BphnUvM=
+"@malagu/core@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/core/-/core-1.10.0.tgz#4cc93dadece1b2465a0ab45c68d8bb9eeabb8334"
+  integrity sha512-8GFZAalfWYh4VW6w5ZhV/Pw9WlveP5VHYMwlcS61fWvDMQFkJkpogEX7ebac01UUQ5Y85FV8Lrnw0U2kCAnfnw==
   dependencies:
     "@types/express" "^4.16.1"
     "@types/lodash.debounce" "4.0.3"
@@ -1075,32 +1083,32 @@
     url-join "^4.0.1"
     vscode-jsonrpc "^5.0.0"
 
-"@malagu/ext-scripts@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/ext-scripts/download/@malagu/ext-scripts-1.9.2.tgz#860961e04f5d433ca5238c773232040afbba7eb7"
-  integrity sha1-hglh4E9dQzylI4x3MjIECvu6frc=
+"@malagu/ext-scripts@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/ext-scripts/-/ext-scripts-1.10.0.tgz#0ad349e2312e31f4614eeb2fe02f3b433b1c6b89"
+  integrity sha512-b/cO53L6fckxrBlb+3gLmS6OrdfKC3AIzLQnrySzXm1396Tmgf+AwSR7kDW1Bf2t7IcuDTax0opXRMoWQuUgAQ==
 
-"@malagu/faas-adapter@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/faas-adapter/download/@malagu/faas-adapter-1.9.2.tgz#e4a482572afd293d674a07911735fcc8904bd9cb"
-  integrity sha1-5KSCVyr9KT1nSgeRFzX8yJBL2cs=
+"@malagu/faas-adapter@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/faas-adapter/-/faas-adapter-1.10.0.tgz#cd2af38dbea93124f300e354879ccabe9c321e7c"
+  integrity sha512-FBYLdCeHLzJ1anZLPEKLmp3eE2tuUBqQx8XyTHZjCh8id6K4ZtY164ou9LbS5Ry/ysk/o57cNhL8TjvS38+H8g==
   dependencies:
-    "@malagu/cloud" "^1.9.2"
+    "@malagu/cloud" "^1.10.0"
     dotenv "^8.2.0"
     fs-extra "^8.1.0"
     inquirer "^6.5.1"
     jszip "^3.2.2"
 
-"@malagu/fc-adapter@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/fc-adapter/download/@malagu/fc-adapter-1.9.2.tgz#dcf1873f604a9d377a0972920d9a407553b05029"
-  integrity sha1-3PGHP2BKnTd6CXKSDZpAdVOwUCk=
+"@malagu/fc-adapter@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/fc-adapter/-/fc-adapter-1.10.0.tgz#700684b496d683b088369d87afbb1437a62a8ed7"
+  integrity sha512-wK6zs5mHP2u1tE1x1ku8e7FuWnldRF5Sa1R6g6e35VCyMA2IpInKs3087rfJ9fTqVjPVhrPiOypU31hmQFWKWA==
   dependencies:
     "@alicloud/cloudapi" "^1.1.0"
     "@alicloud/fc2" "^2.1.1"
     "@alicloud/ram" "^1.0.0"
-    "@malagu/faas-adapter" "^1.9.2"
-    "@malagu/web" "^1.9.2"
+    "@malagu/faas-adapter" "^1.10.0"
+    "@malagu/web" "^1.10.0"
     "@webserverless/fc-express" "^0.1.4"
     ali-oss "^6.1.1"
     co "^4.6.0"
@@ -1109,12 +1117,12 @@
     fs-extra "^8.1.0"
     raw-body "^2.3.3"
 
-"@malagu/grommet@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/grommet/download/@malagu/grommet-1.9.2.tgz#9c562d0b68c85119bf147412049c8f5c8a080de3"
-  integrity sha1-nFYtC2jIURm/FHQSBJyPXIoIDeM=
+"@malagu/grommet@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/grommet/-/grommet-1.10.0.tgz#3c5af1bb3b42e427638212ecbacea089b23db7df"
+  integrity sha512-WGUFOOzHVcKg+J3zSSUkq8AD8FG0yXYoLj9wH6Wce8RABHE6o9Kxx2srm4+OTEBof5spWkcKDkj4zp7QdZqBuw==
   dependencies:
-    "@malagu/react" "^1.9.2"
+    "@malagu/react" "^1.10.0"
     grommet "^2.14.0"
     grommet-icons "^4.4.0"
     react "^16.12.0"
@@ -1122,50 +1130,58 @@
     react-is "^16.13.1"
     styled-components "^5.1.1"
 
-"@malagu/mvc@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/mvc/download/@malagu/mvc-1.9.2.tgz#f7152493129ede5cb8bccb5a06ff65a355c6a611"
-  integrity sha1-9xUkkxKe3ly4vMtaBv9lo1XGphE=
+"@malagu/mvc@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/mvc/-/mvc-1.10.0.tgz#0bd2b24b985dfab06f2aa64fb2318026ee9369b2"
+  integrity sha512-TU3eqAg9HLjWn6HzRTcRBd+I1ED/72VMauJFYRt63zNLYZsi/iba5vuUX6a+0iOJH1FS8+PJd0Ki/ae23IGwog==
   dependencies:
-    "@malagu/web" "^1.9.2"
+    "@malagu/web" "^1.10.0"
     is-stream "^2.0.0"
     mustache "^4.0.1"
 
-"@malagu/oauth2-client@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/oauth2-client/download/@malagu/oauth2-client-1.9.2.tgz#ae5fbff330559ccce77ca7187192cf97baa22714"
-  integrity sha1-rl+/8zBVnMznfKcYcZLPl7qiJxQ=
+"@malagu/oauth2-client@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/oauth2-client/-/oauth2-client-1.10.0.tgz#783646c58cb0ce000294e9bdf9d52456b95d19ee"
+  integrity sha512-LhzIoZjxLti898jsye5yF/kvN5F0a9FiS2P14Jljro1moc58Rwexe2GyUNHtWeI0nzyibiB1v5mRScLSKtRwcQ==
   dependencies:
-    "@malagu/oauth2-jose" "^1.9.2"
+    "@malagu/oauth2-jose" "^1.10.0"
 
-"@malagu/oauth2-core@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/oauth2-core/download/@malagu/oauth2-core-1.9.2.tgz#08232d5c5d0f7d6a7eef7c03c43f61dc43cfefe6"
-  integrity sha1-CCMtXF0PfWp+73wDxD9h3EPP7+Y=
+"@malagu/oauth2-core@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/oauth2-core/-/oauth2-core-1.10.0.tgz#7a202cea823eb0d81b6ccad59dfb0e9b9c618156"
+  integrity sha512-i6AlyEqbe85y78DwosgbUDYUkKyAzi07k6NLjo//1AvRBIVM7xemEesUyadlDjygcPqGkapjCHxr7F50IChyeg==
   dependencies:
-    "@malagu/security" "^1.9.2"
+    "@malagu/security" "^1.10.0"
 
-"@malagu/oauth2-jose@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/oauth2-jose/download/@malagu/oauth2-jose-1.9.2.tgz#0584561a9fee39290b4c6f821a417a247c0a44aa"
-  integrity sha1-BYRWGp/uOSkLTG+CGkF6JHwKRKo=
+"@malagu/oauth2-jose@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/oauth2-jose/-/oauth2-jose-1.10.0.tgz#193003524ca2964e9286784df7ef748251c8b02e"
+  integrity sha512-YqkXMeVU8F6j4nladBDmsmHP2hCKwXv0ZWscRzrwzqZwOGhXyo4KK28MoFUH4nokFVhxY0O1f7xwEuJJnS7WqQ==
   dependencies:
-    "@malagu/oauth2-core" "^1.9.2"
+    "@malagu/oauth2-core" "^1.10.0"
     jose "^1.28.0"
 
-"@malagu/pwa@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/pwa/download/@malagu/pwa-1.9.2.tgz#caf83269dd869137757117543db53868dcff6b7c"
-  integrity sha1-yvgyad2GkTd1cRdUPbU4aNz/a3w=
+"@malagu/oss@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/oss/-/oss-1.10.0.tgz#43555611abae1d5971a69e0dd009d14d572372ee"
+  integrity sha512-Vbg6YqI1OKg2jxVhjO3v87Q1p/8qoUb43Xlar6DRhtDwgVgeU8KJIzkACTiqqyWiOvOyyvHJ9xCoLmxVGF0msQ==
+  dependencies:
+    "@malagu/cloud" "^1.10.0"
+    ali-oss "^5.2.0"
+
+"@malagu/pwa@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/pwa/-/pwa-1.10.0.tgz#ba35d531f7da8e9a215fdba5871fcff98fab86c9"
+  integrity sha512-wWUihBpA2ukPEp5qfxY3IEuEub2rKmwVyEx5jDc8Hv/IgCNeBAVqgQpGhQv/dN6gxUJ8moSXZkKbvUo5OXmj3g==
   dependencies:
     workbox-webpack-plugin "^5.1.3"
 
-"@malagu/react@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/react/download/@malagu/react-1.9.2.tgz#e73068a7f4376dcc107f36c9a480f9d7202682e6"
-  integrity sha1-5zBop/Q3bcwQfzbJpID51yAmguY=
+"@malagu/react@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/react/-/react-1.10.0.tgz#c380260ec6610d4713dbe7eac77d4a30383f4221"
+  integrity sha512-z30H7i62R3SCgk1GXdUqADyWfD1zPg3LgRWUtUBSbe5l3yG6J1pQIb/yYxzq1iY7/V2pTiTptqbc/WbdxqkVJQ==
   dependencies:
-    "@malagu/widget" "^1.9.2"
+    "@malagu/widget" "^1.10.0"
     history "^4.10.1"
     react "^16.12.0"
     react-dom "^16.12.0"
@@ -1173,46 +1189,46 @@
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
-"@malagu/rpc@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/rpc/download/@malagu/rpc-1.9.2.tgz#73129d03d99e083105d3adf71a122e564f1ce439"
-  integrity sha1-cxKdA9meCDEF0633GhIuVk8c5Dk=
+"@malagu/rpc@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/rpc/-/rpc-1.10.0.tgz#520e33d62da1478e81614404d18e88db2a72aca5"
+  integrity sha512-t7+S7zRJGDqv62BH54h1PW55YWHTJHC1pooMYU/yvfwNPBWgPVARNLiWqu1OpExdSffsRiSeV9sO/C0cW9rWDQ==
   dependencies:
-    "@malagu/web" "^1.9.2"
+    "@malagu/web" "^1.10.0"
 
-"@malagu/security@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/security/download/@malagu/security-1.9.2.tgz#536c083b41a6a3ed6d5789097e4b91f125c4de8f"
-  integrity sha1-U2wIO0Gmo+1tV4kJfkuR8SXE3o8=
+"@malagu/security@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/security/-/security-1.10.0.tgz#9c49d6de7012d7feb6e978365bf14e8ac07728d7"
+  integrity sha512-Dd231pv428QaHy34JpqRsj+X+uwUSTYE5hU17HI02lkEQccnaBzOfoyuf5L2DaBCPT7S2+9rD5CKkVy3IfuEgw==
   dependencies:
-    "@malagu/web" "^1.9.2"
+    "@malagu/web" "^1.10.0"
     crypto-js "^4.0.0"
 
-"@malagu/serve-static@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/serve-static/download/@malagu/serve-static-1.9.2.tgz#74d65e4b8654d341ab6c08f6980fa33c1f5a9927"
-  integrity sha1-dNZeS4ZU00GrbAj2mA+jPB9amSc=
+"@malagu/serve-static@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/serve-static/-/serve-static-1.10.0.tgz#19c9bc93ffc63736d3d7b68d7652ce176d2766bb"
+  integrity sha512-Lxi6Dgi/Gv+ALy/kpVRPKO2sHxxjASIrz+1XpGj8lllcxHVtkWLBqOuM1+tx2Vp+tCLkfPX9oTzpaotONXrzFQ==
   dependencies:
-    "@malagu/web" "^1.9.2"
+    "@malagu/web" "^1.10.0"
     serve-static "^1.14.1"
 
-"@malagu/typeorm@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/typeorm/download/@malagu/typeorm-1.9.2.tgz#e6f037f2f970e94286cb61e484ba10ed4d374913"
-  integrity sha1-5vA38vlw6UKGy2HkhLoQ7U03SRM=
+"@malagu/typeorm@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/typeorm/-/typeorm-1.10.0.tgz#facaf9b165e6370f4a589a590ed98580f989c2d6"
+  integrity sha512-hwXtT5Pq39+QvVow2ed1PvH+3aD8rHvaIL2ZPh0Hkq3tDbEBBijViMCvRp7LxA2InC0joozCc90ly/pFR/aTtw==
   dependencies:
-    "@malagu/web" "^1.9.2"
+    "@malagu/web" "^1.10.0"
     mysql "^2.17.1"
     typeorm "^0.2.19"
 
-"@malagu/web@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/web/download/@malagu/web-1.9.2.tgz#0dd592a0ec2035935292c2254679b3745a722e58"
-  integrity sha1-DdWSoOwgNZNSksIlRnmzdFpyLlg=
+"@malagu/web@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/web/-/web-1.10.0.tgz#906fb75214aa0fc7c738b0504aa8a60eef698743"
+  integrity sha512-1/nZFzHs98rAYPk3gk9mfoIis//a3FVKwoKaI4KqpauX82VGm8ZxVeqDk8n6q9axhd+a0+QK+QSlr+G6sgPN3g==
   dependencies:
-    "@malagu/core" "^1.9.2"
+    "@malagu/core" "^1.10.0"
     "@types/express" "^4.17.9"
-    axios "^0.19.2"
+    axios "^0.21.1"
     cookies "^0.8.0"
     cors "^2.8.5"
     crc "^3.8.0"
@@ -1222,12 +1238,12 @@
     url-pattern "^1.0.3"
     uuid "^3.4.0"
 
-"@malagu/widget@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npm.taobao.org/@malagu/widget/download/@malagu/widget-1.9.2.tgz#b4c60ac73aa70f4229d4cf06f24026897f2fd1e7"
-  integrity sha1-tMYKxzqnD0Ip1M8G8kAmiX8v0ec=
+"@malagu/widget@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@malagu/widget/-/widget-1.10.0.tgz#2dad678edfaa56b1b69ec630d560082f4c997143"
+  integrity sha512-88yffg/Jopi96tfBSjWaBR8qEODh6z2mBl8SdzIVnQHPKL3l7gDzYtlKt/vYJDP8JcRlK0SSj7XlbatvkBnRkQ==
   dependencies:
-    "@malagu/core" "^1.9.2"
+    "@malagu/core" "^1.10.0"
 
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
@@ -1529,14 +1545,6 @@
     ws "^7.1.2"
     yargs "^15.3.1"
 
-"@theia/editor-preview@latest":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@theia/editor-preview/-/editor-preview-1.9.0.tgz#2e9e869dde725cbe59f3d50d6578cb49a9ecb055"
-  integrity sha512-kru8IDzwmdxWInu9Zdd3q3mioq7sZcg1NGq4c9pQW55C1E96HulhAs82UIdeEGrtW+Je25Fv2SAIM2178MXvjA==
-  dependencies:
-    "@theia/core" "^1.9.0"
-    "@theia/editor" "^1.9.0"
-
 "@theia/editor@^1.9.0", "@theia/editor@latest":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@theia/editor/-/editor-1.9.0.tgz#01d11f5f27ce32e495bc3075d07ae83ff83139af"
@@ -1771,6 +1779,11 @@
   dependencies:
     "@types/connect" "*"
     "@types/node" "*"
+
+"@types/cache-manager@^2.10.3":
+  version "2.10.3"
+  resolved "https://registry.yarnpkg.com/@types/cache-manager/-/cache-manager-2.10.3.tgz#6c5ffb177b45c2e251f32432354ff83bddbd18ec"
+  integrity sha512-PbaxAeU8SZhbVd6+IuepvyWN7KAjEThsrkdvITDxKAlN6/abIr3NW3WPzNLjJekqbVijg4YUYsyrVc84xXUHQw==
 
 "@types/cacheable-request@^6.0.1":
   version "6.0.1"
@@ -2088,6 +2101,14 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/readable-stream@^2.3.9":
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-2.3.9.tgz#40a8349e6ace3afd2dd1b6d8e9b02945de4566a9"
+  integrity sha512-sqsgQqFT7HmQz/V5jH1O0fvQQnXAJO46Gg9LRO/JPfjmVmGUlcx831TZZO3Y3HtWhIkzf3kTsNT0Z0kzIhIvZw==
+  dependencies:
+    "@types/node" "*"
+    safe-buffer "*"
+
 "@types/request@^2.0.3", "@types/request@^2.48.4":
   version "2.48.5"
   resolved "https://registry.yarnpkg.com/@types/request/-/request-2.48.5.tgz#019b8536b402069f6d11bee1b2c03e7f232937a0"
@@ -2181,6 +2202,14 @@
   version "1.16.3"
   resolved "https://registry.yarnpkg.com/@types/tar-fs/-/tar-fs-1.16.3.tgz#425b2b817c405d13d051f36ec6ec6ebd25e31069"
   integrity sha512-Y+fdeg11tb9J3UNIatNtrTPM1i8U+WLv2mMhZ3W13mtU19stCgrXJ4iXLkTpoF8jqHi3T/qTS8+fQ3IPzXxpuA==
+  dependencies:
+    "@types/node" "*"
+    "@types/tar-stream" "*"
+
+"@types/tar-fs@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/tar-fs/-/tar-fs-2.0.0.tgz#db94cb4ea1cccecafe3d1a53812807efb4bbdbc1"
+  integrity sha512-3H2HmxuT1OCZYXi1KG5xIjbpv97JjdLSRByH13YhHK8lr+GaJndJ91IuQfHxn23BQRaWHf2LTnlHPQcQDzt8vw==
   dependencies:
     "@types/node" "*"
     "@types/tar-stream" "*"
@@ -2715,6 +2744,39 @@ ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.5.3:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+ali-oss@^5.2.0:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/ali-oss/-/ali-oss-5.3.2.tgz#11259062c838102149bd626cac0e82b513abbdc1"
+  integrity sha512-027NdIg+egthwF/LmXmVdOetchQx/GxyP9wLMyaymlawjSuVmOQM8G0L9ppQSgREp+ERvgKWXq+fw3+ctOSHWQ==
+  dependencies:
+    address "^1.0.0"
+    agentkeepalive "^3.4.1"
+    any-promise "^1.3.0"
+    bowser "^1.6.0"
+    co "^4.6.0"
+    co-defer "^1.0.0"
+    co-gather "^0.0.1"
+    co-priority-queue "^1.0.3"
+    copy-to "^2.0.1"
+    dateformat "^2.0.0"
+    debug "^2.2.0"
+    destroy "^1.0.4"
+    end-or-error "^1.0.1"
+    get-ready "^1.0.0"
+    humanize-ms "^1.2.0"
+    is-type-of "^1.0.0"
+    jstoxml "^0.2.3"
+    merge-descriptors "^1.0.1"
+    mime "^1.3.4"
+    mz-modules "^2.1.0"
+    platform "^1.3.1"
+    sdk-base "^2.0.1"
+    stream-http "2.8.2"
+    stream-wormhole "^1.0.4"
+    urllib "^2.17.1"
+    utility "^1.8.0"
+    xml2js "^0.4.16"
+
 ali-oss@^6.1.1:
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/ali-oss/-/ali-oss-6.12.0.tgz#2bc744cad569aee741e3b3968207761fbb2d21a4"
@@ -3128,7 +3190,7 @@ async@^2.5.0, async@^2.6.2, async@^2.6.3:
   dependencies:
     lodash "^4.17.14"
 
-async@^3.1.0:
+async@^3.1.0, async@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
   integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
@@ -3153,12 +3215,12 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@^0.19.2:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
-    follow-redirects "1.5.10"
+    follow-redirects "^1.10.0"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -3803,6 +3865,15 @@ cache-base@^1.0.1:
     union-value "^1.0.0"
     unset-value "^1.0.0"
 
+cache-manager@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/cache-manager/-/cache-manager-3.4.0.tgz#6f352fa1ee95709878e3474e9ed8489ef751bba3"
+  integrity sha512-+WtL5sKHGngtnzTHNFA6+gC0wjpAAUmwmprXOSeaCBOkohM8Nh7GvV8fC90NFrDh7m3i87AshGd39/yYbWNtWA==
+  dependencies:
+    async "^3.2.0"
+    lodash "^4.17.20"
+    lru-cache "6.0.0"
+
 cacheable-lookup@^5.0.3:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/cacheable-lookup/-/cacheable-lookup-5.0.4.tgz#5a6b865b2c44357be3d5ebc2a467b032719a7005"
@@ -4283,6 +4354,23 @@ co-defer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/co-defer/-/co-defer-1.0.0.tgz#3e4a787a8eed6b0a21ee287c094f7e8de0d3c818"
   integrity sha1-Pkp4eo7tawoh7ih8CU9+jeDTyBg=
+
+co-gather@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/co-gather/-/co-gather-0.0.1.tgz#efa35fbef02c9f647d8a740b3f5db731862535bc"
+  integrity sha1-76NfvvAsn2R9inQLP123MYYlNbw=
+  dependencies:
+    co-thread "0.0.1"
+
+co-priority-queue@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/co-priority-queue/-/co-priority-queue-1.0.3.tgz#b9646e00e84439fb15563d61b68bee2ba5169b4f"
+  integrity sha1-uWRuAOhEOfsVVj1htovuK6UWm08=
+
+co-thread@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/co-thread/-/co-thread-0.0.1.tgz#57713f0ef4b87e5595d4f23711ffe4b3b6de5e74"
+  integrity sha1-V3E/DvS4flWV1PI3Ef/ks7beXnQ=
 
 co@^4.6.0:
   version "4.6.0"
@@ -5114,7 +5202,7 @@ debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.4, debug@^2.6.8, de
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0, debug@=3.1.0:
+debug@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
@@ -6504,14 +6592,7 @@ fn.name@1.x.x:
   resolved "https://registry.yarnpkg.com/fn.name/-/fn.name-1.1.0.tgz#26cad8017967aea8731bc42961d04a3d5988accc"
   integrity sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
 
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
-
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
   integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
@@ -9102,6 +9183,13 @@ lowercase-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz#2603e78b7b4b0006cbca2fbcc8a3202558ac9479"
   integrity sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA==
 
+lru-cache@6.0.0, lru-cache@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
+  integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
+  dependencies:
+    yallist "^4.0.0"
+
 lru-cache@^4.0.0, lru-cache@^4.0.1:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
@@ -9116,13 +9204,6 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
-
-lru-cache@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
-  integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
-  dependencies:
-    yallist "^4.0.0"
 
 lunr@^2.3.8:
   version "2.3.9"
@@ -11905,15 +11986,15 @@ rxjs@^6.4.0, rxjs@^6.6.0, rxjs@^6.6.2:
   dependencies:
     tslib "^1.9.0"
 
+safe-buffer@*, safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@~5.2.0:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
+
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
-
-safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@~5.2.0:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
-  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
 safe-regex@^1.1.0:
   version "1.1.0"
@@ -12890,7 +12971,7 @@ tar-fs@^1.16.2:
     pump "^1.0.0"
     tar-stream "^1.1.2"
 
-tar-fs@^2.0.0:
+tar-fs@^2.0.0, tar-fs@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-2.1.1.tgz#489a15ab85f1f0befabb370b7de4f9eb5cbe8784"
   integrity sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==
@@ -13736,7 +13817,7 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-urllib@^2.33.1:
+urllib@^2.17.1, urllib@^2.33.1:
   version "2.36.1"
   resolved "https://registry.yarnpkg.com/urllib/-/urllib-2.36.1.tgz#fbd9fb13bbc140e1fc15bcdba8703d6142a7eb3a"
   integrity sha512-g0Gh7bH5AwfPUzFetxPtJwumGHE6D7KQn0K68MwcJXPgO2K0AliwEIxLAwGMF+TpY75DYAsvz1h9ekagYoq33w==

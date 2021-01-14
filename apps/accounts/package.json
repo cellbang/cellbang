@@ -15,7 +15,7 @@
     "@cellbang/config": "0.0.0"
   },
   "devDependencies": {
-    "@malagu/cli": "^1.9.2",
+    "@malagu/cli": "^1.10.0",
     "rimraf": "^2.6.3"
   },
   "scripts": {

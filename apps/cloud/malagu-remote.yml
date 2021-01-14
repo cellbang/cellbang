@@ -1,0 +1,6 @@
+mode: [ database ]
+backend:  
+  cellbang:
+    filesystem:
+      entity:
+        bucket: cellbang-filesystem

@@ -1,0 +1,5 @@
+mode:
+  - locales
+frontend: 
+  modules:
+    - '@theia/preview/lib/browser/preview-frontend-module'

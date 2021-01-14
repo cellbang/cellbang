@@ -1,0 +1,10 @@
+mode:
+  - locales
+frontend: 
+  modules:
+    - '@theia/mini-browser/lib/browser/mini-browser-frontend-module'
+    - '@theia/mini-browser/lib/browser/environment/mini-browser-environment-module'
+backend: 
+  modules:
+    - '@theia/mini-browser/lib/node/mini-browser-backend-module'
+

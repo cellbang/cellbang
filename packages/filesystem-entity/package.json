@@ -1,0 +1,46 @@
+{
+  "name": "@cellbang/filesystem-entity",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
+  "dependencies": {
+    "@malagu/rpc": "^1.10.0",
+    "@malagu/cloud": "^1.10.0",
+    "@cellbang/entity": "0.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "malagu-component"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cellbang/cellbang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cellbang/cellbang/issues"
+  },
+  "homepage": "https://github.com/cellbang/cellbang",
+  "files": [
+    "lib",
+    "src",
+    "malagu.yml"
+  ],
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "malaguext clean",
+    "build": "malaguext build",
+    "watch": "malaguext watch",
+    "test": "malaguext test",
+    "docs": "malaguext docs"
+  },
+  "devDependencies": {
+    "@malagu/ext-scripts": "^1.10.0"
+  },
+  "nyc": {
+    "extends": "../../configs/nyc.json"
+  }
+}

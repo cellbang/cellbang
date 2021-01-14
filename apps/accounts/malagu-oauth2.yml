@@ -1,0 +1,7 @@
+backend:
+    oauth2:
+      client:
+        registrations:
+          github:
+            clientId: 7c01e5d59631d1649985
+            clientSecret: 06f5642b338eadd2728affabf332a52ab50f889f

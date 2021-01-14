@@ -1,0 +1,20 @@
+mode:
+  - locales
+frontend: 
+  modules:
+    - '@theia/filesystem/lib/browser/filesystem-frontend-module'
+    - '@theia/filesystem/lib/browser/download/file-download-frontend-module'
+    - '@theia/filesystem/lib/browser/file-dialog/file-dialog-module'
+backend: 
+  modules:
+    - '@theia/filesystem/lib/node/download/file-download-backend-module'
+cellbang:
+  desktop:
+    editorMode: true
+malagu:
+  cache:
+    config:
+      filesystem:
+        store: memory
+        max: 100
+        ttl: 3600 # seconds

@@ -1,0 +1,11 @@
+mode:
+  - locales
+frontend: 
+  modules:
+    - '@theia/workspace/lib/browser/workspace-frontend-module'
+backend: 
+  modules:
+    - '@theia/workspace/lib/node/workspace-backend-module'
+cellbang:
+  workspace:
+    root: /tmp

@@ -1,0 +1,1 @@
+# Malagu - Mini Browser Database Component

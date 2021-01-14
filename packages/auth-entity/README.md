@@ -1,1 +1,1 @@
-# Cellbang - Auth Component
+# Cellbang - Auth Entity Component

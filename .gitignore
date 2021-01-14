@@ -25,3 +25,4 @@ gh-pages
 /ssl
 malagu-local.yml
 malagu-secret.yml
+malagu-database.yml

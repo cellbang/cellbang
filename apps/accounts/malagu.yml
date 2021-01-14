@@ -1,5 +1,10 @@
-mode: [ cdn, secret ]
+mode: [ cdn ]
 malagu:
+  oauth2:
+    client:
+      registrations:
+        github:
+          clientName: Github
   security:
     loginRequired: false
 

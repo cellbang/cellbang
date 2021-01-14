@@ -5,10 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@cellbang/desktop": [
-        "ide-packages/desktop/src/common"
+        "packages/desktop/src/common"
       ],
       "@cellbang/desktop/lib/*": [
-        "ide-packages/desktop/src/*"
+        "packages/desktop/src/*"
       ]
     },
     "plugins": [
@@ -19,7 +19,6 @@
   },
   "include": [
     "dev-packages/*/src",
-    "ide-packages/*/src",
     "packages/*/src",
     "examples/*/test"
   ]

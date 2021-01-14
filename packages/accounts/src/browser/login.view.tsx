@@ -7,7 +7,6 @@ import { LocaleMenu, Icon } from '@malagu/grommet';
 import { useIntl } from 'react-intl';
 import { Box, Button, Heading, ResponsiveContext, Nav } from 'grommet';
 import styled from 'styled-components';
-import { Github } from 'grommet-icons';
 const { useContext } = React;
 
 const StyledWraper = styled.div`
@@ -32,7 +31,7 @@ const StyledContainer = styled.div<ContainerProps>`
     text-align: center;
     background-color: #ffffff;
     box-shadow: ${props => props.size === 'small' ? 'none' : '0px 0px 5px #e9e9e9'};
-    border-radius: ${props => props.size === 'small' ? '0' : '8px'};
+    border-radius: ${props => props.size === 'small' ? '0' : '4px'};
 `;
 
 export function Login() {
@@ -40,12 +39,13 @@ export function Login() {
     const size = useContext(ResponsiveContext);
     const intl = useIntl();
     const targetUrlParameter = ConfigUtil.get<string>('malagu.security.targetUrlParameter');
+    const registrations = ConfigUtil.get<{[key: string]: { icon?: string, clientName: string } }>('malagu.oauth2.client.registrations');
     const redirect = parse(location.search && location.search.substring(1))[targetUrlParameter];
     const queryStr = redirect ? `?${stringify({ [targetUrlParameter]: redirect})}` : '';
     return (
     <StyledWraper style={size === 'small' ? { top: 0, bottom: 0, right: 0, left: 0 } : undefined }>
         <StyledContainer size={size}>
-            <Box direction="column" pad="large" align="center" background="brand" round={ size === 'small' ? undefined : { corner: 'top', size: '8px' } }>
+            <Box direction="column" pad="large" align="center" background="brand" round={ size === 'small' ? undefined : { corner: 'top', size: '4px' } }>
                 <Button plain
                     href={ConfigUtil.get('cellbang.accounts.home.url')}
                     icon={<Icon size="large" color="white" icon={ConfigUtil.get('cellbang.accounts.logo.icon')}></Icon>}>
@@ -55,11 +55,19 @@ export function Login() {
             <Box direction="column" align="center" animation="slideDown">
                 <Heading level="6">{intl.formatMessage({ id: 'cellbang.accounts.quick.login.label' })}</Heading>
                 <Nav>
-                    <Button hoverIndicator icon={<Github size="large"></Github>} href={`/oauth2/authorization/github${queryStr}`}></Button>
+                    {
+                        Object.keys(registrations).map(id => (
+                            <Button
+                                hoverIndicator
+                                icon={<Icon icon={registrations[id].icon || registrations[id].clientName} size="large"></Icon>}
+                                href={`/oauth2/authorization/${id}${queryStr}`}>
+                            </Button>
+                        ))
+                    }
                 </Nav>
             </Box>
             <Box direction="column" fill="horizontal" style={ { position: 'absolute', bottom: 0 } } align="center">
-                <LocaleMenu items={[]} size="small"/>
+                <LocaleMenu size="small" fontSize="12px"/>
             </Box>
         </StyledContainer>
     </StyledWraper>);
