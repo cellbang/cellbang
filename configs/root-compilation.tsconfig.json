@@ -1,0 +1,83 @@
+{
+  "extends": "./base.tsconfig",
+  "include": [],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "references": [
+    {
+      "path": "../packages/accounts/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/accounts-client/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/app-console/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/app-entity/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/auth-entity/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/desktop/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/editor/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/entity/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/file-search/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/filesystem/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/filesystem-database/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/filesystem-entity/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/getting-started/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/mini-browser/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/mini-browser-database/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/monaco/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/navigator/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/oidc-provider/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/preferences/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/preview/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/process/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/visual/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/workspace/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/workspace-database/compile.tsconfig.json"
+    }
+  ]
+}

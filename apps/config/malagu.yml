@@ -4,3 +4,9 @@ malagu:
   rpc:
     merge:
       enabled: true
+  webpack:
+    config:
+      devServer:
+        watchOptions: 
+          aggregateTimeout: 1500
+          ignored: [ '**/*.ts' ]

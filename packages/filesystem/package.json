@@ -6,8 +6,8 @@
   "typings": "lib/common/index.d.ts",
   "dependencies": {
     "@cellbang/desktop": "0.0.0",
-    "@malagu/cache": "^1.10.0",
-    "@malagu/cloud": "^1.10.0",
+    "@malagu/cache": "^1.11.0",
+    "@malagu/cloud": "^1.11.0",
     "@theia/filesystem": "latest"
   },
   "publishConfig": {
@@ -39,7 +39,7 @@
     "docs": "malaguext docs"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.10.0",
+    "@malagu/ext-scripts": "^1.11.0",
     "@types/cache-manager": "^2.10.3"
   },
   "nyc": {

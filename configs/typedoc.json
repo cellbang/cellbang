@@ -9,7 +9,7 @@
   "target": "es6",
   "hideGenerator": true,
   "external-modulemap": ".*\/packages\/([\\w\\-_]+)\/",
-  "name": "Cellbang TypeDoc",
+  "name": "Malagu TypeDoc",
   "exclude": [
     "**/+(dev-packages|examples|typings)/**/*",
     "**/*spec.ts"
