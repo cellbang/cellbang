@@ -11,8 +11,8 @@ export class ColorRegistryImpl extends ColorRegistry {
 
     constructor() {
         super();
-		this.colorsById = {};
-	}
+        this.colorsById = {};
+    }
 
     *getColors(): IterableIterator<string> {
         for (const id of Object.keys(this.colorsById)) {

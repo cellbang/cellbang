@@ -1,0 +1,7 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Sheet Editor: 表格编辑器
+          

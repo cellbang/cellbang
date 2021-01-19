@@ -1,13 +1,12 @@
 {
-  "name": "@cellbang/workspace",
+  "name": "@cellbang/sheet",
   "version": "0.0.0",
   "description": "",
   "main": "lib/common/index.js",
   "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@cellbang/filesystem": "0.0.0",
-    "@theia/workspace": "next",
-    "@theia/variable-resolver": "next"
+    "@cellbang/monaco": "0.0.0",
+    "x-data-spreadsheet": "^1.1.8"
   },
   "publishConfig": {
     "access": "public"
@@ -37,7 +36,8 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.11.0"
+    "@malagu/ext-scripts": "^1.11.0",
+    "@types/traverse": "^0.6.32"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

@@ -33,7 +33,7 @@ export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements Handl
     protected tenantProvider: TenantProvider;
 
     async canHandle(): Promise<boolean> {
-        return this.requestMatcher.match(await this.pathResolver.resolve(`${MiniBrowserEndpoint.HANDLE_PATH}*`));
+        return this.requestMatcher.match(await this.pathResolver.resolve('/mini-browser/*'));
     }
 
     async handle(): Promise<void> {
@@ -42,7 +42,7 @@ export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements Handl
     }
 
     protected getUri(request: Request): MaybePromise<string> {
-        const decodedPath = request.path.substr(MiniBrowserEndpoint.HANDLE_PATH.length);
+        const decodedPath = request.path.substr('/mini-browser/'.length);
         return new URI(FileUri.create(decodedPath).toString(true)).path.toString();
     }
 

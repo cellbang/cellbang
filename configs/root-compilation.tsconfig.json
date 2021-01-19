@@ -78,6 +78,9 @@
     },
     {
       "path": "../packages/workspace-database/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/sheet/compile.tsconfig.json"
     }
   ]
 }

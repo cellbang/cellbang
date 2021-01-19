@@ -18,7 +18,7 @@ export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements Handl
     protected readonly pathResolver: PathResolver;
 
     async canHandle(): Promise<boolean> {
-        return this.requestMatcher.match(await this.pathResolver.resolve(`${MiniBrowserEndpoint.HANDLE_PATH}*`));
+        return this.requestMatcher.match(await this.pathResolver.resolve('/mini-browser/*'));
     }
 
     async handle(): Promise<void> {

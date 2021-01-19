@@ -20,6 +20,7 @@
     "@cellbang/preview": "0.0.0",
     "@cellbang/navigator": "0.0.0",
     "@malagu/oss": "^1.11.0",
+    "@cellbang/sheet": "0.0.0",
     "@cellbang/config": "0.0.0"
   },
   "devDependencies": {

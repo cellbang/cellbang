@@ -1,0 +1,15 @@
+mode:
+  - locales
+frontend: 
+  modules:
+    - '@theia/variable-resolver/lib/browser/variable-resolver-frontend-module'
+    - '@theia/editor/lib/browser/editor-frontend-module'
+  malagu:
+    webpack:
+      config:
+        externals:
+          x-data-spreadsheet: x_spreadsheet
+      htmlWebpackTagsPlugin:
+        sheet-css: 'https://unpkg.com/x-data-spreadsheet@1.1.8/dist/xspreadsheet.css'
+        sheet-js: 'https://unpkg.com/x-data-spreadsheet@1.1.8/dist/xspreadsheet.js'
+        sheet-zh-cn: 'https://unpkg.com/x-data-spreadsheet@1.1.8/dist/locale/zh-cn.js'

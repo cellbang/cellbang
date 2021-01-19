@@ -1,5 +1,3 @@
-// tslint:disable:no-any
-
 import { loadMonaco } from '@theia/monaco/lib/browser/monaco-loader';
 
 export function loadVsRequire(context: any): Promise<any> {
@@ -9,6 +7,7 @@ export function loadVsRequire(context: any): Promise<any> {
             const vsLoader = document.createElement('script');
             vsLoader.type = 'text/javascript';
             vsLoader.src = './vs/loader.js';
+            // eslint-disable-next-line
             vsLoader.charset = 'utf-8';
             vsLoader.addEventListener('load', () => {
                 const amdRequire = context.require;

@@ -9,8 +9,8 @@
     "@malagu/rpc": "^1.11.0",
     "@malagu/mvc": "^1.11.0",
     "@malagu/serve-static": "^1.11.0",
-    "@theia/core": "latest",
-    "@theia/messages": "latest"
+    "@theia/core": "next",
+    "@theia/messages": "next"
   },
   "publishConfig": {
     "access": "public"
@@ -33,12 +33,11 @@
     "malagu.yml"
   ],
   "scripts": {
-    "prepare": "yarn run clean && yarn run build",
-    "clean": "malaguext clean",
+    "lint": "malaguext lint",
     "build": "malaguext build",
     "watch": "malaguext watch",
-    "test": "malaguext test",
-    "docs": "malaguext docs"
+    "clean": "malaguext clean",
+    "test": "malaguext test"
   },
   "devDependencies": {
     "@malagu/ext-scripts": "^1.11.0"

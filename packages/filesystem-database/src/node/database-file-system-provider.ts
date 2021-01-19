@@ -130,7 +130,7 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
     }
 
     async access(resource: URI, mode?: number): Promise<void> {
-
+        console.log(resource.toString() + mode);
     }
 
     async readdir(resource: URI): Promise<[string, FileType][]> {

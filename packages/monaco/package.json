@@ -9,8 +9,8 @@
     "@babel/preset-env": "^7.10.0",
     "@cellbang/editor": "0.0.0",
     "@cellbang/workspace": "0.0.0",
-    "@theia/monaco": "latest",
-    "@theia/output": "latest",
+    "@theia/monaco": "next",
+    "@theia/output": "next",
     "babel-loader": "^8.0.6",
     "circular-dependency-plugin": "^5.2.0",
     "monaco-json": "^3.2.1",
@@ -38,12 +38,11 @@
     "malagu.yml"
   ],
   "scripts": {
-    "prepare": "yarn run clean && yarn run build",
-    "clean": "malaguext clean",
+    "lint": "malaguext lint",
     "build": "malaguext build",
     "watch": "malaguext watch",
-    "test": "malaguext test",
-    "docs": "malaguext docs"
+    "clean": "malaguext clean",
+    "test": "malaguext test"
   },
   "devDependencies": {
     "@malagu/ext-scripts": "^1.11.0"

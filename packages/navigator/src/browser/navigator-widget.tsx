@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { injectable } from 'inversify';
 import { Message } from '@phosphor/messaging';
-import { ViewContainer } from '@theia/core/lib/browser';
+import { ViewContainer, TreeModel } from '@theia/core/lib/browser';
 import { FileNavigatorWidget, LABEL, EXPLORER_VIEW_CONTAINER_TITLE_OPTIONS } from '@theia/navigator/lib/browser/navigator-widget';
 import { IntlUtil } from '@cellbang/desktop/src/browser/utils';
 
@@ -27,6 +27,13 @@ export class FileNavigatorWidgetExt extends FileNavigatorWidget {
             });
         }
         super.onUpdateRequest(msg);
+    }
+
+    protected renderTree(model: TreeModel): React.ReactNode {
+        if (!this.model.root) {
+            return this.renderOpenWorkspaceDiv();
+        }
+        return super.renderTree(model);
     }
 
     /**
