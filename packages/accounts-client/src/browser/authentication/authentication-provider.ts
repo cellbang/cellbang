@@ -42,7 +42,7 @@ export class AuthenticationProviderImpl implements AuthenticationProvider, Front
         this.restOperations.interceptors.response.use(response => response, error => {
             if (error.response) {
                 if (error.response.status === HttpStatus.FORBIDDEN) {
-                    this.messageService.error(IntlUtil.get(error.response.data, HttpStatus.FORBIDDEN_REASON_PHRASE)!, IntlUtil.get('Close')!);
+                    this.messageService.warn(IntlUtil.get(error.response.data, HttpStatus.FORBIDDEN_REASON_PHRASE)!);
                 }
             }
             return Promise.reject(error);

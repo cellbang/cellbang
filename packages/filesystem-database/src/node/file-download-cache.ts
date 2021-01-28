@@ -1,5 +1,4 @@
 import { Autowired, Component, Logger } from '@malagu/core';
-import { TenantProvider } from '@malagu/core';
 import { DownloadStorageItem, FileRepository, DownloadRepository } from '@cellbang/filesystem-entity/lib/node';
 
 @Component(FileDownloadCache)
@@ -16,14 +15,10 @@ export class FileDownloadCache {
     @Autowired(DownloadRepository)
     protected downloadRepository: DownloadRepository;
 
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
-
     async addDownload(downloadInfo: DownloadStorageItem): Promise<void> {
         downloadInfo.file = downloadInfo.file;
         // expires in 1 minute enough for parallel connections to be connected.
         downloadInfo.expire = new Date(Date.now() + (this.expireTimeInMinutes * 600000));
-        downloadInfo.tenant = await this.tenantProvider.provide();
         await this.downloadRepository.create(downloadInfo);
     }
 

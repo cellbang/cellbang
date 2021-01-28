@@ -4,4 +4,15 @@ frontend:
       zh-CN:
         messages:
           Sheet Editor: 表格编辑器
-          
+          Paste values only: 粘贴数据
+          Paste format only: 粘贴格式
+          Insert row: 插入行
+          Insert column: 插入列
+          Delete row: 删除行
+          Delete column: 删除列
+          Delete cell text: 删除数据
+          Data validations: 数据验证
+          Enable export: 可打印
+          Disable export: 不可打印
+          Enable editing: 可编辑
+          Disable editing: 不可编辑

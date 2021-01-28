@@ -13,7 +13,7 @@ export class SheetEditorImpl implements SheetEditor {
 
     protected readonly toDispose = new DisposableCollection();
 
-    protected editor: any;
+    editor: any;
     protected dataTraverse: traverse.Traverse<any>;
 
     constructor(
@@ -34,12 +34,12 @@ export class SheetEditorImpl implements SheetEditor {
         this.dataTraverse = traverse(jsoncparser.parse(jsoncparser.stripComments(this.model.getText())) || []);
 
         const parent = host.parentElement as HTMLElement;
-        host.addEventListener('touchmove', event => { event.preventDefault(); }, { passive: false });
 
         this.editor = spreadsheet(host, {
+            showContextmenu: false,
             view: {
                 height: () => parent.clientHeight,
-                width: () => parent.clientWidth,
+                width: () =>  parent.clientWidth
             }
         });
         const onChange = debounce((data: any) => this.onChange(data), 300);

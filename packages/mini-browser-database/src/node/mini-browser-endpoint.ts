@@ -1,39 +1,38 @@
 import { FileStatWithContent, MiniBrowserEndpoint, MiniBrowserEndpointHandler } from '@theia/mini-browser/lib/node/mini-browser-endpoint';
 import { Autowired, ApplicationLifecycle } from '@malagu/core';
-import { TenantProvider } from '@malagu/core';
 import { BackendApplication } from '@malagu/core/lib/node';
 import { Context, HandlerAdapter, RequestMatcher, Response, Request } from '@malagu/web/lib/node';
 import { MVC_HANDLER_ADAPTER_PRIORITY } from '@malagu/mvc/lib/node';
 import { Rpc } from '@malagu/rpc';
 import { Component } from '@malagu/core';
-import { PathResolver } from '@malagu/web';
+import { UrlUtil } from '@malagu/web';
 import { MiniBrowserService } from '@theia/mini-browser/lib/common/mini-browser-service';
-import { FileRepository } from '@cellbang/filesystem-entity/lib/node';
+import {  } from '@cellbang/filesystem/lib/node';
 import { FileUri } from '@theia/core/lib/node/file-uri';
 import { lookup } from 'mime-types';
 import { MaybePromise } from '@theia/core/lib/common/types';
 import URI from '@theia/core/lib/common/uri';
+import { FileRepository } from '@cellbang/filesystem-entity/lib/node';
+import { FileSystemProvider } from '@theia/filesystem/lib/common/files';
+import { ResourceNotFoundError } from '@cellbang/entity/lib/node';
 
 const CODE_EDITOR_PRIORITY = 100;
 
-@Rpc({ id: [MiniBrowserService, HandlerAdapter, ApplicationLifecycle], rebind: true})
+@Rpc({ id: [MiniBrowserService, HandlerAdapter, ApplicationLifecycle], rebind: true, proxy: false})
 export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements HandlerAdapter, ApplicationLifecycle<BackendApplication> {
     readonly priority = MVC_HANDLER_ADAPTER_PRIORITY + 10;
 
     @Autowired(RequestMatcher)
     protected readonly requestMatcher: RequestMatcher;
 
-    @Autowired(PathResolver)
-    protected readonly pathResolver: PathResolver;
+    @Autowired(FileSystemProvider)
+    protected readonly fileSystemProvider: FileSystemProvider;
 
     @Autowired(FileRepository)
-    protected fileRepository: FileRepository;
-
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
+    protected readonly fileRepository: FileRepository;
 
     async canHandle(): Promise<boolean> {
-        return this.requestMatcher.match(await this.pathResolver.resolve('/mini-browser/*'));
+        return this.requestMatcher.match(await UrlUtil.getPath('/mini-browser/*'));
     }
 
     async handle(): Promise<void> {
@@ -47,10 +46,13 @@ export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements Handl
     }
 
     protected async response(uri: string, response: Response): Promise<Response> {
-        console.log(uri);
-        const exists = await this.fileRepository.exists(uri, await this.tenantProvider.provide());
-        if (!exists) {
-            return this.missingResourceHandler()(uri, response);
+        try {
+            await this.fileSystemProvider.stat(FileUri.create(uri));
+        } catch (error) {
+            if (error instanceof ResourceNotFoundError) {
+                return this.missingResourceHandler()(uri, response);
+            }
+            throw error;
         }
         const statWithContent = await this.readContent(uri);
         try {
@@ -73,7 +75,7 @@ export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements Handl
 
     protected defaultHandler(): (statWithContent: FileStatWithContent, response: Response) => MaybePromise<Response> {
         return async (statWithContent: FileStatWithContent, response: Response) => {
-            const content = await this.fileRepository.readFileStream(statWithContent.stat.uri, await this.tenantProvider.provide());
+            const content = await this.fileRepository.readFileStream(statWithContent.stat.uri);
             const mimeType = lookup(FileUri.fsPath(statWithContent.stat.uri));
             if (!mimeType) {
                 this.logger.warn(`Cannot handle unexpected resource. URI: ${statWithContent.stat.uri}.`);
@@ -87,7 +89,7 @@ export class MiniBrowserEndpointExt extends MiniBrowserEndpoint implements Handl
     }
 
     protected async readContent(uri: string): Promise<FileStatWithContent> {
-        const stat = await this.fileRepository.stat(uri, await this.tenantProvider.provide());
+        const stat = await this.fileRepository.stat(uri);
         return { stat: Object.assign({
             isDirectory: () => stat.isDirectory,
             isFile: () => stat.isFile, uri, size: stat.size
@@ -102,15 +104,12 @@ export abstract class AbstractMiniBrowserEndpointHandler implements MiniBrowserE
     @Autowired(FileRepository)
     protected fileRepository: FileRepository;
 
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
-
     priority(): number {
         return CODE_EDITOR_PRIORITY + 5;
     }
 
     protected async doRespond(statWithContent: FileStatWithContent, response: Response) {
-        const content = await this.fileRepository.readFileStream(statWithContent.stat.uri, await this.tenantProvider.provide());
+        const content = await this.fileRepository.readFileStream(statWithContent.stat.uri);
         response.setHeader('Content-Length', statWithContent.stat.size);
         return new Promise<Response>((resolve, reject) => {
             content.on('error', error => {
@@ -159,9 +158,6 @@ export class ImageHandler extends AbstractMiniBrowserEndpointHandler {
 
     @Autowired(FileRepository)
     protected fileRepository: FileRepository;
-
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
 
     supportedExtensions(): string[] {
         return ['jpg', 'jpeg', 'png', 'bmp', 'gif'];

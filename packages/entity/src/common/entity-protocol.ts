@@ -7,5 +7,5 @@ export interface BaseEntity {
 }
 
 export interface Resource extends BaseEntity {
-    crn: string;
+    tenant: string;
 }

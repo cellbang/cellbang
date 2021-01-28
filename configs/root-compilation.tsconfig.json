@@ -81,6 +81,9 @@
     },
     {
       "path": "../packages/sheet/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/filesystem-share/compile.tsconfig.json"
     }
   ]
 }

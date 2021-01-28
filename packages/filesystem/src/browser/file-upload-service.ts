@@ -1,14 +1,17 @@
 import URI from '@theia/core/lib/common/uri';
 import { checkCancelled, cancelled } from '@theia/core/lib/common/cancellation';
 import { Deferred } from '@theia/core/lib/common/promise-util';
-import { RestOperations, ENDPOINT, PathResolver, MediaType, HttpHeaders } from '@malagu/web';
-import { Component, Autowired, Value } from '@malagu/core';
+import { RestOperations, UrlUtil, MediaType, HttpHeaders } from '@malagu/web';
+import { Component, Autowired } from '@malagu/core';
 import { v4 } from 'uuid';
 import throttle = require('lodash.throttle');
-import { FileUploadResult, FileUploadService } from '@theia/filesystem/lib/browser/file-upload-service';
+import { FileUploadProgressParams, FileUploadResult, FileUploadService } from '@theia/filesystem/lib/browser/file-upload-service';
 import { RemoteFileSystemProvider } from '@theia/filesystem/lib/common/remote-file-system-provider';
 import { RemoteFileSystemProviderExt } from './remote-file-system-provider';
 import { FileChangeType } from '@theia/filesystem/lib/common/filesystem-watcher-protocol';
+import { CancellationTokenSource, CancellationToken } from '@theia/core/lib/common/cancellation';
+import { Progress } from '@theia/core/lib/common/message-service-protocol';
+import { IntlUtil } from '@cellbang/desktop/lib/browser';
 
 @Component({ id: FileUploadService, rebind: true })
 export class FileUploadServiceExt extends FileUploadService {
@@ -16,17 +19,11 @@ export class FileUploadServiceExt extends FileUploadService {
     @Autowired(RestOperations)
     protected readonly restOperations: RestOperations;
 
-    @Autowired(PathResolver)
-    protected readonly pathResolver: PathResolver;
-
-    @Value(ENDPOINT)
-    protected readonly endpoint: string;
-
     @Autowired(RemoteFileSystemProvider)
     protected readonly remoteFileSystemProvider: RemoteFileSystemProviderExt;
 
     protected async getUrl() {
-        return this.pathResolver.resolve(this.endpoint, await this.pathResolver.resolve(`file-upload?id=${v4()}`));
+        return UrlUtil.getUrl(`file-upload?id=${v4()}`);
     }
 
     protected async exists(resource: URI): Promise<boolean> {
@@ -48,7 +45,7 @@ export class FileUploadServiceExt extends FileUploadService {
         const folderMap = new Map<string, boolean>();
         const url = await this.getUrl();
         const reportProgress = throttle(() => progress.report({
-            message: `${doneFiles} out of ${totalFiles}`,
+            message: `${doneFiles} ${ IntlUtil.get('out of')} ${totalFiles}`,
             work: { done, total }
         }), 60);
         const deferredUpload = new Deferred<FileUploadResult>();
@@ -132,5 +129,19 @@ export class FileUploadServiceExt extends FileUploadService {
             rejectAndClose(e);
         }
         return deferredUpload.promise;
+    }
+
+    protected async withProgress<T>(
+        cb: (progress: Progress, token: CancellationToken) => Promise<T>,
+        { text }: FileUploadProgressParams = { text: IntlUtil.get('Uploading Files...')! }
+    ): Promise<T> {
+        const cancellationSource = new CancellationTokenSource();
+        const { token } = cancellationSource;
+        const progress = await this.messageService.showProgress({ text, options: { cancelable: true } }, () => cancellationSource.cancel());
+        try {
+            return await cb(progress, token);
+        } finally {
+            progress.cancel();
+        }
     }
 }

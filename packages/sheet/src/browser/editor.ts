@@ -15,6 +15,7 @@ export interface SheetDocumentChangeEvent {
 export interface SheetEditor extends Disposable, Navigatable {
     readonly uri: URI;
     readonly model: MonacoEditorModel;
+    editor: any;
 
     refresh(): void;
 

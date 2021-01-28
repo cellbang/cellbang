@@ -1,13 +1,19 @@
 mode: [ cdn ]
 
 malagu:
+  tenant:
+    enabled: true
   security:
-    enabled: false
     loginRequired: false
 frontend:
   malagu:
     security:
       logoutSuccessUrl: '{redirect}'
+backend:
+  malagu:
+    security:
+      policy:
+        '*': ''
 cellbang:
   workspace:
     root: 

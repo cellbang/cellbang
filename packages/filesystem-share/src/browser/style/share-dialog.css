@@ -1,0 +1,65 @@
+.dialogContent .cellbang-ShareMessage {
+    margin: .7em 0;
+}
+
+.dialogContent .cellbang-SharePasswordCheckBox {
+    margin: .7em 0;
+    padding: 0;
+}
+
+.dialogContent .cellbang-SharePasswordCheckBox label input {
+    margin-left: 0px;
+    vertical-align: middle;
+}
+
+.dialogContent .cellbang-SharePasswordCheckBox label span {
+    vertical-align: middle;
+}
+
+.dialogContent .cellbang-SharePasswordArea {
+    margin: .7em 0;
+    padding: 2.5px 5px;
+}
+
+
+.dialogContent .cellbang-SharePasswordArea:first-child {
+    width: 250px;
+}
+
+.dialogContent .cellbang-ShareResetPassword {
+    cursor: pointer;
+    opacity: .7;
+    float: right;
+}
+
+.dialogContent .cellbang-ShareResetPassword:hover {
+    opacity: 1;
+}
+
+.dialogContent .cellbang-ShareSharingLink {
+    margin: .7em 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dialogContent .cellbang-ShareSharingLink input {
+    width: 280px;
+    padding: 2.5px 5px;
+}
+
+.dialogContent .cellbang-ShareCopy {
+    float: right;
+}
+
+.dialogContent .cellbang-ShareWorkspacePath {
+    margin: .7em 0;
+}
+
+.dialogContent .cellbang-ShareWorkspacePath i {
+    margin-right: .5em;
+}
+
+.dialogContent .cellbang-ShareHidden,
+.dialogControl .cellbang-ShareHidden {
+    display: none;
+}

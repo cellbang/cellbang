@@ -1,6 +1,6 @@
 
 import { autoBind } from '@malagu/core';
-import { ErrorConverter, ProxyProvider } from '@malagu/rpc';
+import { ErrorConverter, ProxyProvider, GlobalConverter } from '@malagu/rpc';
 import { RemoteFileSystemServer } from '@theia/filesystem/lib/common/remote-file-system-provider';
 import '.';
 import '../common';
@@ -10,7 +10,8 @@ export default autoBind((bind, unbind, isBound, rebind) => {
     rebind(RemoteFileSystemServer).toDynamicValue(ctx => {
         const path = RemoteFileSystemServer.toString();
         const proxyProvider = ctx.container.get<ProxyProvider>(ProxyProvider);
-        const errorConverters = [ctx.container.getNamed<ErrorConverter>(ErrorConverter, RemoteFileSystemServer)];
+        const errorConverters = [...ctx.container.getAllNamed<ErrorConverter>(ErrorConverter, GlobalConverter),
+            ctx.container.getNamed<ErrorConverter>(ErrorConverter, RemoteFileSystemServer)];
         const proxy = proxyProvider.provide(path, errorConverters);
         (proxy as any).setClient = () => {};
         return proxy;

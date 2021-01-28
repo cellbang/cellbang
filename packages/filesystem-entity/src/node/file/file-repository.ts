@@ -1,4 +1,4 @@
-import { Component, Autowired, Value, Logger } from '@malagu/core';
+import { Component, Autowired, Value, Logger, TenantProvider } from '@malagu/core';
 import { ObjectStorageService, RawCloudService } from '@malagu/cloud';
 import { FileRepository } from './file-protocol';
 import { Transactional, OrmContext } from '@malagu/typeorm/lib/node';
@@ -16,11 +16,15 @@ export class FileRepositoryImpl implements FileRepository {
     @Autowired(Logger)
     protected logger: Logger;
 
+    @Autowired(TenantProvider)
+    protected tenantProvider: TenantProvider;
+
     @Autowired(ObjectStorageService)
     protected readonly objectStorageService: ObjectStorageService<RawCloudService>;
 
     @Transactional({ readOnly: true })
-    async exists(resource: string, tenant: string): Promise<boolean> {
+    async exists(resource: string, tenant?: string): Promise<boolean> {
+        tenant = await this.tenantProvider.provide(tenant);
         const repo = OrmContext.getRepository(FileStat);
         return await repo.createQueryBuilder()
             .where('resource = :resource and tenant = :tenant', { resource, tenant })
@@ -28,7 +32,8 @@ export class FileRepositoryImpl implements FileRepository {
     }
 
     @Transactional({ readOnly: true })
-    async stat(resource: string, tenant: string): Promise<FileStat> {
+    async stat(resource: string, tenant?: string): Promise<FileStat> {
+        tenant = await this.tenantProvider.provide(tenant);
         const repo = OrmContext.getRepository(FileStat);
         const stat = await repo.createQueryBuilder()
             .where('resource = :resource and tenant = :tenant', { resource, tenant })
@@ -41,7 +46,8 @@ export class FileRepositoryImpl implements FileRepository {
     }
 
     @Transactional({ readOnly: true })
-    async readdir(resource: string, tenant: string): Promise<FileStat[]> {
+    async readdir(resource: string, tenant?: string): Promise<FileStat[]> {
+        tenant = await this.tenantProvider.provide(tenant);
         const stat = await this.stat(resource, tenant);
         const repo = OrmContext.getRepository(FileStat);
         const stats = await repo.createQueryBuilder()
@@ -54,33 +60,37 @@ export class FileRepositoryImpl implements FileRepository {
         return Array.from(map.values());
     }
 
-    async getFileSize(resource: string, tenant: string): Promise<number> {
+    async getFileSize(resource: string, tenant?: string): Promise<number> {
+        tenant = await this.tenantProvider.provide(tenant);
         const result = await this.objectStorageService.headObject(this.getBucketAndKey(resource, tenant));
         return result.contentLength || 0;
     }
 
-    async readFile(resource: string, tenant: string): Promise<Uint8Array> {
+    async readFile(resource: string, tenant?: string): Promise<Uint8Array> {
+        tenant = await this.tenantProvider.provide(tenant);
         return <Uint8Array> await this.objectStorageService.getObject(this.getBucketAndKey(resource, tenant));
     }
 
-    async readFileStream(resource: string, tenant: string, options?: { start: number, end: number }): Promise<Readable> {
-
+    async readFileStream(resource: string, options?: { start: number, end: number }, tenant?: string): Promise<Readable> {
+        tenant = await this.tenantProvider.provide(tenant);
         return this.objectStorageService.getStream({ ...this.getBucketAndKey(resource, tenant), range: options ? `${options.start}-${options.end}` : undefined });
     }
 
-    async writeFile(resource: string, tenant: string, content: Uint8Array | Readable, options?: { expires?: Date, contentLength?: number }): Promise<void> {
+    async writeFile(resource: string, content: Uint8Array | Readable, options?: { expires?: Date, contentLength?: number }, tenant?: string): Promise<void> {
+        tenant = await this.tenantProvider.provide(tenant);
         return this.objectStorageService.putObject({ ...this.getBucketAndKey(resource, tenant), body: content, expires: options?.expires, contentLength: options?.contentLength });
     }
 
     @Transactional()
     async create(stat: FileStat, content?: Uint8Array): Promise<FileStat> {
+        stat.tenant = await this.tenantProvider.provide(stat.tenant);
         if (await this.exists(stat.resource, stat.tenant)) {
             throw new ResourceAlreadyExistsError(stat.resource);
         }
         const repo = OrmContext.getRepository(FileStat);
         if (content && stat.isFile) {
             stat.size = content.byteLength;
-            await this.writeFile(stat.resource, stat.tenant, content);
+            await this.writeFile(stat.resource, content, undefined, stat.tenant);
         }
         const newStat = await repo.save(stat);
         return newStat;
@@ -89,22 +99,24 @@ export class FileRepositoryImpl implements FileRepository {
     @Transactional()
     async update(stat: FileStat, content?: Uint8Array): Promise<FileStat> {
         const repo = OrmContext.getRepository(FileStat);
+        stat.tenant = await this.tenantProvider.provide(stat.tenant);
         if (content && stat.isFile) {
             stat.size = content.byteLength;
-            await this.writeFile(stat.resource, stat.tenant, content);
+            await this.writeFile(stat.resource, content, undefined, stat.tenant);
         }
         const newStat = await repo.save(stat);
         return newStat;
     }
 
     @Transactional()
-    async delete(resource: string, tenant: string): Promise<void> {
+    async delete(resource: string, tenant?: string): Promise<void> {
+        tenant = await this.tenantProvider.provide(tenant);
         const repo = OrmContext.getRepository(FileStat);
         const where = 'resource like :resource and tenant = :tenant';
         const params = { resource: `${resource}%`, tenant };
         const stats = await repo.createQueryBuilder().where(where, params).getMany();
         await repo.createQueryBuilder().delete().where(where, params).execute();
-        let keys = stats.filter(stat => stat.isFile).map(stat => this.getBucketAndKey(stat.resource, tenant).key);
+        let keys = stats.filter(stat => stat.isFile).map(stat => this.getBucketAndKey(stat.resource, tenant!).key);
         if (!stats.length) {
             const { bucket, key } = this.getBucketAndKey(resource, tenant);
             const result = await this.objectStorageService.listObjects({ bucket, prefix: key, maxKeys: 500 });
@@ -124,7 +136,8 @@ export class FileRepositoryImpl implements FileRepository {
     }
 
     @Transactional()
-    async mkdir(resource: string, tenant: string): Promise<FileStat> {
+    async mkdir(resource: string, tenant?: string): Promise<FileStat> {
+        tenant = await this.tenantProvider.provide(tenant);
         return this.doMkdir(resource, tenant);
     }
 
@@ -155,7 +168,8 @@ export class FileRepositoryImpl implements FileRepository {
     }
 
     @Transactional()
-    async rename(source: string, target: string, tenant: string): Promise<void> {
+    async rename(source: string, target: string, tenant?: string): Promise<void> {
+        tenant = await this.tenantProvider.provide(tenant);
         const repo = OrmContext.getRepository(FileStat);
         const parent = this.getParentDir(target);
         const parentStat = await this.stat(parent, tenant);

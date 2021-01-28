@@ -1,7 +1,7 @@
 import URI from '@theia/core/lib/common/uri';
 import { FileUri } from '@theia/core/lib/node/file-uri';
 import { DirectoryArchiver } from '@theia/filesystem/lib/node/download/directory-archiver';
-import { Component, Autowired, TenantProvider } from '@malagu/core';
+import { Component, Autowired } from '@malagu/core';
 import { FileRepository, FileStat } from '@cellbang/filesystem-entity/lib/node';
 import path = require('path');
 import * as tar from 'tar-stream';
@@ -13,13 +13,6 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
 
     @Autowired(FileRepository)
     protected readonly fileRepository: FileRepository;
-
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
-
-    protected getTenant() {
-        return this.tenantProvider.provide();
-    }
 
     protected doArchive(cwd: string, entries?: string[]) {
         const queue = entries || ['.'];
@@ -37,12 +30,12 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
             const nextAbs = path.join(cwd, next);
             let stat: FileStat;
             try {
-                stat = await this.fileRepository.stat(nextAbs, await this.getTenant());
+                stat = await this.fileRepository.stat(nextAbs);
             } catch (error) {
                 if (error instanceof ResourceNotFoundError) {
                     try {
                         stat = new FileStat();
-                        stat.size = await this.fileRepository.getFileSize(nextAbs, await this.getTenant());
+                        stat.size = await this.fileRepository.getFileSize(nextAbs);
                         stat.createdAt = new Date();
                         stat.updatedAt = new Date();
                         stat.isDirectory = false;
@@ -68,7 +61,7 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
                 header.size = 0;
                 header.type = 'directory';
                 try {
-                    const files = await this.fileRepository.readdir(nextAbs, await this.getTenant());
+                    const files = await this.fileRepository.readdir(nextAbs);
                     for (const file of files) {
                         queue.push(path.join(next, file.name));
                     }
@@ -83,7 +76,7 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
                 const entry = tarPack.entry(header, loop);
                 if (entry) {
                     try {
-                        const rs = await this.fileRepository.readFileStream(nextAbs, await this.getTenant());
+                        const rs = await this.fileRepository.readFileStream(nextAbs);
                         rs.on('error', function (err: any) { // always forward errors on destroy
                             entry.destroy(err);
                         });
@@ -105,12 +98,12 @@ export class DirectoryArchiverExt extends DirectoryArchiver {
 
     async archive(inputPath: string, outputPath: string, entries?: string[]): Promise<void> {
         const tarPack = this.doArchive(inputPath, entries);
-        await this.fileRepository.writeFile(outputPath, await this.getTenant(), tarPack, { expires: new Date(Date.now() + 800000) });
+        await this.fileRepository.writeFile(outputPath, tarPack, { expires: new Date(Date.now() + 800000) });
     }
 
     protected async isDir(uri: URI): Promise<boolean> {
         try {
-            const stat = await this.fileRepository.stat(FileUri.fsPath(uri), await this.getTenant());
+            const stat = await this.fileRepository.stat(FileUri.fsPath(uri));
             return stat.isDirectory;
         } catch {
             return false;

@@ -1,7 +1,8 @@
-import { Component, PostConstruct } from '@malagu/core';
+import { Component, PostConstruct, Autowired } from '@malagu/core';
 import URI from '@theia/core/lib/common/uri';
 import { RecursivePartial, Emitter, Event } from '@theia/core/lib/common';
 import { WidgetOpenerOptions, NavigatableWidgetOpenHandler, OpenHandler } from '@theia/core/lib/browser';
+import { ThemeService, ThemeType } from '@theia/core/lib/browser/theming';
 import { Range } from './editor';
 import { SheetEditorWidget } from './sheet-editor-widget';
 
@@ -10,7 +11,10 @@ export interface EditorOpenerOptions extends WidgetOpenerOptions {
     preview?: boolean;
 }
 
-@Component(OpenHandler)
+const darkCss = require('../../src/browser/style/variables-dark.useable.css');
+const lightCss = require('../../src/browser/style/variables-bright.useable.css');
+
+@Component([EditorManager, OpenHandler])
 export class EditorManager extends NavigatableWidgetOpenHandler<SheetEditorWidget> {
 
     readonly id = SheetEditorWidget.FACTORY_ID;
@@ -28,6 +32,9 @@ export class EditorManager extends NavigatableWidgetOpenHandler<SheetEditorWidge
      * Emit when the current editor is changed.
      */
     readonly onCurrentEditorChanged: Event<SheetEditorWidget | undefined> = this.onCurrentEditorChangedEmitter.event;
+
+    @Autowired(ThemeService)
+    protected readonly themeService: ThemeService;
 
     @PostConstruct()
     protected init(): void {
@@ -56,6 +63,19 @@ export class EditorManager extends NavigatableWidgetOpenHandler<SheetEditorWidge
             }
         }
         this.updateCurrentEditor();
+        this.themeService.onThemeChange(e => this.changeTheme(e.newTheme.type));
+        this.changeTheme(this.themeService.getCurrentTheme().type);
+
+    }
+
+    protected changeTheme(type: ThemeType) {
+        if (type === 'light') {
+            lightCss.use();
+            darkCss.unuse();
+        } else {
+            darkCss.use();
+            lightCss.unuse();
+        }
     }
 
     protected readonly recentlyVisibleIds: string[] = [];

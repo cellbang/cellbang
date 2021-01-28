@@ -1,0 +1,98 @@
+.x-spreadsheet {
+    border-left: var(--cellbang-sheet-border);
+    border-top: var(--cellbang-sheet-border);
+    border-right: var(--cellbang-sheet-border);
+}
+.x-spreadsheet-toolbar {
+    color: var(--theia-editor-foreground);
+    width: 100% !important;
+}
+.x-spreadsheet-toolbar, .x-spreadsheet-bottombar {
+    background: var(--cellbang-sheet-toolbar-background);
+}
+.x-spreadsheet-icon .x-spreadsheet-icon-img {
+    background-image: var(--cellbang-sheet-icons);
+}
+
+.x-spreadsheet-dropdown .x-spreadsheet-dropdown-content {
+    background: var(--theia-menu-background);
+    color: var(--theia-menu-foreground);
+    box-shadow: 0px 1px 6px var(--theia-widget-shadow);
+    border: 1px solid var(--theia-menu-border);
+}
+
+.x-spreadsheet-item {
+    border: 1px solid var(--theia-menu-border);
+    color: var(--theia-menu-foreground);
+
+}
+
+.x-spreadsheet-item:hover, .x-spreadsheet-item.active {
+    background: var(--theia-menu-selectionBackground);
+    color: var(--theia-menu-selectionForeground);
+    border: thin solid var(--theia-menu-selectionBorder);
+    opacity: 1;
+}
+
+.x-spreadsheet-menu > li.active {
+    background: var(--theia-tab-unfocusedActiveBackground);
+    color: var(--theia-tab-activeForeground);
+    border-bottom: var(--theia-panel-border-width) solid var(--theia-activityBar-activeBorder);
+    border-right: transparent;
+}
+
+.x-spreadsheet-bottombar .x-spreadsheet-menu > li {
+    border-right: transparent;
+    height: 38px;
+}
+
+.x-spreadsheet-editor .x-spreadsheet-editor-area textarea {
+    color: #000;
+}
+
+.x-spreadsheet-border-palette table,
+.x-spreadsheet-color-palette table {
+    background: transparent;
+}
+
+
+.x-spreadsheet-color-palette table td:hover {
+    border-color: var(--theia-menu-selectionBorder);
+}
+
+.x-spreadsheet-border-palette .x-spreadsheet-border-palette-left .x-spreadsheet-border-palette-cell:hover {
+    background-color: var(--theia-menubar-selectionBackground);
+}
+
+.x-spreadsheet-suggest, .x-spreadsheet-contextmenu {
+    background: var(--theia-menu-background);
+    color: var(--theia-menu-foreground);
+    box-shadow: 0px 1px 6px var(--theia-widget-shadow);
+    border: 1px solid var(--theia-menu-border);
+}
+
+.x-spreadsheet-toolbar-divider {
+    border-right: 1px solid var(--theia-menu-foreground);
+}
+
+.x-spreadsheet-item.state:before, .x-spreadsheet-header.state:before {
+    background: rgba(125, 125, 125, 0.6);
+}
+
+.x-spreadsheet-border-palette .x-spreadsheet-border-palette-right .x-spreadsheet-line-type svg line {
+    stroke: var(--theia-menu-foreground);
+}
+
+.x-spreadsheet-menu > li.active input {
+    background: var(--theia-input-background);
+    color: var(--theia-input-foreground);
+    border: var(--theia-border-width) solid var(--theia-input-border);
+}
+
+.x-spreadsheet-scrollbar {
+    background: transparent;
+}
+
+.x-spreadsheet-scrollbar > div {
+    background: transparent !important;
+}

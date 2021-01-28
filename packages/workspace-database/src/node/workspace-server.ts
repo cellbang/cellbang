@@ -3,7 +3,6 @@ import { FileUri } from '@theia/core/lib/node';
 import { Autowired } from '@malagu/core';
 import { Rpc } from '@malagu/rpc';
 import { WorkspaceServer } from '@theia/workspace/lib/common';
-import { TenantProvider } from '@malagu/core';
 import { FileRepository } from '@cellbang/filesystem-entity/lib/node';
 import { WorkspaceServerImpl } from '@cellbang/workspace/lib/node';
 import { EncodingService } from '@theia/core/lib/common/encoding-service';
@@ -18,9 +17,6 @@ export class DatabaseWorkspaceServer extends WorkspaceServerImpl {
 
     @Autowired(FileSystemProvider)
     protected fileSystemProvider: FileSystemProvider;
-
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
 
     @Autowired(EncodingService)
     protected readonly encodingService: EncodingService;
@@ -44,7 +40,7 @@ export class DatabaseWorkspaceServer extends WorkspaceServerImpl {
     }
 
     protected async exist(workspaceRootUri: string): Promise<boolean> {
-        return this.fileRepository.exists(FileUri.fsPath(workspaceRootUri), await this.tenantProvider.provide());
+        return this.fileRepository.exists(FileUri.fsPath(workspaceRootUri));
     }
 
     async getRecentWorkspaces(): Promise<string[]> {
@@ -69,7 +65,7 @@ export class DatabaseWorkspaceServer extends WorkspaceServerImpl {
 
     protected async readJsonFromFile(fsPath: string): Promise<object | undefined> {
         if (await this.exist(fsPath)) {
-            const rawContent = await this.fileRepository.readFile(fsPath, await this.tenantProvider.provide());
+            const rawContent = await this.fileRepository.readFile(fsPath);
 
             const strippedContent = jsoncparser.stripComments(this.encodingService.decode(BinaryBuffer.wrap(rawContent)));
             return jsoncparser.parse(strippedContent);

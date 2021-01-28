@@ -1,4 +1,5 @@
 
+import '../../src/browser/style/index.css';
 import { autoBind } from '@malagu/core';
 import { SheetEditorWidget, SheetEditorWidgetOptions } from './sheet-editor-widget';
 import { WidgetFactory } from '@theia/core/lib/browser';

@@ -1,0 +1,7 @@
+backend:
+  malagu:
+    security:
+      policy:
+        '*NodeFileUploadService': 
+          type: el
+          el: 'true'

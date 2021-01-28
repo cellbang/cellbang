@@ -1,0 +1,11 @@
+
+:root {
+  --cellbang-sheet-icons: url(./icons-light.svg);
+}
+
+:root {
+
+  --cellbang-sheet-toolbar-background: #0a0908;
+  --cellbang-sheet-border: 1px solid #000000;
+  --cellbang-sheet-icons: url(./icons-dark.svg);
+}

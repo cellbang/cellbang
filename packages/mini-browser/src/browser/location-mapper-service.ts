@@ -1,9 +1,9 @@
 
 import URI from '@theia/core/lib/common/uri';
-import { Endpoint } from '@theia/core/lib/browser';
 import { MaybePromise } from '@theia/core/lib/common/types';
 import { LocationMapper } from '@theia/mini-browser/lib/browser/location-mapper-service';
 import { Component } from '@malagu/core';
+import { UrlUtil } from '@malagu/web';
 
 /**
  * `file` URI location mapper.
@@ -24,13 +24,6 @@ export class FileLocationMapper implements LocationMapper {
         if (rawLocation.charAt(0) === '/') {
             rawLocation = rawLocation.substr(1);
         }
-        return new MiniBrowserEndpoint().getRestUrl().resolve(rawLocation).toString();
-    }
-
-}
-
-export class MiniBrowserEndpoint extends Endpoint {
-    constructor() {
-        super({ path: 'mini-browser' });
+        return UrlUtil.getUrl('mini-browser', rawLocation);
     }
 }

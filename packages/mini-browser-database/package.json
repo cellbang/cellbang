@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "dependencies": {
-    "@cellbang/filesystem": "0.0.0",
-    "@cellbang/filesystem-entity": "0.0.0",
+    "@cellbang/filesystem-database": "0.0.0",
     "@cellbang/mini-browser": "0.0.0"
   },
   "publishConfig": {
@@ -35,7 +34,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.11.0"
+    "@malagu/ext-scripts": "^1.12.2"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

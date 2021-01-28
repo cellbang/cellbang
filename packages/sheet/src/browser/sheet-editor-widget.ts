@@ -1,4 +1,4 @@
-import { Widget, BaseWidget, Message, Navigatable, StatefulWidget, Saveable } from '@theia/core/lib/browser';
+import { Widget, BaseWidget, Message, Navigatable, StatefulWidget, Saveable, ContextMenuRenderer } from '@theia/core/lib/browser';
 import URI from '@theia/core/lib/common/uri';
 import { SheetEditor } from './editor';
 import { MonacoEditorModel } from '@theia/monaco/lib/browser/monaco-editor-model';
@@ -10,6 +10,7 @@ import { SheetEditorImpl } from './sheet-editor';
 import { MonacoWorkspace } from '@theia/monaco/lib/browser/monaco-workspace';
 import { LocaleManager } from '@malagu/widget';
 import * as ReactDOM from 'react-dom';
+import { SHEET_CONTEXT_MENU } from './sheet-context-menu';
 
 export const SheetEditorWidgetOptions = Symbol('SheetEditorWidgetOptions');
 export interface SheetEditorWidgetOptions extends NavigatableWidgetOptions {
@@ -39,7 +40,10 @@ export class SheetEditorWidget extends BaseWidget implements SaveableSource, Nav
     @Autowired(MonacoWorkspace)
     protected readonly workspace: MonacoWorkspace;
 
-    protected editor: SheetEditor;
+    @Autowired(ContextMenuRenderer)
+    protected readonly contextMenuRenderer: ContextMenuRenderer;
+
+    editor: SheetEditor;
 
     protected uri: URI;
 
@@ -91,6 +95,28 @@ export class SheetEditorWidget extends BaseWidget implements SaveableSource, Nav
 
     protected onAfterAttach(msg: Message): void {
         super.onAfterAttach(msg);
+        if (this.isVisible) {
+            this.refreshOrCreateEditor();
+        }
+        this.addEventListener(this.node, 'contextmenu', e => {
+            const target = e.target as any;
+            if (target.tagName?.toLowerCase() !== 'li') {
+                this.contextMenuRenderer.render({
+                    menuPath: SHEET_CONTEXT_MENU,
+                    anchor: e
+                });
+                e.stopPropagation();
+                e.preventDefault();
+            }
+        }, true);
+    }
+
+    protected onAfterShow(msg: Message): void {
+        super.onAfterShow(msg);
+        this.refreshOrCreateEditor();
+    }
+
+    protected refreshOrCreateEditor() {
         const model = this.sheetEditorWidgetOptions.reference.object;
         if (this.editor) {
             this.editor.refresh();
@@ -102,10 +128,6 @@ export class SheetEditorWidget extends BaseWidget implements SaveableSource, Nav
             this.toDispose.push(this.editor);
             this.editor.create(host);
         }
-    }
-
-    protected onAfterShow(msg: Message): void {
-        super.onAfterShow(msg);
     }
 
     protected onResize(msg: Widget.ResizeMessage): void {
@@ -123,5 +145,4 @@ export class SheetEditorWidget extends BaseWidget implements SaveableSource, Nav
     get onDispose(): Event<void> {
         return this.toDispose.onDispose;
     }
-
 }

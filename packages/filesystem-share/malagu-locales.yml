@@ -1,0 +1,28 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Unauthorized: 未经授权
+          Share...: 分享...
+          OK: 确认
+          Prompt: 提示
+          Sharing is off: 分享已关闭
+          Share does not exist: 分享不存在
+          Password is wrong: 密码错误
+          Enter password: 输入密码
+          Enter your password: 输入密码
+          Link sharing: 链接分享
+          Turn on sharing: 开启分享
+          Turn off sharing: 关闭分享
+          Copy link: 复制链接
+          Copy link and password: 复制链接和密码
+          Password required to access: 需要密码访问
+          Reset Password: 重置密码
+          Reset successfully: 重置成功
+          Link copied to clipboard: 链接已复制
+          'Password: ': 密码：
+          Turn on to share knowledges with others via a link: 开启后，可通过链接与他人分享知识
+          Everyone who gets the link can access this Document: 获得链接的所有人，可访问文档
+          Please enter the password to access current Document: 请输入密码访问当前文档
+

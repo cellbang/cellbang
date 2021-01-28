@@ -1,4 +1,4 @@
-import { Component, Autowired, TenantProvider } from '@malagu/core';
+import { Component, Autowired } from '@malagu/core';
 import { normalize, join } from 'path';
 import URI from '@theia/core/lib/common/uri';
 import { FileUri } from '@theia/core/lib/node/file-uri';
@@ -27,10 +27,18 @@ import { EncodingService } from '@theia/core/lib/common/encoding-service';
 import { BinaryBuffer } from '@theia/core/lib/common/buffer';
 import { FileRepository, FileStat } from '@cellbang/filesystem-entity/lib/node';
 import { ResourceNotFoundError } from '@cellbang/entity/lib/node';
+import { Resource } from '@malagu/security/lib/node';
+import { AOP_POINTCUT } from '@malagu/web';
+import { FILE_SERVICE_NAME } from './policy';
+
+const RESOURCE_ARG = 'args[0].path';
+const FROM_ARG = 'args[0].path';
+const TO_ARG = 'args[1].path';
 
 /* eslint-disable no-null/no-null */
 
-@Component({ id: FileSystemProvider, rebind: true })
+@Component({ id: FileSystemProvider, rebind: true, sysTags: [ AOP_POINTCUT ], proxy: true })
+@Resource(FILE_SERVICE_NAME)
 export class DatabaseFileSystemProvider implements Disposable, FileSystemProviderWithFileReadWriteCapability, FileSystemProviderWithFileFolderCopyCapability {
 
     readonly onDidChangeCapabilities = Event.None;
@@ -46,9 +54,6 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
 
     @Autowired(FileRepository)
     protected fileRepository: FileRepository;
-
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
 
     @Autowired(EncodingService)
     protected readonly encodingService: EncodingService;
@@ -81,10 +86,6 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         return normalize(FileUri.fsPath(resource));
     }
 
-    protected getTenant() {
-        return this.tenantProvider.provide();
-    }
-
     protected toType(entry: FileStat): FileType {
         return entry.isFile ? FileType.File : FileType.Directory;
     }
@@ -101,9 +102,10 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         return createFileSystemProviderError(error, FileSystemProviderErrorCode.Unknown);
     }
 
+    @Resource(RESOURCE_ARG)
     async stat(resource: URI): Promise<Stat> {
         try {
-            const stat = await this.fileRepository.stat(this.toFilePath(resource), await this.getTenant());
+            const stat = await this.fileRepository.stat(this.toFilePath(resource));
             return {
                 type: this.toType(stat),
                 ctime: stat.createdAt.getTime(),
@@ -113,7 +115,7 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         } catch (error) {
             if (resource.path.isRoot && error instanceof ResourceNotFoundError) {
                 try {
-                    const stat = await this.fileRepository.mkdir(this.toFilePath(resource), await this.getTenant());
+                    const stat = await this.fileRepository.mkdir(this.toFilePath(resource));
                     return {
                         type: this.toType(stat),
                         ctime: stat.createdAt.getTime(),
@@ -129,34 +131,37 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         }
     }
 
+    @Resource(RESOURCE_ARG)
     async access(resource: URI, mode?: number): Promise<void> {
-        console.log(resource.toString() + mode);
     }
 
+    @Resource(RESOURCE_ARG)
     async readdir(resource: URI): Promise<[string, FileType][]> {
         try {
-            const children = await this.fileRepository.readdir(this.toFilePath(resource), await this.getTenant());
+            const children = await this.fileRepository.readdir(this.toFilePath(resource));
             return children.map(child => [child.name, this.toType(child)]);
         } catch (error) {
             throw this.toFileSystemProviderError(error);
         }
     }
 
+    @Resource(RESOURCE_ARG)
     async readFile(resource: URI): Promise<Uint8Array> {
         try {
             const filePath = this.toFilePath(resource);
-            return await this.fileRepository.readFile(filePath, await this.getTenant());
+            return await this.fileRepository.readFile(filePath);
         } catch (error) {
             throw this.toFileSystemProviderError(error);
         }
     }
 
+    @Resource(RESOURCE_ARG)
     async writeFile(resource: URI, content: Uint8Array, opts: FileWriteOptions): Promise<void> {
         try {
             const filePath = this.toFilePath(resource);
             let stat: FileStat | undefined;
             try {
-                stat = await this.fileRepository.stat(filePath, await this.getTenant());
+                stat = await this.fileRepository.stat(filePath);
             } catch (error2) {
                 if (!(error2 instanceof ResourceNotFoundError)) {
                     throw error2;
@@ -174,7 +179,6 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
                     if (!opts.create) {
                         throw createFileSystemProviderError('File does not exist', FileSystemProviderErrorCode.FileNotFound);
                     } else {
-
                         return;
                     }
                 }
@@ -183,13 +187,12 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
             if (stat) {
                 await this.fileRepository.update(stat, content);
             } else {
-                const parent = await this.fileRepository.mkdir(this.toFilePath(resource.parent), await this.getTenant());
+                const parent = await this.fileRepository.mkdir(this.toFilePath(resource.parent));
                 stat = new FileStat();
                 stat.parentId = parent.id;
                 stat.isFile = true;
                 stat.name = resource.path.base;
                 stat.resource = this.toFilePath(resource);
-                stat.tenant = await this.getTenant();
                 await this.fileRepository.create(stat, content);
             }
 
@@ -198,20 +201,23 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         }
     }
 
+    @Resource(RESOURCE_ARG)
     async mkdir(resource: URI): Promise<void> {
-        await this.fileRepository.mkdir(this.toFilePath(resource), await this.getTenant());
+        await this.fileRepository.mkdir(this.toFilePath(resource));
     }
 
+    @Resource(RESOURCE_ARG)
     async delete(resource: URI, opts: FileDeleteOptions): Promise<void> {
         try {
             const filePath = this.toFilePath(resource);
 
-            await this.fileRepository.delete(filePath, await this.getTenant());
+            await this.fileRepository.delete(filePath);
         } catch (error) {
             throw this.toFileSystemProviderError(error);
         }
     }
 
+    @Resource(FROM_ARG, TO_ARG)
     async rename(from: URI, to: URI, opts: FileOverwriteOptions): Promise<void> {
         const fromFilePath = this.toFilePath(from);
         const toFilePath = this.toFilePath(to);
@@ -238,9 +244,10 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
             return Promise.resolve();
         }
 
-        await this.fileRepository.rename(source, target, await this.getTenant());
+        await this.fileRepository.rename(source, target);
     }
 
+    @Resource(FROM_ARG, TO_ARG)
     async copy(from: URI, to: URI, opts: FileOverwriteOptions): Promise<void> {
         const fromFilePath = this.toFilePath(from);
         const toFilePath = this.toFilePath(to);
@@ -265,7 +272,7 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
     protected async doCopy(source: string, target: string, copiedSourcesIn?: { [path: string]: boolean }): Promise<void> {
         const copiedSources = copiedSourcesIn ? copiedSourcesIn : Object.create(null);
 
-        const fileStat = await this.fileRepository.stat(source, await this.getTenant());
+        const fileStat = await this.fileRepository.stat(source);
         if (!fileStat.isDirectory) {
             return this.doCopyFile(source, target);
         }
@@ -280,18 +287,20 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         await this.mkdir(new URI(target));
 
         // Copy each file recursively
-        const files = await this.fileRepository.readdir(source, await this.getTenant());
+        const files = await this.fileRepository.readdir(source);
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
             await this.doCopy(join(source, file.name), join(target, file.name), copiedSources);
         }
     }
 
+    @Resource(RESOURCE_ARG)
     watch(resource: URI, opts: WatchOptions): Disposable {
 
         return Disposable.NULL;
     }
 
+    @Resource(RESOURCE_ARG)
     async updateFile(resource: URI, changes: TextDocumentContentChangeEvent[], opts: FileUpdateOptions): Promise<FileUpdateResult> {
         try {
             const content = await this.readFile(resource);
@@ -317,16 +326,15 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
 
     protected async doCopyFile(source: string, target: string): Promise<void> {
         const targetUri = new URI(target);
-        const sourceStat = await this.fileRepository.stat(source, await this.getTenant());
-        const parentStat = await this.fileRepository.stat(this.toFilePath(targetUri.parent), await this.getTenant());
-        const content = await this.fileRepository.readFile(source, await this.getTenant());
+        const sourceStat = await this.fileRepository.stat(source);
+        const parentStat = await this.fileRepository.stat(this.toFilePath(targetUri.parent));
+        const content = await this.fileRepository.readFile(source);
         const stat = new FileStat();
         stat.parentId = parentStat.id;
         stat.isFile = true;
         stat.name = targetUri.path.base;
         stat.resource = target;
         stat.type = sourceStat.type;
-        stat.tenant = await this.getTenant();
         await this.fileRepository.create(stat, content);
     }
 
@@ -346,7 +354,7 @@ export class DatabaseFileSystemProvider implements Disposable, FileSystemProvide
         }
 
         // handle existing target (unless this is a case change)
-        if (!isSameResourceWithDifferentPathCase && await this.fileRepository.exists(toFilePath, await this.getTenant())) {
+        if (!isSameResourceWithDifferentPathCase && await this.fileRepository.exists(toFilePath)) {
             if (!overwrite) {
                 throw createFileSystemProviderError('File at target already exists', FileSystemProviderErrorCode.FileExists);
             }

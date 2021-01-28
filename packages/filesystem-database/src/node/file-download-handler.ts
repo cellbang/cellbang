@@ -10,12 +10,13 @@ import { ILogger } from '@theia/core/lib/common/logger';
 import { FileUri } from '@theia/core/lib/node/file-uri';
 import { DirectoryArchiver } from '@theia/filesystem/lib/node/download/directory-archiver';
 import { FileDownloadData } from '@theia/filesystem/lib/common/download/file-download-data';
-import { Component, Autowired, TenantProvider } from '@malagu/core';
-import { FileRepository, FileStat } from '@cellbang/filesystem-entity/lib/node';
-import { FileSystemProvider } from '@theia/filesystem/lib/common/files';
+import { Component, Autowired } from '@malagu/core';
+import { FileRepository } from '@cellbang/filesystem-entity/lib/node';
+import { FileSystemProvider, Stat, FileType} from '@theia/filesystem/lib/common/files';
 import { Readable } from 'stream';
 import { FileDownloadCache } from './file-download-cache';
 import { DownloadStorageItem } from '@cellbang/filesystem-entity/lib/node';
+import { ResourceNotFoundError } from '@cellbang/entity/lib/node';
 
 interface PrepareDownloadOptions {
     filePath: string;
@@ -42,15 +43,7 @@ export abstract class FileDownloadHandler {
     @Autowired(FileSystemProvider)
     protected readonly fileSystemProvider: FileSystemProvider;
 
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
-
     public abstract handle(request: Request, response: Response): Promise<void>;
-
-    protected getTenant() {
-        return this.tenantProvider.provide();
-        ;
-    }
 
     /**
      * Prepares the file and the link for download
@@ -58,7 +51,7 @@ export abstract class FileDownloadHandler {
     protected async prepareDownload(request: Request, response: Response, options: PrepareDownloadOptions): Promise<void> {
         const name = path.basename(options.filePath);
         try {
-            const size = await this.fileRepository.getFileSize(options.filePath, await this.getTenant());
+            const size = await this.fileRepository.getFileSize(options.filePath);
             const item = new DownloadStorageItem();
             item.downloadId = options.downloadId;
             item.file = options.filePath;
@@ -87,7 +80,7 @@ export abstract class FileDownloadHandler {
             const range = this.parseRangeHeader(request.headers['range'], statSize);
             if (!range) {
                 response.setHeader('Content-Length', statSize);
-                this.streamDownload(OK, response, await this.fileRepository.readFileStream(filePath, downloadInfo.tenant), id);
+                this.streamDownload(OK, response, await this.fileRepository.readFileStream(filePath, undefined, downloadInfo.tenant), id);
             } else {
                 const rangeStart = range.start;
                 const rangeEnd = range.end;
@@ -100,7 +93,7 @@ export abstract class FileDownloadHandler {
                 response.setHeader('Content-Range', `bytes ${rangeStart}-${rangeEnd}/${statSize}`);
                 response.setHeader('Content-Length', rangeStart === rangeEnd ? 0 : (rangeEnd - rangeStart + 1));
                 response.setHeader('Cache-Control', 'no-cache');
-                this.streamDownload(PARTIAL_CONTENT, response, await this.fileRepository.readFileStream(filePath, downloadInfo.tenant, { start: rangeStart, end: rangeEnd }), id);
+                this.streamDownload(PARTIAL_CONTENT, response, await this.fileRepository.readFileStream(filePath, { start: rangeStart, end: rangeEnd }, downloadInfo.tenant), id);
             }
         } catch (e) {
             await this.fileDownloadCache.deleteDownload(id);
@@ -218,17 +211,19 @@ export class SingleFileDownloadHandler extends FileDownloadHandler {
         const uri = new URI(query.uri).toString(true);
         const filePath = FileUri.fsPath(uri);
 
-        let stat: FileStat;
+        let stat: Stat;
         try {
-            stat = await this.fileRepository.stat(filePath, await this.getTenant());
-        } catch {
-            this.handleError(response, `The file does not exist. URI: ${uri}.`, NOT_FOUND);
-            return;
+            stat = await this.fileSystemProvider.stat(new URI(uri));
+        } catch (err) {
+            if (err instanceof ResourceNotFoundError) {
+                this.handleError(response, `The file does not exist. URI: ${uri}.`, NOT_FOUND);
+            }
+            throw err;
         }
         try {
             const downloadId = v4();
             const options: PrepareDownloadOptions = { filePath, downloadId, remove: false };
-            if (!stat.isDirectory) {
+            if (stat.type === FileType.File) {
                 await this.prepareDownload(request, response, options);
             } else {
                 const outputRootPath = await this.createTempDir(downloadId);
@@ -269,10 +264,12 @@ export class MultiFileDownloadHandler extends FileDownloadHandler {
         }
         for (const uri of body.uris) {
             try {
-                await this.fileRepository.stat(FileUri.fsPath(uri), await this.getTenant());
-            } catch {
-                this.handleError(response, `The file does not exist. URI: ${uri}.`, NOT_FOUND);
-                return;
+                await this.fileSystemProvider.stat(FileUri.create(uri));
+            } catch (err) {
+                if (err instanceof ResourceNotFoundError) {
+                    this.handleError(response, `The file does not exist. URI: ${uri}.`, NOT_FOUND);
+                }
+                throw err;
             }
         }
         try {
