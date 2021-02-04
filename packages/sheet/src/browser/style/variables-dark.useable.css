@@ -8,4 +8,5 @@
   --cellbang-sheet-toolbar-background: #0a0908;
   --cellbang-sheet-border: 1px solid #000000;
   --cellbang-sheet-icons: url(./icons-dark.svg);
+  --cellbang-sheet-toolbar-activeBackground: rgba(255, 255, 255, .2);
 }

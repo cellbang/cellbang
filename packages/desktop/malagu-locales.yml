@@ -2,6 +2,7 @@ frontend:
   malagu:
     locales:
       zh-CN:
+        label: 中文
         messages:
           File: 文件
           Edit: 编辑
@@ -83,6 +84,7 @@ frontend:
           Sign in to use Cellbang (1): 登录
           You are not signed in to any accounts: 您未登录任何帐户
       en-US:
+        label: English
         messages:
           File: File
           Sign in to use Cellbang (1): Login

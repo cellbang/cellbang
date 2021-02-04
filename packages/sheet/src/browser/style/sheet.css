@@ -96,3 +96,7 @@
 .x-spreadsheet-scrollbar > div {
     background: transparent !important;
 }
+
+.x-spreadsheet-toolbar .x-spreadsheet-toolbar-btn:hover, .x-spreadsheet-toolbar .x-spreadsheet-toolbar-btn.active {
+    background: var(--cellbang-sheet-toolbar-activeBackground);
+}

@@ -3,7 +3,9 @@ import * as React from 'react';
 import { injectable } from 'inversify';
 import { Message } from '@phosphor/messaging';
 import { ViewContainer, TreeModel } from '@theia/core/lib/browser';
-import { FileNavigatorWidget, LABEL, EXPLORER_VIEW_CONTAINER_TITLE_OPTIONS } from '@theia/navigator/lib/browser/navigator-widget';
+import { FileNavigatorWidget, LABEL } from '@theia/navigator/lib/browser/navigator-widget';
+import { EXPLORER_VIEW_CONTAINER_TITLE_OPTIONS } from '@theia/navigator/lib/browser/navigator-widget-factory';
+
 import { IntlUtil } from '@cellbang/desktop/src/browser/utils';
 
 @injectable()

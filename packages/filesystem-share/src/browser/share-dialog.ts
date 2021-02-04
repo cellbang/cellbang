@@ -100,7 +100,6 @@ export class ShareDialog extends AbstractDialog<void> {
         this.turnOffContainer.classList.add(SHARE_HIDDEN_CLASS);
         this.contentNode.appendChild(this.turnOffContainer);
         this.appendMessageAfterTurningOn();
-        this.appendCloseButton(IntlUtil.get('Cancel'));
         this.appendTurnOnSharingButton();
 
     }
@@ -201,6 +200,7 @@ export class ShareDialog extends AbstractDialog<void> {
 
     protected appendTurnOffSharingButton(): HTMLButtonElement {
         this.turnOffSharingButton = this.createButton(IntlUtil.get('Turn off sharing')!);
+        this.turnOffSharingButton.classList.add('secondary');
         this.turnOffSharingButton.classList.add(SHARE_HIDDEN_CLASS);
         this.controlPanel.appendChild(this.turnOffSharingButton);
         return this.turnOffSharingButton;

@@ -3,7 +3,7 @@ export * from './shell';
 export * from './logger';
 export * from './command';
 export * from './messaging';
-export * from './color';
+// export * from './color';
 export * from './widget-manager';
 export * from './locale';
 export * from './menu';
