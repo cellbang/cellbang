@@ -2,16 +2,20 @@ import { Component, Value, Autowired, PostConstruct, Deferred, ContainerUtil } f
 import { RestOperations, PathResolver, HttpHeaders, HttpStatus } from '@malagu/web';
 import { Method, AxiosResponse } from 'axios';
 import { parse } from 'querystring';
-import { AUTHENTICATION_SCHEME_CB_SHARE, ShareService, SHARE_DOES_NOT_EXIST, SHARING_IS_OFF, X_CB_SHARE_ID } from '../common';
+import { AUTHENTICATION_SCHEME_CB_SHARE, ShareServer, ShareService, SHARE_DOES_NOT_EXIST, SHARING_IS_OFF, X_CB_SHARE_ID } from '../common';
 import { SharePasswordDialog } from './share-password-dialog';
 import { ConfirmDialog } from '@theia/core/lib/browser';
 import { IntlUtil } from '@cellbang/desktop/lib/browser';
+import { Autorpc } from '@malagu/rpc';
 
 @Component(ShareService)
 export class ShareServiceImpl implements ShareService {
 
     @Autowired(RestOperations)
     protected restOperations: RestOperations;
+
+    @Autorpc(ShareServer)
+    protected readonly shareServer: ShareServer;
 
     @Value('cellbang.filesystem.share.checkShareStatusUrl')
     protected readonly checkShareStatusUrl: string;
@@ -79,6 +83,11 @@ export class ShareServiceImpl implements ShareService {
                 }
             });
             this.deferred.resolve();
+            if (!window.location.hash) {
+                const resource = await this.shareServer.getResource(shareId);
+                window.location.hash = `#${resource}`;
+                window.location.reload();
+            }
             return response;
         }
         this.deferred.resolve();

@@ -1,5 +1,5 @@
 import { Context, Middleware, AttributeScope, RequestMatcher } from '@malagu/web/lib/node';
-import { SESSION_MIDDLEWARE_PRIORITY } from '@malagu/web/lib/node/session/session-protocol';
+import { SECURITY_CONTEXT_MIDDLEWARE_PRIORITY } from '@malagu/security/lib/node';
 import { Component, Autowired, Value } from '@malagu/core';
 import { AUTHENTICATION_SCHEME_CB_SHARE, ShareServer, SHARE_DOES_NOT_EXIST, SHARING_IS_OFF, X_CB_SHARE_ID } from '../common';
 import { HttpHeaders, PathResolver } from '@malagu/web';
@@ -36,6 +36,7 @@ export class ShareMiddleware implements Middleware {
                 if (share.disabled) {
                     throw new ShareAuthenticationError(SHARING_IS_OFF);
                 }
+                Context.setTenant(share.tenant);
                 if (share.password) {
                     const password = Context.getAttr(shareId, AttributeScope.Session);
                     if (!password) {
@@ -79,6 +80,6 @@ export class ShareMiddleware implements Middleware {
         return !!await this.requestMatcher.match(await this.pathResolver.resolve(this.checkShareStatusUrl), this.checkShareStatusMethod);
     }
 
-    readonly priority = SESSION_MIDDLEWARE_PRIORITY - 10;
+    readonly priority = SECURITY_CONTEXT_MIDDLEWARE_PRIORITY - 10;
 
 }

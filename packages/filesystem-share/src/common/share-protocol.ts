@@ -14,7 +14,7 @@ export interface Share extends Resource {
 
     shareId: string;
 
-    resource: string;
+    fileId: number;
 
     password?: string;
 
@@ -25,12 +25,14 @@ export interface Share extends Resource {
 }
 
 export interface ShareServer {
-    turnOn(resource: string): Promise<Share>;
-    turnOff(resource: string): Promise<Share | undefined>;
-    resetPassword(resource: string): Promise<string>;
-    clearPassword(resource: string): Promise<void>;
+    turnOn(id: number): Promise<Share>;
+    turnOff(id: number): Promise<Share | undefined>;
+    resetPassword(id: number): Promise<string>;
+    clearPassword(id: number): Promise<void>;
     getByResource(resource: string): Promise<Share | undefined>;
     get(shareId: string): Promise<Share | undefined>;
+    create(resource: string): Promise<Share>;
+    getResource(shareId: string): Promise<string | undefined>;
 }
 
 export interface ShareService {

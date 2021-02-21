@@ -1,0 +1,11 @@
+.p-Widget.dialogOverlay.cellbang-MemberJoinDialog {
+    z-index: 60000;
+}
+.p-Widget.dialogOverlay.cellbang-MemberJoinDialog .title {
+    padding: 4px;
+}
+
+.p-Widget.dialogOverlay.cellbang-MemberJoinDialog .item {
+    opacity: .7;
+    padding: 4px;
+}

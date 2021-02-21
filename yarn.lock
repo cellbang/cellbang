@@ -1002,18 +1002,18 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@malagu/cache@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/cache/-/cache-1.12.2.tgz#1cc155c6771eeaddf58225ec038630ff2f8850af"
-  integrity sha512-ANgUi7vx4+sF/8e4LKqYQ4C9yJ2bjrWJA4N/aug8yjuAZql7fzQmBAxYhTEO3z/6HwILX8ZUazGtlUszPHBbgQ==
+"@malagu/cache@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/cache/-/cache-1.13.1.tgz#e6042977d3f1020216eb5df010e8eac19be7fcc0"
+  integrity sha512-ipJM18kMUcuF8nfO9rrb6f6uDI8/H/78XrLfNOg//2IkHgIAqZIqHzuWudPrYhpTvSIHcsmMXqHE3Cfg2SwHYQ==
   dependencies:
-    "@malagu/core" "^1.12.2"
+    "@malagu/core" "^1.13.1"
     cache-manager "^3.4.0"
 
-"@malagu/cli@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/cli/-/cli-1.12.2.tgz#d773576e933ea8d2424c2fad0ae45f09a045d254"
-  integrity sha512-1QE07d1J7a8uffoi7SObR6uz3EdUwTt24lhNLGNxa/DCnq5UvrS+twAik0faHzj9RHfLI7vS1TGmFcKmg3lbVA==
+"@malagu/cli@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/cli/-/cli-1.13.1.tgz#1ec98262788222781589c5d175ea867d6e957f5f"
+  integrity sha512-UCP53i8zOMorq6ey2+qFfXoS4fF4/5w8zgPr9E5Ghdz1kYDpw0H80E9/8l1kYkePT73qv1Ty2R/aW1ObAI3mBQ==
   dependencies:
     "@babel/core" "^7.10.0"
     "@babel/plugin-transform-classes" "^7.10.0"
@@ -1067,24 +1067,24 @@
     webpack-node-externals "^1.7.2"
     worker-loader "^2.0.0"
 
-"@malagu/cloud@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/cloud/-/cloud-1.12.2.tgz#6a5fe3f0a1992f2c1e85825bc73c24e819d2134d"
-  integrity sha512-1J9ObnvTK296qjiffXpRZ9CGh3qb8akd9GnVGMuOCY9QwPw51WvWzrEJwy8Puh+bH6auUeFRswb/k7ZCV25gNQ==
+"@malagu/cloud@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/cloud/-/cloud-1.13.1.tgz#3d88f54222cc423cd14c9797b1f6ca2248f9269f"
+  integrity sha512-MLS+jlXaJ044WfLhPfl2ofiQp1cveayIcJF1poEzPhAzffR/eNaAvU/TlU3TK8IV9rdS6ix5mwqdPrLfcSAKPQ==
   dependencies:
-    "@malagu/core" "^1.12.2"
+    "@malagu/core" "^1.13.1"
 
-"@malagu/compression@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/compression/-/compression-1.12.2.tgz#37e388e4a780439f41467b712dc84eeb7dfaf434"
-  integrity sha512-9ZT2YW/K5YvbiqXpX1d6fQe5xkn99dp27zU6x9Acsh+p/dxlkg/7/G+C0H/yvKI6hXFh9jFofF+NoAtQmIJ4yw==
+"@malagu/compression@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/compression/-/compression-1.13.1.tgz#7974287bfb691af9a4dc3fd67fd55ef60c4a0244"
+  integrity sha512-W+zSk7PV7la8hlZ7FTJ0/VEYn6m6YFY3K1QnwPDMoJ2I1yP+dmTRDYzE/YfWbHjBPCfklWuOSJffHzCdjU4C4w==
   dependencies:
     compression-webpack-plugin "^4.0.1"
 
-"@malagu/core@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/core/-/core-1.12.2.tgz#4648379fefedc0e28b105e51c2e16a2b45f54253"
-  integrity sha512-edR6nzr55rvxSEF72Cov9s2nZg9bWEz/x3NmODaAeWPsPl09EJyplFe7t8Qr7hLFpB5D+ghI3F5auDZ+GN4Gtg==
+"@malagu/core@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/core/-/core-1.13.1.tgz#acaf1e6e669e08de21a0b85e5479b3c6a9f5f617"
+  integrity sha512-sZc2IlbNrb4Gt8xclkaYewiOnQsaQUaqHg3cd2lBGj9avJMBLtRVg6pvqDpDkjTqgw3NaD3f9Znxm/KUgvf0YA==
   dependencies:
     "@types/express" "^4.16.1"
     "@types/lodash.debounce" "4.0.3"
@@ -1105,32 +1105,32 @@
     url-join "^4.0.1"
     vscode-jsonrpc "^5.0.0"
 
-"@malagu/ext-scripts@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/ext-scripts/-/ext-scripts-1.12.2.tgz#289d4ec4ed1fa087d0d9c5ab7acf3641b664d3cd"
-  integrity sha512-wB2tQ9IEsLhVxkHqN2Zibq88/lTxixSMWejxjwEOBvQwtbVd9HaOUvlIKUoIel6noGn8+h8pnBJYoIXqW44TAg==
+"@malagu/ext-scripts@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/ext-scripts/-/ext-scripts-1.13.1.tgz#6ccfffd73d0cc73d0b8e5645e0c071031229103c"
+  integrity sha512-Ovwfhk6lTDob48VbK1+SGGPjijH3/SX42S13o8nkp9ojy+mkyEX8vaEVKHZUax3EbUJz/yB+bNQMuK8uUboUcQ==
 
-"@malagu/faas-adapter@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/faas-adapter/-/faas-adapter-1.12.2.tgz#6ad3e9f17e8ed346f207eb1759aeff93419e73d2"
-  integrity sha512-rWGENtaoHIVHciBZh9TR8vFvhMvAFj1OdGoAor+lps9sWWjVxKrL/X/AlovoYBN7H0pJlTvYbzQfzRCZkqtCHg==
+"@malagu/faas-adapter@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/faas-adapter/-/faas-adapter-1.13.1.tgz#80254f2f1e4a2aa26db29b12c13be50d9997b8b4"
+  integrity sha512-sxm3DNg2Dq2JNqlWJxMrI5eZoiyjSclaybr3XlUZUYAV+jWTkcRIUHLg8Hwjbwb57x9KXpxVgpkeBWNuPt0bQg==
   dependencies:
-    "@malagu/cloud" "^1.12.2"
+    "@malagu/cloud" "^1.13.1"
     dotenv "^8.2.0"
     fs-extra "^8.1.0"
     inquirer "^6.5.1"
     jszip "^3.2.2"
 
-"@malagu/fc-adapter@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/fc-adapter/-/fc-adapter-1.12.2.tgz#d6c37f646cd02c9d03f77d84b57bc032db6d7162"
-  integrity sha512-SsfP7+2fMKSsHNiX4fZp6xJvBR6JAl+FzEyv3dQ2C9cLlx5M5NKa7+QNAux+AFcZ7GOMvCLqKsaHQVCi+Oqp4g==
+"@malagu/fc-adapter@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/fc-adapter/-/fc-adapter-1.13.1.tgz#a7f226674e79b5d86e434bf6af5131363764dc9d"
+  integrity sha512-4EDatgYXAw7TQQEJ2hqTgiXDDD7LluJH48lsQwa5v9RZZZd/wur7HuU3H23yXTXflv+OEbMEMm8hRKviO+fB0w==
   dependencies:
     "@alicloud/cloudapi" "^1.1.0"
     "@alicloud/fc2" "^2.1.1"
     "@alicloud/ram" "^1.0.0"
-    "@malagu/faas-adapter" "^1.12.2"
-    "@malagu/web" "^1.12.2"
+    "@malagu/faas-adapter" "^1.13.1"
+    "@malagu/web" "^1.13.1"
     "@webserverless/fc-express" "^0.1.4"
     ali-oss "^6.1.1"
     co "^4.6.0"
@@ -1139,12 +1139,12 @@
     fs-extra "^8.1.0"
     raw-body "^2.3.3"
 
-"@malagu/grommet@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/grommet/-/grommet-1.12.2.tgz#05f389910ba1310a088b19777385d738c713e86a"
-  integrity sha512-2ez4NzzrxdRRxrrICmn/PmQt5Iz1SQyOzfbYJoTaYtlP/QnVEHfHodK3kh/7hcsW/bA3vbQW5o/eEiYufYEy9w==
+"@malagu/grommet@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/grommet/-/grommet-1.13.1.tgz#6277061fe594e97fb8118cd5b347205b5c57dd4c"
+  integrity sha512-l3vf3wmEtQTt2tD94k9h5e7kfzqt1yAVchHZ0gdQyuRGwYjfAeB99uYpcv/ImLhG9KjUy/wVgejpfeuqmR+mDg==
   dependencies:
-    "@malagu/react" "^1.12.2"
+    "@malagu/react" "^1.13.1"
     grommet "^2.14.0"
     grommet-icons "^4.4.0"
     react "^16.12.0"
@@ -1152,58 +1152,58 @@
     react-is "^16.13.1"
     styled-components "^5.1.1"
 
-"@malagu/mvc@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/mvc/-/mvc-1.12.2.tgz#62ce730ac47747e44a6d6924c23bcdf9e7d81647"
-  integrity sha512-ii02Ve6hHpctkh81drweSzmrtbaR9QH9KOsIyxL4q9n/CcHulKXxBcXdOIStF/+bJztrUrP2tcai5QP1DcqV5w==
+"@malagu/mvc@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/mvc/-/mvc-1.13.1.tgz#90bcb64855d8432ba2c6a3195a7647f6da7f4018"
+  integrity sha512-TFACKJM4Z4YrO0qG/rIUqg+Cw0rE35kipZlXCX1NZ6xYsabyOHYBLbN+4odu2weAM51zlfZNWPvXnFqE68iiDQ==
   dependencies:
-    "@malagu/web" "^1.12.2"
+    "@malagu/web" "^1.13.1"
     is-stream "^2.0.0"
     mustache "^4.0.1"
 
-"@malagu/oauth2-client@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/oauth2-client/-/oauth2-client-1.12.2.tgz#ca355fbd7813b7e286836c97482eed75fcb6b4e3"
-  integrity sha512-uxPtHpNnGz0kSj/+ly6zOIsYwbNyb17GH33h+I+PkYVCfDb9ZfyLowS6+pKulw/cz/j+qsL5tJ6ELP/1tyOErQ==
+"@malagu/oauth2-client@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/oauth2-client/-/oauth2-client-1.13.1.tgz#9f81a16fa3b0d30c9ddb26bc59a2c8727b5e13a8"
+  integrity sha512-hpzKideL7lKasVMf30rvYsD+yu6SnXnUbHifxkCTdPsQN3KUFVTUYBglJ5Kk0zZ3DfEllIks58progaABeNDyA==
   dependencies:
-    "@malagu/oauth2-jose" "^1.12.2"
+    "@malagu/oauth2-jose" "^1.13.1"
 
-"@malagu/oauth2-core@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/oauth2-core/-/oauth2-core-1.12.2.tgz#9bdb0961ba9235a0c92c50b6820cb6f3ad225fb1"
-  integrity sha512-R/RtPJR+6FjYR+7PlP1RYe7AJ1VK1EVVQflSHBkvzrL6l6xGUrZUXeU2l55u0hP4jnI6E/Y+1d7dnMU0L5AXgw==
+"@malagu/oauth2-core@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/oauth2-core/-/oauth2-core-1.13.1.tgz#c0e09b00153c677ff498f845175b86b3aaadf85c"
+  integrity sha512-jhWY53gd16paL+hL8l5xbXFO3+Z+p5mMxT82O07oYY1Qj6t3/xi0EPyueHSAArLDySERd9HqcxNYO7/kkJsVlw==
   dependencies:
-    "@malagu/security" "^1.12.2"
+    "@malagu/security" "^1.13.1"
 
-"@malagu/oauth2-jose@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/oauth2-jose/-/oauth2-jose-1.12.2.tgz#45e2c580c06b601f560758e1af5b05293977685c"
-  integrity sha512-eUtua7KehsIblpLK8/9r0/7+0+7VzG7J0lQ1yNkynIdrw/3gCRcYAB+l9BCz+/unm4TqdZo5qgA26szlNGH6bw==
+"@malagu/oauth2-jose@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/oauth2-jose/-/oauth2-jose-1.13.1.tgz#e5d6a6f0819407c9171c16306d3d81395db53706"
+  integrity sha512-ZKmbJ8O5w31i8lUlIQIhYFdqxexpwsZ5m/boPs+7aA/4oBbA4RnZw7aJO67IGFqSEk+avyLuRWekxp7vp86hiA==
   dependencies:
-    "@malagu/oauth2-core" "^1.12.2"
+    "@malagu/oauth2-core" "^1.13.1"
     jose "^1.28.0"
 
-"@malagu/oss@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/oss/-/oss-1.12.2.tgz#4fb9c5ca804b87a59ef1d9affc429412dcdeec2e"
-  integrity sha512-337C78JuVeIkdS8380G0KMfTMsNujNwsTxNaEcrzPp0rZw2pR/v9FIMCfivE1gDs1xxl5+khoELNSImU8ok9Eg==
+"@malagu/oss@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/oss/-/oss-1.13.1.tgz#88066926c37a2505b14fcd218008425f6eb988bb"
+  integrity sha512-w08uplECNOjy6KenivDRPFgLXv6WUTI1pnAHtrW0PYixl5ZQd/TUXnEPPT5LFJEBIzsws15dgu2j8HxCuWMc9Q==
   dependencies:
-    "@malagu/cloud" "^1.12.2"
+    "@malagu/cloud" "^1.13.1"
     ali-oss "^5.2.0"
 
-"@malagu/pwa@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/pwa/-/pwa-1.12.2.tgz#40b08529713313ede7f999a9eebbc3037523d2b6"
-  integrity sha512-TZbbJswqnQj7GlhSTSvybLz7seBEtx9hS/aZ9awH4ayV6iiTgenjXhTARTWArWC9sGDf/nEvkULp7/SqjXCjZw==
+"@malagu/pwa@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/pwa/-/pwa-1.13.1.tgz#a9754a1b44e90d25c0987e3286d11708cd6f433e"
+  integrity sha512-NnPce0WBDXXaSuTeOTcEz0HLO5cSJoK56zHIyJz0Eim1F8rHs1k1FBtwV9WGXrDhnww5s02jUIJ5Z8XXwTV6Vw==
   dependencies:
     workbox-webpack-plugin "^5.1.3"
 
-"@malagu/react@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/react/-/react-1.12.2.tgz#479b9374801c837fe70c16a05b8bddc377b7c13d"
-  integrity sha512-4yTRsB3O19EGnke/XZIQDcmlZ5stSY9hPtBRwqCUmAyN/vAizsvEXLQjbwnk9BB4D/HYQUOcKV4X9WStqS/LxA==
+"@malagu/react@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/react/-/react-1.13.1.tgz#eaa61b777852cb7de2cf63a20015d8932f9fcea3"
+  integrity sha512-cEEbiooDFdF+3wZM8Gr4OKYb8CPw9NqEP74U7BRhN7XkAVsDY6EzSbQ62Qic+NBvrKGblyJiMo4dcT9Uhi8ZVA==
   dependencies:
-    "@malagu/widget" "^1.12.2"
+    "@malagu/widget" "^1.13.1"
     history "^4.10.1"
     react "^16.12.0"
     react-dom "^16.12.0"
@@ -1211,45 +1211,45 @@
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
-"@malagu/rpc@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/rpc/-/rpc-1.12.2.tgz#aee0648bedc1f7cef317bf2e278c8d0ce710b75c"
-  integrity sha512-bLR8FRSTDZ8fXLH/KLBjMPmN5nIlHfw4KKyzrejubshDaDEWtSLLM+plaOdSpt0gHuverzOcKIGjfV5ifAu/Ig==
+"@malagu/rpc@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/rpc/-/rpc-1.13.1.tgz#4ffc78fdef3354ea2302004782c9ccc927f339e7"
+  integrity sha512-IA8tNf9+FiiKf+H+V4+A56z3S6ZBNvZ/otbw+NtxUigvkWClQduarEuitGulW72yT2PrHcyIBDxpqnA5mv+HdQ==
   dependencies:
-    "@malagu/web" "^1.12.2"
+    "@malagu/web" "^1.13.1"
 
-"@malagu/security@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/security/-/security-1.12.2.tgz#5c667b49bf0052646e812a925d553f96f1ae47d8"
-  integrity sha512-vKn4p8SlRIAzdJmT5yiBnqKwYwDcXRg9YW2M3i0i36GNMgnBwbngAzC3G1CItqnVHhHmXXrSYLaneCIAGBHyAA==
+"@malagu/security@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/security/-/security-1.13.1.tgz#324ea11303dfe98aa0dc4cc50b3cfdc5629f365e"
+  integrity sha512-HYpp0MVNvLHiA3xEjAk8Bm7E5x3ZvmRnHXoc5/mbYU54pCDIwS7Hl2UjFJwi2E7OrlEynIrfIXeQmLyDoHVZJA==
   dependencies:
-    "@malagu/web" "^1.12.2"
+    "@malagu/web" "^1.13.1"
     crypto-js "^4.0.0"
     micromatch "^4.0.2"
 
-"@malagu/serve-static@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/serve-static/-/serve-static-1.12.2.tgz#c750b579620545e892a6b76910f79b4197d6da19"
-  integrity sha512-zvLonJUVaYIp0s9RzKU5r1PUT5jZ0zkCL4fJVDrKnQ7MPrrODxKvOouKKNXyZ+vfZgcdwSzb6Nngoje7Md4gXA==
+"@malagu/serve-static@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/serve-static/-/serve-static-1.13.1.tgz#e233a95e05f2b9493cae112e362b40f8cbedd4a7"
+  integrity sha512-CogqsNhPMI1SD63aqLCC8BmiJNqhaSoydmUSm5vxVkWabreJIOhThfdfHRMj3SGF7msYvCX3jmj0XMDTgJHJ3w==
   dependencies:
-    "@malagu/web" "^1.12.2"
+    "@malagu/web" "^1.13.1"
     serve-static "^1.14.1"
 
-"@malagu/typeorm@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/typeorm/-/typeorm-1.12.2.tgz#acfc0ff1e10b40e75510f89144e41d5f32bff171"
-  integrity sha512-c4eSw0y9I1Ye+K/Xj5/wmOT2NJ7IsIAhKZxvM4642npqTBqWOILDNv17/nmGyLOhxS+7r8Rd01/ggE9wFBXg3Q==
+"@malagu/typeorm@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/typeorm/-/typeorm-1.13.1.tgz#c5c575390e56f8016cba7f62990c2cad46f0bb6c"
+  integrity sha512-NNvrmD30btHdS9OTWcxcMCRNM8YH7RHjGjaT8L+1I8R3p8Qjm867X9BvXG85aAA5hfA1O5eAPQM764loB+SPkg==
   dependencies:
-    "@malagu/web" "^1.12.2"
+    "@malagu/web" "^1.13.1"
     mysql "^2.17.1"
     typeorm "^0.2.19"
 
-"@malagu/web@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/web/-/web-1.12.2.tgz#332286952eb7b034ae5781520ed6df4aa9fa2f0f"
-  integrity sha512-ETRb4h5sWLzmh6TF6Z03ixpMh0ZLldTIQb99kieWuHAgN2LhJ7jovtSgU8U3YyT1rHf052ef8FkUd2NLHIQPgg==
+"@malagu/web@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/web/-/web-1.13.1.tgz#183b1b00686120a44e52aabcb92338df62af2412"
+  integrity sha512-22OFzfpgi6L8+P9U8ov1e853yb/MMg7EfLQSCzbGpBMvPYKShwWxq3IvbThMtT2uGrIPmY4811z2JYbn3HdSFw==
   dependencies:
-    "@malagu/core" "^1.12.2"
+    "@malagu/core" "^1.13.1"
     "@types/express" "^4.17.9"
     axios "^0.21.1"
     cookies "^0.8.0"
@@ -1261,12 +1261,12 @@
     url-pattern "^1.0.3"
     uuid "^3.4.0"
 
-"@malagu/widget@^1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@malagu/widget/-/widget-1.12.2.tgz#db4850001dca6f21cf806f44fc27fcd06892c63f"
-  integrity sha512-xdesG7JKujWemw4zfXFrY/sdhfAFOhsY5nVInl1nKs6fI4QF5ZAoEVWTUtiDxjULZsvvA9itj8DTD00VoPnkcg==
+"@malagu/widget@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@malagu/widget/-/widget-1.13.1.tgz#d416d70964af14c5684e68cfe3aa9f3f3e06f187"
+  integrity sha512-26etZdu3RqgSHDjPjEzfpG78y6cr3nv7vOplu/i1Vfc+oFWMjddQHV2e/tZshofSdfTCQRZJ4VysyWpX1kMsAQ==
   dependencies:
-    "@malagu/core" "^1.12.2"
+    "@malagu/core" "^1.13.1"
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"

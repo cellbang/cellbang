@@ -1,0 +1,8 @@
+mode: [ locales ]
+cellbang:
+  page:
+    sandbox:
+      - allow-same-origin
+      - allow-scripts
+      - allow-forms
+      - allow-modals

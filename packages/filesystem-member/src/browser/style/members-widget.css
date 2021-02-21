@@ -1,0 +1,197 @@
+.cellbang-MembersMainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#cellbang-MembersTableContainer {
+    flex: 1;
+    overflow: auto;
+}
+
+.fuzzy-match {
+    font-weight: 600;
+    color: var(--theia-list-highlightForeground);
+}
+
+.members-actions {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.members-action-item {
+    padding-left: 12px;
+}
+
+.members-action-nickname {
+    visibility: hidden;
+    padding-left: 5px;
+}
+
+.members table {
+    border-spacing: 0;
+    border-collapse: separate;
+    background-color: var(--theia-editor-background);
+    width: 100%;
+    table-layout: fixed;
+}
+
+.members table tr {
+    min-height: var(--theia-icon-size);
+}
+
+.th-action,
+.members-actions {
+    text-align: right;
+}
+
+.th-label, .th-role, .members-label, .members-role, .th-action {
+    padding: 2px 10px 5px 10px;
+    min-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.members table th {
+    font-size: var(--theia-ui-font-size1);
+}
+
+.members table td code {
+    font-size: 90%;
+}
+
+.td-source {
+    text-transform: lowercase;
+}
+
+.members table tr:nth-child(odd) {
+    background-color: rgba(130, 130, 130, 0.04);
+}
+
+.members table tbody tr:hover {
+    background-color: var(--theia-list-focusBackground);
+}
+
+.members table tbody tr:hover .members-action-nickname {
+    visibility: visible;
+    color: var(--theia-icon-foreground);
+    text-decoration: none;
+}
+
+.members table th {
+    word-break: keep-all;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+    vertical-align: middle;
+    position: sticky;
+    top: 0;
+    background-color: var(--theia-editorWidget-background);
+}
+
+.members table .th-placeholder {
+    width: 4%;
+}
+
+.members table .th-action {
+    width: 25%;
+    text-align: right;
+}
+
+.members table .th-label {
+    width: 25%;
+}
+
+.members table .th-role {
+    width: 25%;
+}
+
+.no-members {
+    border: 1px solid  var(--theia-editorWarning-foreground);
+}
+
+.cellbang-MembesSearchMembers {
+    height: 25px;
+    flex: 1;
+}
+
+.vs .cellbang-MembesSearchMembers {
+    border: 1px solid #ddd;
+}
+
+.cellbang-MembersMembersContainer {
+    padding: 10px;
+    display: flex;
+}
+
+.members-item-row td a,
+.members-item-row td a:active,
+.members-item-row td a:focus {
+    outline: 0;
+    border: none;
+}
+
+.members-actions-icons {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cellbang-MembersMainContainer .members table td img {
+    margin: 3px 8px 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--theia-activityBar-inactiveForeground);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px var(--theia-activityBar-inactiveForeground) solid;
+}
+
+.cellbang-MembersMainContainer .member-role-menu {
+    position: fixed;
+    z-index: 6000;
+    background: var(--theia-menu-background);
+    color: var(--theia-menu-foreground);
+    font-size: var(--theia-ui-font-size1);
+    box-shadow: 0px 1px 6px var(--theia-widget-shadow);
+    border: 1px solid var(--theia-menu-border);
+}
+
+.cellbang-MembersMainContainer .member-role-menu ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.cellbang-MembersMainContainer .member-role-menu ul li {
+    padding: 4px 0;
+    padding-right: 30px;
+}
+
+.cellbang-MembersMainContainer .member-role-menu ul li:hover {
+    background: var(--theia-menu-selectionBackground);
+    color: var(--theia-menu-selectionForeground);
+    border: thin solid var(--theia-menu-selectionBorder);
+    opacity: 1;
+}
+
+.cellbang-MembersMainContainer .member-role-menu .title,
+.cellbang-MembersMainContainer .member-role-menu .desc {
+    margin-left: 30px;
+}
+
+.cellbang-MembersMainContainer .member-role-menu .desc {
+    opacity: .7;
+}
+
+.cellbang-MembersMainContainer .member-role-menu .icon {
+    float: left;
+    line-height: 2.5em;
+    width: 30px;
+    text-align: center;
+}

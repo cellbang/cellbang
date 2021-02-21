@@ -26,9 +26,10 @@ export class SharePolicyProvider implements PolicyProvider {
     async provide(ctx: PolicyContext): Promise<Policy[]> {
         const share = Context.getAttr<Share>(CURRENT_SHARE_REQUEST_KEY, AttributeScope.Request);
         if (share) {
-            const resource: string[] = [ share.resource ];
-            if (isWorkspaceFile(share.resource)) {
-                const content = await this.fileRepository.readFile(share.resource);
+            const stat = await this.fileRepository.get(share.fileId);
+            const resource: string[] = [ stat.resource ];
+            if (isWorkspaceFile(stat.resource)) {
+                const content = await this.fileRepository.readFile(stat.resource);
                 const decoded = this.encodingService.decode(BinaryBuffer.wrap(content), 'utf8');
                 resource.push(...JSON.parse(decoded).folders);
             }

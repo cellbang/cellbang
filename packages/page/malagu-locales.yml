@@ -1,0 +1,9 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          An error occurred while loading this page: 加载此页面时发生错误
+          Still loading...: 仍在加载...
+          Reload This Page: 重新载入此页面
+          Page: 页面

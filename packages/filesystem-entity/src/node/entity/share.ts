@@ -7,8 +7,8 @@ export class Share extends Resource {
     @Column({ length: 128 })
     shareId: string;
 
-    @Column({ length: 1024 })
-    resource: string;
+    @Column()
+    fileId: number;
 
     @Column({ nullable: true })
     password?: string;

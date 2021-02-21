@@ -84,6 +84,12 @@
     },
     {
       "path": "../packages/filesystem-share/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/filesystem-member/compile.tsconfig.json"
+    },
+    {
+      "path": "../packages/page/compile.tsconfig.json"
     }
   ]
 }

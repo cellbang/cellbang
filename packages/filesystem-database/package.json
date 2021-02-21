@@ -8,7 +8,7 @@
     "@cellbang/accounts-client": "0.0.0",
     "@cellbang/filesystem": "0.0.0",
     "@cellbang/filesystem-entity": "0.0.0",
-    "@malagu/cloud": "^1.12.2",
+    "@malagu/cloud": "^1.13.1",
     "tar-fs": "^2.1.1"
   },
   "publishConfig": {
@@ -39,7 +39,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.12.2",
+    "@malagu/ext-scripts": "^1.13.1",
     "@types/readable-stream": "^2.3.9",
     "@types/tar-fs": "^2.0.0"
   },

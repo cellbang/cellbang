@@ -1,0 +1,6 @@
+mode: [ locales ]
+cellbang:
+  filesystem:
+    member:
+      getMemberStatusUrl: /getMemberStatus
+      getMemberStatusMethod: POST

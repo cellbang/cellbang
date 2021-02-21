@@ -1,0 +1,79 @@
+.dialogContent .cellbang-CollaborationMessage {
+    margin: .7em 0;
+}
+
+.dialogContent .cellbang-CollaborationApprovalCheckBox {
+    margin: .7em 0;
+    padding: 0;
+}
+
+.dialogContent .cellbang-CollaborationApprovalCheckBox label input {
+    margin-left: 0px;
+    vertical-align: middle;
+}
+
+.dialogContent .cellbang-CollaborationApprovalCheckBox label span {
+    vertical-align: middle;
+}
+
+.dialogContent .cellbang-CollaborationPasswordArea {
+    margin: .7em 0;
+    padding: 2.5px 5px;
+}
+
+
+.dialogContent .cellbang-CollaborationPasswordArea:first-child {
+    width: 250px;
+}
+
+.dialogContent .cellbang-CollaborationResetPassword {
+    cursor: pointer;
+    opacity: .7;
+    float: right;
+}
+
+.dialogContent .cellbang-CollaborationResetPassword:hover {
+    opacity: 1;
+}
+
+.dialogContent .cellbang-CollaborationSharingLink {
+    margin: .7em 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dialogContent .cellbang-CollaborationLink input {
+    width: 280px;
+    padding: 2.5px 5px;
+}
+
+.dialogContent .cellbang-CollaborationLink .cellbang-CollaborationEditSlugIcon {
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.dialogContent .cellbang-CollaborationLink:hover .cellbang-CollaborationEditSlugIcon {
+    visibility: visible;
+}
+
+.dialogContent .cellbang-CollaborationInvitingLink input {
+    width: 280px;
+    padding: 2.5px 5px;
+}
+
+.dialogContent .cellbang-CollaborationCopy {
+    float: right;
+}
+
+.dialogContent .cellbang-CollaborationWorkspacePath {
+    margin: .7em 0;
+}
+
+.dialogContent .cellbang-CollaborationWorkspacePath i {
+    margin-right: .5em;
+}
+
+.dialogContent .cellbang-CollaborationHidden,
+.dialogControl .cellbang-CollaborationHidden {
+    display: none;
+}

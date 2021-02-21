@@ -16,5 +16,6 @@ export interface FileRepository {
     readFileStream(resource: string, options?: { start: number, end: number }, tenant?: string): Promise<Readable>;
     mkdir(resource: string, tenant?: string): Promise<FileStat>;
     getFileSize(resource: string, tenant?: string): Promise<number>;
+    get(id: number): Promise<FileStat>;
 
 }

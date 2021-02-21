@@ -72,7 +72,7 @@ export class ShareDialog extends AbstractDialog<void> {
             this.hideElement(this.turnOnSharingButton);
             this.showElement(this.turnOnContainer);
             this.showElement(this.turnOffSharingButton);
-            this.sharingLinkInput.value = `${location.protocol}//${location.host}${location.pathname}?share=${this.share.shareId}#${FileUri.fsPath(this.props.fileStat.resource)}`;
+            this.sharingLinkInput.value = `${location.protocol}//${location.host}${location.pathname}?share=${this.share.shareId}`;
             if (this.share.password) {
                 this.passwordCheckBox.checked = true;
                 this.passwordLabel.textContent = `${IntlUtil.get('Password: ')}${this.share.password}`;
@@ -209,13 +209,16 @@ export class ShareDialog extends AbstractDialog<void> {
     protected onAfterAttach(msg: Message): void {
         super.onAfterAttach(msg);
         this.addKeyListener(this.turnOnSharingButton, Key.ENTER, async () => {
-            this.share = await this.shareServer.turnOn(FileUri.fsPath(this.props.fileStat.resource));
+            await this.loadShare();
+            if (!this.share) {
+                this.share = await this.shareServer.create(FileUri.fsPath(this.props.fileStat.resource));
+            }
+            this.share = await this.shareServer.turnOn(this.share!.id);
             this.refresh();
-            // this.accept();
         }, 'click');
 
         this.addEventListener(this.turnOffSharingButton, 'click', async () => {
-            this.share = await this.shareServer.turnOff(FileUri.fsPath(this.props.fileStat.resource));
+            this.share = await this.shareServer.turnOff(this.share!.id);
             this.refresh();
         });
 
@@ -226,18 +229,17 @@ export class ShareDialog extends AbstractDialog<void> {
         });
 
         this.addEventListener(this.passwordCheckBox, 'change', async () => {
-            const resource = FileUri.fsPath(this.props.fileStat.resource);
             if (this.passwordCheckBox.checked) {
-                this.share!.password = await this.shareServer.resetPassword(resource);
+                this.share!.password = await this.shareServer.resetPassword(this.share!.id);
             } else {
-                await this.shareServer.clearPassword(resource);
+                await this.shareServer.clearPassword(this.share!.id);
                 this.share!.password = undefined;
             }
             this.refresh();
 
         });
         this.addEventListener(this.resetPassword, 'click', async () => {
-            this.share!.password = await this.shareServer.resetPassword(FileUri.fsPath(this.props.fileStat.resource));
+            this.share!.password = await this.shareServer.resetPassword(this.share!.id);
             this.refresh();
         });
     }

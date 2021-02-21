@@ -1,4 +1,4 @@
-import { Component, Autowired, Value, Logger, TenantProvider } from '@malagu/core';
+import { Component, Autowired, Value, Logger } from '@malagu/core';
 import { ObjectStorageService, RawCloudService } from '@malagu/cloud';
 import { FileRepository } from './file-protocol';
 import { Transactional, OrmContext } from '@malagu/typeorm/lib/node';
@@ -6,6 +6,7 @@ import { FileStat } from '../entity';
 import { ResourceNotFoundError, ResourceAlreadyExistsError } from '@cellbang/entity/lib/node';
 import { basename } from 'path';
 import { Readable } from 'stream';
+import { Context } from '@malagu/web/lib/node';
 
 @Component(FileRepository)
 export class FileRepositoryImpl implements FileRepository {
@@ -16,15 +17,12 @@ export class FileRepositoryImpl implements FileRepository {
     @Autowired(Logger)
     protected logger: Logger;
 
-    @Autowired(TenantProvider)
-    protected tenantProvider: TenantProvider;
-
     @Autowired(ObjectStorageService)
     protected readonly objectStorageService: ObjectStorageService<RawCloudService>;
 
     @Transactional({ readOnly: true })
     async exists(resource: string, tenant?: string): Promise<boolean> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         const repo = OrmContext.getRepository(FileStat);
         return await repo.createQueryBuilder()
             .where('resource = :resource and tenant = :tenant', { resource, tenant })
@@ -33,7 +31,7 @@ export class FileRepositoryImpl implements FileRepository {
 
     @Transactional({ readOnly: true })
     async stat(resource: string, tenant?: string): Promise<FileStat> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         const repo = OrmContext.getRepository(FileStat);
         const stat = await repo.createQueryBuilder()
             .where('resource = :resource and tenant = :tenant', { resource, tenant })
@@ -46,8 +44,19 @@ export class FileRepositoryImpl implements FileRepository {
     }
 
     @Transactional({ readOnly: true })
+    async get(id: number): Promise<FileStat> {
+        const repo = OrmContext.getRepository(FileStat);
+        const stat = await repo.findOne(id);
+        if (stat) {
+            return stat;
+        }
+        throw new ResourceNotFoundError(id);
+
+    }
+
+    @Transactional({ readOnly: true })
     async readdir(resource: string, tenant?: string): Promise<FileStat[]> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         const stat = await this.stat(resource, tenant);
         const repo = OrmContext.getRepository(FileStat);
         const stats = await repo.createQueryBuilder()
@@ -61,29 +70,29 @@ export class FileRepositoryImpl implements FileRepository {
     }
 
     async getFileSize(resource: string, tenant?: string): Promise<number> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         const result = await this.objectStorageService.headObject(this.getBucketAndKey(resource, tenant));
         return result.contentLength || 0;
     }
 
     async readFile(resource: string, tenant?: string): Promise<Uint8Array> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         return <Uint8Array> await this.objectStorageService.getObject(this.getBucketAndKey(resource, tenant));
     }
 
     async readFileStream(resource: string, options?: { start: number, end: number }, tenant?: string): Promise<Readable> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         return this.objectStorageService.getStream({ ...this.getBucketAndKey(resource, tenant), range: options ? `${options.start}-${options.end}` : undefined });
     }
 
     async writeFile(resource: string, content: Uint8Array | Readable, options?: { expires?: Date, contentLength?: number }, tenant?: string): Promise<void> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         return this.objectStorageService.putObject({ ...this.getBucketAndKey(resource, tenant), body: content, expires: options?.expires, contentLength: options?.contentLength });
     }
 
     @Transactional()
     async create(stat: FileStat, content?: Uint8Array): Promise<FileStat> {
-        stat.tenant = await this.tenantProvider.provide(stat.tenant);
+        stat.tenant = stat.tenant || Context.getTenant(); ;
         if (await this.exists(stat.resource, stat.tenant)) {
             throw new ResourceAlreadyExistsError(stat.resource);
         }
@@ -99,7 +108,7 @@ export class FileRepositoryImpl implements FileRepository {
     @Transactional()
     async update(stat: FileStat, content?: Uint8Array): Promise<FileStat> {
         const repo = OrmContext.getRepository(FileStat);
-        stat.tenant = await this.tenantProvider.provide(stat.tenant);
+        stat.tenant = stat.tenant || Context.getTenant(); ;
         if (content && stat.isFile) {
             stat.size = content.byteLength;
             await this.writeFile(stat.resource, content, undefined, stat.tenant);
@@ -110,7 +119,7 @@ export class FileRepositoryImpl implements FileRepository {
 
     @Transactional()
     async delete(resource: string, tenant?: string): Promise<void> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         const repo = OrmContext.getRepository(FileStat);
         const where = 'resource like :resource and tenant = :tenant';
         const params = { resource: `${resource}%`, tenant };
@@ -137,7 +146,7 @@ export class FileRepositoryImpl implements FileRepository {
 
     @Transactional()
     async mkdir(resource: string, tenant?: string): Promise<FileStat> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         return this.doMkdir(resource, tenant);
     }
 
@@ -169,7 +178,7 @@ export class FileRepositoryImpl implements FileRepository {
 
     @Transactional()
     async rename(source: string, target: string, tenant?: string): Promise<void> {
-        tenant = await this.tenantProvider.provide(tenant);
+        tenant = tenant || Context.getTenant();
         const repo = OrmContext.getRepository(FileStat);
         const parent = this.getParentDir(target);
         const parentStat = await this.stat(parent, tenant);

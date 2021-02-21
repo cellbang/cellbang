@@ -1,0 +1,68 @@
+frontend: 
+  malagu:
+    locales:
+      zh-CN:
+        messages:
+          Collaborations...: 协作...
+          Members...: 成员...
+          Settings...: 设置...
+          Collaboration: 协作
+          Members: 成员
+          Settings: 设置
+          Directory collaboration: 目录协作
+          Workspace collaboration: 工作空间协作
+          OK: 确认
+          Prompt: 提示
+          Sharing is off: 分享已关闭
+          Share does not exist: 分享不存在
+          Turn on collaboration: 开启协作
+          Turn off collaboration: 关闭协作
+          Collaboration is off: 协作已关闭
+          Collaboration does not exist: 协作不存在
+          Copy link: 复制链接
+          Reset link: 重置链接
+          Reset link successfully: 重置链接成功
+          Link copied to clipboard: 链接已复制
+          invite others to collabrate: 邀请他人参与协作
+          Turn on to collaborate knowledges with others via a link: 开启后，可通过链接与他人协作知识
+          Members who gets the link can access this Document: 获得链接的成员，可访问文档
+          Invite collaborators by links: 通过链接快速邀请协作
+          Approval confirmation when joining by link: 通过链接加入时需审批确认
+          The slug cannot be empty.: 不能为空。
+          Only letters, numbers, hyphen, underscore and dot are allowed.: 只能输入大小写字母、横线、下划线和点
+          At least three characters.: 至少 3 个字符。
+          No results found!: 未找到结果！
+          Search members: 搜索成员
+          Nickname: 昵称
+          Username: 用户名
+          Role: 角色
+          admin: 管理员
+          member: 成员
+          guest: 只读成员
+          Modify nickname: 修改昵称
+          Modify Nickname For: 修改昵称 - 
+          nickname value is required: 昵称值是必填的
+          Delete member: 删除成员
+          Add Member: 添加成员
+          Highest permissions of workspace: 拥有工作空间的所有权限
+          Management permissions of workspace: 拥有工作空间的管理权限
+          Only read access: 仅有阅读权限
+          Do you really want to delete this member?: 您真的想要删除此成员吗？
+          Agree: 同意
+          applying: 正在申请
+          Operation: 操作
+          Apply join collaboration: 申请加入协作
+          Apply: 申请加入
+          Anonymous User: 匿名用户 
+          Already applied: 已经提交申请
+          'You will get the following permissions:': 加入协作后将获得以下权限：
+          All content viewing permissions for the workspace: 工作空间所有内容查看权限
+          Create and edit permissions for the directory and its contents: 工作空间目录及其内容的新建、编辑权限
+    en-US:
+      messages:
+        applying: Applying
+        
+
+
+
+
