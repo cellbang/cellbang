@@ -44,7 +44,7 @@ export class MemberServerImpl implements MemberServer {
             return {
                 nickname: auth.name,
                 login: auth.name,
-                avater: ''
+                avatar: 'https://s.gravatar.com/avatar/a3fac94600492e3fb20f16b0cb6827f2?size=120&default=retro'
             };
         }
 

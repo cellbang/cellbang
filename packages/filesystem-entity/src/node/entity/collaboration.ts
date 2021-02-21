@@ -4,13 +4,13 @@ import { Resource } from '@cellbang/entity/lib/node';
 @Entity()
 export class Collaboration extends Resource {
 
-    @Column({ length: 128 })
+    @Column({ length: 128, unique: true })
     slug: string;
 
     @Column()
     fileId: number;
 
-    @Column()
+    @Column({ unique: true })
     token: string;
 
     @Column()

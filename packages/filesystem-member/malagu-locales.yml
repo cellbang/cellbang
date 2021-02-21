@@ -29,6 +29,7 @@ frontend:
           Invite collaborators by links: 通过链接快速邀请协作
           Approval confirmation when joining by link: 通过链接加入时需审批确认
           The slug cannot be empty.: 不能为空。
+          The slug already exists.: 已经存在。
           Only letters, numbers, hyphen, underscore and dot are allowed.: 只能输入大小写字母、横线、下划线和点
           At least three characters.: 至少 3 个字符。
           No results found!: 未找到结果！

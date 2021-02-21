@@ -264,20 +264,25 @@ export class CollaborationDialog extends AbstractDialog<void> {
                     start: 0,
                     end: this.collaboration!.slug.length
                 },
-                validate: (input, mode) => {
+                validate: async (input, mode) => {
                     if (!input) {
                         return IntlUtil.get('The slug cannot be empty.')!;
                     } else if (input.length <= 2) {
                         return IntlUtil.get('At least three characters.')!;
                     } else if (!/^[a-zA-Z0-9-_.]+$/.test(input)) {
                         return IntlUtil.get('Only letters, numbers, hyphen, underscore and dot are allowed.')!;
+                    } else if (await this.collaborationServer.getBySlug(input)) {
+                        return IntlUtil.get('The slug already exists.')!;
                     }
                     return '';
                 }
             });
-            const slug = (await dialog.open())!;
-            this.collaboration = await this.collaborationServer.updateSlug(this.collaboration!.id, slug);
-            this.refresh();
+            const slug = await dialog.open();
+            if (slug) {
+                this.collaboration = await this.collaborationServer.updateSlug(this.collaboration!.id, slug);
+                this.refresh();
+            }
+            
         });
     }
 
