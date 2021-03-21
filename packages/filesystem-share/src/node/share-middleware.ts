@@ -1,10 +1,11 @@
 import { Context, Middleware, AttributeScope, RequestMatcher } from '@malagu/web/lib/node';
 import { SECURITY_CONTEXT_MIDDLEWARE_PRIORITY } from '@malagu/security/lib/node';
-import { Component, Autowired, Value } from '@malagu/core';
-import { AUTHENTICATION_SCHEME_CB_SHARE, ShareServer, SHARE_DOES_NOT_EXIST, SHARING_IS_OFF, X_CB_SHARE_ID } from '../common';
+import { Component, Autowired, Value, Named } from '@malagu/core';
+import { AUTHENTICATION_SCHEME_CB_SHARE, ShareServer, Share, SHARE_DOES_NOT_EXIST, SHARING_IS_OFF, X_CB_SHARE_ID } from '../common';
 import { HttpHeaders, PathResolver } from '@malagu/web';
 import { ShareAuthenticationError, ShareNotFoundError } from './error';
 import { parse } from 'querystring';
+import { CacheManager } from '@malagu/cache';
 
 export const CURRENT_SHARE_REQUEST_KEY = 'CurrentShareRequest';
 
@@ -26,12 +27,17 @@ export class ShareMiddleware implements Middleware {
     @Autowired(RequestMatcher)
     protected readonly requestMatcher: RequestMatcher;
 
+    @Autowired(CacheManager)
+    @Named('filesystem-share')
+    protected readonly cacheManager: CacheManager;
+
     async handle(ctx: Context, next: () => Promise<void>): Promise<void> {
         const search = (ctx.request.get(HttpHeaders.REFERER) || '').split('?').pop();
         const shareId = ctx.request.get(X_CB_SHARE_ID) || ctx.request.query.share as string || search && parse(search).share as string;
         if (shareId) {
             this.savePasswordIfNeed(shareId);
-            const share = await this.shareServer.get(shareId);
+            const share = await this.cacheManager.wrap<Share>(`get:${shareId}`, () => this.shareServer.get(shareId));
+
             if (share) {
                 if (share.disabled) {
                     throw new ShareAuthenticationError(SHARING_IS_OFF);

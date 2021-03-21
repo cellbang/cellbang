@@ -72,7 +72,7 @@ export class ShareDialog extends AbstractDialog<void> {
             this.hideElement(this.turnOnSharingButton);
             this.showElement(this.turnOnContainer);
             this.showElement(this.turnOffSharingButton);
-            this.sharingLinkInput.value = `${location.protocol}//${location.host}${location.pathname}?share=${this.share.shareId}`;
+            this.sharingLinkInput.value = `${location.protocol}//${location.host}${location.pathname}?share=${this.share.shareId}#${FileUri.fsPath(this.props.fileStat.resource)}`;
             if (this.share.password) {
                 this.passwordCheckBox.checked = true;
                 this.passwordLabel.textContent = `${IntlUtil.get('Password: ')}${this.share.password}`;

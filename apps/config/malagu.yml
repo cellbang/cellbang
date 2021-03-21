@@ -10,5 +10,5 @@ malagu:
         watchOptions: 
           aggregateTimeout: 1500
           ignored: [ '**/*.ts' ]
-    session:
-      maxAge: 2592000000
+  session:
+    maxAge: 2592000000

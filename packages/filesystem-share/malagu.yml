@@ -4,3 +4,10 @@ cellbang:
     share:
       checkShareStatusUrl: /checkShareStatus
       checkShareStatusMethod: POST
+malagu:
+  cache:
+    config:
+      filesystem-share:
+        store: memory
+        max: 100
+        ttl: 5 # seconds

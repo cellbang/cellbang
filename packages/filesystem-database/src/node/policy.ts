@@ -1,5 +1,6 @@
 import { AclPolicy, PolicyType, Effect } from '@malagu/security';
 import { Context } from '@malagu/web/lib/node';
+import { FileUri } from '@theia/core/lib/node/file-uri';
 
 export const FILE_SERVICE_NAME = 'file';
 
@@ -74,7 +75,7 @@ export namespace ResourceUtils {
 
     export function getReource(resource: string) {
         const tenant = Context.getTenant();
-        return `${tenant}:${FILE_SERVICE_NAME}:${resource}`;
+        return `${tenant}:${FILE_SERVICE_NAME}:${FileUri.fsPath(resource)}`;
     }
 
 }

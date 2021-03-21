@@ -55,7 +55,7 @@ export class ShareRepositoryImpl implements ShareRepository {
     async turnOff(id: number): Promise<Share> {
         const repo = OrmContext.getRepository(Share);
         const share = await this.getById(id);
-        share.disabled = false;
+        share.disabled = true;
         return repo.save(share);
     }
 

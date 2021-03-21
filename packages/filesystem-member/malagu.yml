@@ -4,3 +4,10 @@ cellbang:
     member:
       getMemberStatusUrl: /getMemberStatus
       getMemberStatusMethod: POST
+malagu:
+  cache:
+    config:
+      filesystem-member:
+        store: memory
+        max: 100
+        ttl: 5 # seconds

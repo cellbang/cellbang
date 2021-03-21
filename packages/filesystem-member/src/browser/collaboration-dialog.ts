@@ -78,7 +78,7 @@ export class CollaborationDialog extends AbstractDialog<void> {
             this.showElement(this.turnOnContainer);
             this.showElement(this.turnOffCollaborationButton);
             this.collaborationLinkInput.value =
-                `${location.protocol}//${location.host}${location.pathname}?slug=${this.collaboration.slug}`;
+                `${location.protocol}//${location.host}${location.pathname}?slug=${this.collaboration.slug}#${FileUri.fsPath(this.props.fileStat.resource)}`;
             this.invitingLinkInput.value = `${location.protocol}//${location.host}${location.pathname}?join=${this.collaboration.token}`;
             this.approvalCheckBox.checked = this.collaboration.approval;
         } else {
@@ -282,7 +282,7 @@ export class CollaborationDialog extends AbstractDialog<void> {
                 this.collaboration = await this.collaborationServer.updateSlug(this.collaboration!.id, slug);
                 this.refresh();
             }
-            
+
         });
     }
 
