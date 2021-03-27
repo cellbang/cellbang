@@ -9,8 +9,8 @@
     "@babel/preset-env": "^7.10.0",
     "@cellbang/editor": "0.0.0",
     "@cellbang/workspace": "0.0.0",
-    "@theia/monaco": "next",
-    "@theia/output": "next",
+    "@theia/monaco": "^1.12.0",
+    "@theia/output": "^1.12.0",
     "babel-loader": "^8.0.6",
     "circular-dependency-plugin": "^5.2.0",
     "monaco-json": "^3.2.1",
@@ -45,7 +45,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.13.1"
+    "@malagu/ext-scripts": "^1.16.12"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

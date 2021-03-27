@@ -6,8 +6,8 @@
   "typings": "lib/common/index.d.ts",
   "dependencies": {
     "@cellbang/desktop": "0.0.0",
-    "@theia/node-pty": "next",
-    "@theia/process": "next"
+    "@theia/node-pty": "0.9.0-theia.6",
+    "@theia/process": "^1.12.0"
   },
   "publishConfig": {
     "access": "public"
@@ -37,7 +37,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.13.1"
+    "@malagu/ext-scripts": "^1.16.12"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"
