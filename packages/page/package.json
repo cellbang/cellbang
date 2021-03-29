@@ -36,7 +36,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.16.12",
+    "@malagu/ext-scripts": "^1.17.0",
     "@types/crypto-js": "^4.0.1",
     "@types/readable-stream": "^2.3.9",
     "@types/tar-fs": "^2.0.0"
