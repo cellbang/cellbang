@@ -11,8 +11,8 @@
     "@cellbang/filesystem-entity": "0.0.0",
     "@cellbang/filesystem-database": "0.0.0",
     "@cellbang/mini-browser-database": "0.0.0",
-    "@theia/navigator": "^1.12.0",
-    "@theia/workspace": "^1.12.0"
+    "@theia/navigator": "^1.13.0",
+    "@theia/workspace": "^1.13.0"
   },
   "publishConfig": {
     "access": "public"

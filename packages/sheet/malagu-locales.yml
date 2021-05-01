@@ -3,7 +3,7 @@ frontend:
     locales:
       zh-CN:
         messages:
-          Sheet Editor: 表格编辑器
+          Table Editor: 表格编辑器
           Paste values only: 粘贴数据
           Paste format only: 粘贴格式
           Insert row: 插入行
