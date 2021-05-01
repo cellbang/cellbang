@@ -8,6 +8,9 @@
   },
   "references": [
     {
+      "path": "../packages/auth-entity/compile.tsconfig.json"
+    },
+    {
       "path": "../packages/accounts/compile.tsconfig.json"
     },
     {

@@ -9,6 +9,10 @@ malagu:
   faas-adapter:
     service:
       name: cellbang
+      vpcConfig:
+        vpcId: vpc-bp141rytvrwceloi1rzow
+        vSwitchIds: [ vsw-bp198naxot8mpp6ak9hnq ]
+        securityGroupId: sg-bp1gdn0p8291qxmpeo2z
       logConfig: 
         logstore: logstore
         project: cellbang

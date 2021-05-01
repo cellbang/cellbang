@@ -8,8 +8,7 @@ frontend:
     - '@theia/output/lib/browser/output-frontend-module'
 malagu:
   webpack:
-    toES5Plugin:
-      include:
-        vscode-ws-jsonrpc: vscode-ws-jsonrpc
-        vscode-languageserver-protocol: vscode-languageserver-protocol
-        vscode-languageserver-types: vscode-languageserver-types
+    sourceMapLoader:
+      exclude:
+        monaco: jsonc-parser|class-transformer|vscode-textmate|fast-plist|onigasm|(monaco-editor.*)
+

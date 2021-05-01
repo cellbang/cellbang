@@ -1,39 +1,45 @@
-import { WebpackContext, ConfigurationContext, FRONTEND_TARGET, BACKEND_TARGET } from '@malagu/cli';
+import { WebpackContext, ConfigurationContext } from '@malagu/cli-service';
 const nodeExternals = require('webpack-node-externals');
 import * as path from 'path';
 
 export default async (context: WebpackContext) => {
     const { configurations, dev, pkg } = context;
-    const configuration = ConfigurationContext.getConfiguration(FRONTEND_TARGET, configurations);
+    const configuration = ConfigurationContext.getFrontendConfiguration(configurations);
     if (configuration) {
-        configuration.module!.rules.push(...[
-            {
-                test: /\.css$/,
-                exclude: /materialcolors\.css$|\.useable\.css$/,
-                loader: 'style-loader!css-loader'
-            },
-            {
-                test: /materialcolors\.css$|\.useable\.css$/,
-                use: [
-                  {
-                    loader: 'style-loader/useable',
-                    options: {
-                      singleton: true,
-                      attrs: { id: 'theia-theme' },
-                    }
-                  },
-                  'css-loader'
-                ]
-            },
-        ]);
+        configuration
+            .module
+                .rule('css')
+                    .test(/\.css$/)
+                    .exclude
+                        .add(/materialcolors\.css$|\.useable\.css$/)
+                    .end()
+                    .use('style-loader')
+                        .loader('style-loader')
+                    .end()
+                    .use('css-loader')
+                        .loader('css-loader')
+                    .end()
+                .end()
+                .rule('useable')
+                    .test(/materialcolors\.css$|\.useable\.css$/)
+                    .use('style-loader')
+                        .loader('style-loader/useable')
+                        .options({
+                            singleton: true,
+                            attrs: { id: 'theia-theme' },
+                        })
+                    .end()
+                    .use('css-loader')
+                        .loader('css-loader')
+                    .end();
     }
 
-    const backendConfiguration = ConfigurationContext.getConfiguration(BACKEND_TARGET, configurations);
+    const backendConfiguration = ConfigurationContext.getBackendConfiguration(configurations);
 
     if (dev && backendConfiguration) {
         const whitelist = pkg.componentPackages.map(cp => new RegExp(cp.name));
         whitelist.push(/@theia/);
-        backendConfiguration.externals = [nodeExternals({
+        backendConfiguration.externals([nodeExternals({
             whitelist,
             modulesDir: path.resolve(pkg.projectPath, '../node_modules')
         }), nodeExternals({
@@ -41,7 +47,7 @@ export default async (context: WebpackContext) => {
         }), nodeExternals({
             whitelist,
             modulesDir: path.resolve(pkg.projectPath, '../../node_modules')
-        })];
+        })]);
     }
 
 };

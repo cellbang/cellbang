@@ -1,4 +1,4 @@
-import { ConfigContext } from '@malagu/cli';
+import { ConfigContext } from '@malagu/cli-service';
 import { join } from 'path';
 
 export default async (context: ConfigContext) => {
