@@ -3,19 +3,14 @@
   "version": "0.0.0",
   "description": "",
   "dependencies": {
-    "@babel/core": "^7.10.0",
-    "@babel/plugin-transform-classes": "^7.10.0",
-    "@babel/plugin-transform-runtime": "^7.10.0",
-    "@babel/preset-env": "^7.10.0",
     "@cellbang/editor": "0.0.0",
     "@cellbang/workspace": "0.0.0",
-    "@theia/monaco": "^1.13.0",
-    "@theia/output": "^1.13.0",
-    "babel-loader": "^8.0.6",
-    "circular-dependency-plugin": "^5.2.0",
+    "@theia/monaco": "^1.14.0",
+    "@theia/output": "^1.14.0",
+    "circular-dependency-plugin": "^5.2.2",
     "monaco-json": "^3.2.1",
     "monaco-languages": "^2.1.1",
-    "umd-compat-loader": "^2.1.1"
+    "umd-compat-loader": "^2.1.2"
   },
   "publishConfig": {
     "access": "public"
@@ -45,7 +40,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.20.6"
+    "@malagu/ext-scripts": "^1.23.1"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

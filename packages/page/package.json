@@ -6,7 +6,7 @@
   "typings": "lib/common/index.d.ts",
   "dependencies": {
     "@cellbang/filesystem": "0.0.0",
-    "@theia/navigator": "^1.13.0"
+    "@theia/navigator": "^1.14.0"
   },
   "publishConfig": {
     "access": "public"
@@ -36,7 +36,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.20.6",
+    "@malagu/ext-scripts": "^1.23.1",
     "@types/crypto-js": "^4.0.1",
     "@types/readable-stream": "^2.3.9",
     "@types/tar-fs": "^2.0.0"

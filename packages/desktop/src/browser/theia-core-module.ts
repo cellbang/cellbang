@@ -1,4 +1,4 @@
-
+require('es6-promise/auto');
 import { ConfigUtil } from '@malagu/core';
 import { FrontendApplicationConfigProvider} from '@theia/core/lib/browser/frontend-application-config-provider';
 

@@ -13,20 +13,22 @@ export default async (context: WebpackContext) => {
         const CircularDependencyPlugin = require('circular-dependency-plugin');
         configuration
             .plugin('copyMonaco')
-                .use(CopyPlugin, [[
-                    {
-                        from: monacoEditorCorePath,
-                        to: 'vs'
-                    },
-                    {
-                        from: monacoLanguagesPath,
-                        to: 'vs/basic-languages'
-                    },
-                    {
-                        from: monacoJsonLanguagePath,
-                        to: 'vs/language/json'
-                    }
-                ]])
+                .use(CopyPlugin, [{
+                    patterns: [
+                        {
+                            from: monacoEditorCorePath,
+                            to: 'vs'
+                        },
+                        {
+                            from: monacoLanguagesPath,
+                            to: 'vs/basic-languages'
+                        },
+                        {
+                            from: monacoJsonLanguagePath,
+                            to: 'vs/language/json'
+                        }
+                    ]
+            }])
             .end()
             .plugin('circularDependency')
                 .use(CircularDependencyPlugin, [{
