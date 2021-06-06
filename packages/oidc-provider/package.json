@@ -32,7 +32,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.23.1"
+    "@malagu/ext-scripts": "^1.23.2"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

@@ -5,8 +5,8 @@
   "main": "lib/common/index.js",
   "typings": "lib/common/index.d.ts",
   "dependencies": {
-    "@malagu/rpc": "^1.23.1",
-    "@malagu/cloud": "^1.23.1",
+    "@malagu/rpc": "^1.23.2",
+    "@malagu/cloud": "^1.23.2",
     "@cellbang/entity": "0.0.0"
   },
   "publishConfig": {
@@ -37,7 +37,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.23.1"
+    "@malagu/ext-scripts": "^1.23.2"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

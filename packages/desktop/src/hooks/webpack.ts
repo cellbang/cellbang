@@ -1,5 +1,4 @@
 import { WebpackContext, ConfigurationContext } from '@malagu/cli-service';
-import { ProvidePlugin } from 'webpack';
 const nodeExternals = require('webpack-node-externals');
 import * as path from 'path';
 
@@ -8,11 +7,6 @@ export default async (context: WebpackContext) => {
     const configuration = ConfigurationContext.getFrontendConfiguration(configurations);
     if (configuration) {
         configuration
-            .plugin('process')
-                .use(ProvidePlugin, [{
-                    process: 'process/browser'
-                }])
-            .end()
             .module
                 .rule('css')
                     .test(/\.css$/)

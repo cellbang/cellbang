@@ -10,5 +10,5 @@ malagu:
   webpack:
     sourceMapLoader:
       exclude:
-        monaco: jsonc-parser|class-transformer|vscode-textmate|fast-plist|onigasm|(monaco-editor.*)
+        monaco: socks|smart-buffer|jsonc-parser|vscode-textmate|fast-plist|onigasm|(monaco-editor.*)
 
