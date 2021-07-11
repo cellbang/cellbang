@@ -11,8 +11,8 @@
     "@cellbang/filesystem-entity": "0.0.0",
     "@cellbang/filesystem-database": "0.0.0",
     "@cellbang/mini-browser-database": "0.0.0",
-    "@theia/navigator": "^1.14.0",
-    "@theia/workspace": "^1.14.0"
+    "@theia/navigator": "1.15.0",
+    "@theia/workspace": "1.15.0"
   },
   "publishConfig": {
     "access": "public"
@@ -42,7 +42,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.23.2",
+    "@malagu/ext-scripts": "1.27.2",
     "@types/crypto-js": "^4.0.1",
     "@types/readable-stream": "^2.3.9",
     "@types/tar-fs": "^2.0.0"

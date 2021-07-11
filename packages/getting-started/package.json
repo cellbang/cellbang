@@ -4,7 +4,7 @@
   "description": "",
   "dependencies": {
     "@cellbang/workspace": "0.0.0",
-    "@theia/getting-started": "^1.14.0"
+    "@theia/getting-started": "1.15.0"
   },
   "publishConfig": {
     "access": "public"
@@ -34,7 +34,7 @@
     "test": "malaguext test"
   },
   "devDependencies": {
-    "@malagu/ext-scripts": "^1.23.2"
+    "@malagu/ext-scripts": "1.27.2"
   },
   "nyc": {
     "extends": "../../configs/nyc.json"

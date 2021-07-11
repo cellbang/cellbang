@@ -22,13 +22,13 @@
     "@cellbang/preview": "0.0.0",
     "@cellbang/navigator": "0.0.0",
     "@cellbang/page": "0.0.0",
-    "@malagu/oss": "^1.23.2",
+    "@malagu/oss": "1.27.2",
     "@cellbang/sheet": "0.0.0",
     "@cellbang/config": "0.0.0"
   },
   "devDependencies": {
-    "@malagu/cli": "^1.23.2",
-    "@malagu/cli-service": "^1.23.2",
+    "@malagu/cli": "1.27.2",
+    "@malagu/cli-service": "1.27.2",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.8.5",
     "@types/react-router": "^5.1.7",

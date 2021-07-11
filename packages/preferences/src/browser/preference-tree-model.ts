@@ -5,8 +5,8 @@ import { PostConstruct } from '@malagu/core';
 export class PreferenceTreeModelExt extends PreferenceTreeModel {
 
     @PostConstruct()
-    protected init(): void {
-        super.init();
+    protected async init(): Promise<void> {
+        await super.init();
         this.updateRows();
     }
 
